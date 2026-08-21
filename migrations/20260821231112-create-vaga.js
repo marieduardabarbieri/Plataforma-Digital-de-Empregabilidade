@@ -13,7 +13,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       empresaId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Vagas',
+          key: 'id',
+        },
+        onUpdate: 'RESTRICT',
+        onDelete: 'RESTRICT',
       },
       quantidade_vagas: {
         type: Sequelize.NUMBER
