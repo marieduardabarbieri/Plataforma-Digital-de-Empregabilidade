@@ -39,13 +39,20 @@ module.exports = {
       descricao: {
         type: Sequelize.STRING
       },
+
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal
+          ('CURRENT_TIMESTAMP') // Para sqlite
+
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        // defaultValue: Sequelize. fn( 'NOW'),
+        defaultValue: Sequelize.literal
+          ('CURRENT_TIMESTAMP') // Para sqlite
       }
     });
   },
