@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Titulo da Página</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+    <%-include('.. /partials/header') %>
+
+        <%empresas.forEach((empresa)=> { %>
+            <%=empresas.nome_empresa %> <br />
+            <%=empresas.cnpj %> <br />
+            <%=empresas.email %> <br />
+            <%=empresas.telefone %> <br />
+            <%=empresas.area_atuacao %> <br />
+            <%=empresas.perfil %> <br />
+            <%=empresas.cidade %> <br />
+            <%=empresas.uf %> <br />
+            <%=empresas.localizacao %> <br />
+            <%=empresas.descricao %> <br />
+                <% } ) %>
+
+                    <%-include('.. /partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Titulo da Página</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+    <%-include('.. /partials/header') %>
+
+        <%vagas.forEach((vaga)=> { %>
+            <%=empresas.titulo_vaga %> <br />
+            <%=empresas.quantidade_vagas %> <br />
+            <%=empresas.salario %> <br />
+            <%=empresas.regime_contrato %> <br />
+            <%=empresas.tipo_trabalho %> <br />
+            <%=empresas.localizacao %> <br />
+            <%=empresas.descricao_vaga %> <br />
+          
+                <% } ) %>
+
+                    <%-include('.. /partials/footer') %>
+</body>
+
+</html>
