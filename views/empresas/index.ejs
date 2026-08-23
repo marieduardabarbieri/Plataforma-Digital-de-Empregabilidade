@@ -5,25 +5,28 @@
     <title>Titulo da Página</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+    <body>
 
-<body>
+        <%-include('../partials/header') %>
 
-    <%-include('.. /partials/header') %>
+        <% empresas.forEach((empresa)=> { %>
+            <h1><%= empresa.nome_empresa %></h1> 
+            <%= empresa.cnpj %> 
+            <%= empresa.email %> 
+            <%= empresa.telefone %> 
+            <%= empresa.area_atuacao %> 
+            <%= empresa.perfil %> 
+            <%= empresa.cidade %>
+            <%= empresa.uf %> 
+            <%= empresa.localizacao %>
+            <%= empresa.descricao %>
 
-        <%empresas.forEach((empresa)=> { %>
-            <%=empresas.nome_empresa %> <br />
-            <%=empresas.cnpj %> <br />
-            <%=empresas.email %> <br />
-            <%=empresas.telefone %> <br />
-            <%=empresas.area_atuacao %> <br />
-            <%=empresas.perfil %> <br />
-            <%=empresas.cidade %> <br />
-            <%=empresas.uf %> <br />
-            <%=empresas.localizacao %> <br />
-            <%=empresas.descricao %> <br />
-                <% } ) %>
+            <h3> Estágios da Empresa</h3>
+            <% empresa.vagas.forEach((vaga) => { %>
+                <%=vaga.titulo_vaga %>
+            <% }) %>
+        <% }) %>
 
-                    <%-include('.. /partials/footer') %>
-</body>
-
+        <%-include('../partials/footer') %>
+    </body>
 </html>

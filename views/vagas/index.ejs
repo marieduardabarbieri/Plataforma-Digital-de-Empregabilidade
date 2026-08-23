@@ -8,20 +8,19 @@
 
 <body>
 
-    <%-include('.. /partials/header') %>
+    <%-include('../partials/header') %>
 
         <%vagas.forEach((vaga)=> { %>
-            <%=empresas.titulo_vaga %> <br />
-            <%=empresas.quantidade_vagas %> <br />
-            <%=empresas.salario %> <br />
-            <%=empresas.regime_contrato %> <br />
-            <%=empresas.tipo_trabalho %> <br />
-            <%=empresas.localizacao %> <br />
-            <%=empresas.descricao_vaga %> <br />
-          
-                <% } ) %>
+            <%=vaga.titulo_vaga %> <br />
+            <%=vaga.quantidade_vagas %> <br />
+            <%=vaga.salario %> <br />
+            <%=vaga.regime_contrato %> <br />
+            <%=vaga.tipo_trabalho %> <br />
+            <%=vaga.localizacao %> <br />
+            <%=vaga.descricao_vaga %> <br />
+        <% }) %>
 
-                    <%-include('.. /partials/footer') %>
+    <%-include('../partials/footer') %>
 </body>
 
 </html>
