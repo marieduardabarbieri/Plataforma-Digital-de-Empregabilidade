@@ -1,4 +1,4 @@
-const { Vaga } = require('../models');
+const { Vaga, Empresa } = require('../models');
 
 const getVaga = async function (req, res, next) {
     const vagas = await Vaga.findAll({
