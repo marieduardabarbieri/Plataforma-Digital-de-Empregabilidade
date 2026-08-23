@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const homeRoutes = require('./routes/home');
+const empresasRoutes = require('./routes/empresas');
+const vagasRoutes = require('./routes/vagas');
 
 const app = express();
 
@@ -10,6 +12,8 @@ app.set('view engine', 'ejs');
 
 // Rotas
 app.use('/', homeRoutes);
+app.use('/empresas', empresasRoutes);
+app.use('/vagas', vagasRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
