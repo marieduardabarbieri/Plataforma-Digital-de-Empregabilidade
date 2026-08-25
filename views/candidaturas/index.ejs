@@ -5,16 +5,20 @@
     <title>Titulo da Página</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-    <body>
 
-        <%-include('../partials/header') %>
+<body>
 
-       
+    <%-include('.. /partials/header') %>
+
+
         <% candidaturas.forEach((candidatura)=> { %>
-            <p>Status: <%= candidatura.status %> </p>
-           
-        <% }) %>
+            <p> Candidato: <%= candidatura.candidato.nome %>   </p>
+            <p> Vaga: <%= candidatura.vaga.titulo_vaga %> </p>
+            <p> Status: <%= candidatura.status %> </p>
 
-        <%-include('../partials/footer') %>
-    </body>
+            <% }) %>
+
+                <%-include('.. /partials/footer') %>
+</body>
+
 </html>
