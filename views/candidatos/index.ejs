@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Titulo da Página</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+    <body>
+
+        <%-include('../partials/header') %>
+
+        <% candidatos.forEach((candidato)=> { %>
+            <%= candidato.nome %> 
+        <% }) %>
+
+        <%-include('../partials/footer') %>
+    </body>
+</html>
