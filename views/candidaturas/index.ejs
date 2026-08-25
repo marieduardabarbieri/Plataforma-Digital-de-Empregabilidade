@@ -8,17 +8,15 @@
 
 <body>
 
-    <%-include('.. /partials/header') %>
-
-
-        <% candidaturas.forEach((candidatura)=> { %>
+          <%-include('../partials/header') %>  
+         <% candidaturas.forEach((candidatura)=> { %>
             <p> Candidato: <%= candidatura.candidato.nome %>   </p>
             <p> Vaga: <%= candidatura.vaga.titulo_vaga %> </p>
             <p> Status: <%= candidatura.status %> </p>
 
             <% }) %>
 
-                <%-include('.. /partials/footer') %>
+                <%-include('../partials/footer') %>
 </body>
 
 </html>
