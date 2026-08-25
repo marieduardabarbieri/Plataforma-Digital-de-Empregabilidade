@@ -9,8 +9,10 @@
 
         <%-include('../partials/header') %>
 
+       
         <% curriculos.forEach((curriculo)=> { %>
-            <%= curriculo.curriculos_pdf %> 
+            <p>Candidato: <%= curriculo.candidato.nome %> </p>
+            <p> Currículo: <%= curriculo.curriculo_pdf %> </p>
         <% }) %>
 
         <%-include('../partials/footer') %>

@@ -10,7 +10,9 @@
         <%-include('../partials/header') %>
 
         <% candidatos.forEach((candidato)=> { %>
-            <%= candidato.nome %> 
+          <p>Candidato: <%= candidato.nome %> </p>
+          <p>Email: <%= candidato.email %> </p>
+          <p>Perfil: <%= candidato.perfil %> </p>
         <% }) %>
 
         <%-include('../partials/footer') %>

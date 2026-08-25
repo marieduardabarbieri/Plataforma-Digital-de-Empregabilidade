@@ -11,19 +11,19 @@
 
         <% empresas.forEach((empresa)=> { %>
             <h1><%= empresa.nome_empresa %></h1> 
-            <%= empresa.cnpj %> 
-            <%= empresa.email %> 
-            <%= empresa.telefone %> 
-            <%= empresa.area_atuacao %> 
-            <%= empresa.perfil %> 
-            <%= empresa.cidade %>
-            <%= empresa.uf %> 
-            <%= empresa.localizacao %>
-            <%= empresa.descricao %>
+           <p>Cnpj: <%= empresa.cnpj %> </p>
+           <p>Email: <%= empresa.email %> </p>
+           <p>Telefone: <%= empresa.telefone %> </p>
+           <p>Area de atuação <%= empresa.area_atuacao %> </p>
+           <p>Perfil: <%= empresa.perfil %> </p>
+           <p>Cidade: <%= empresa.cidade %></p>
+           <p>UF: <%= empresa.uf %> </p>
+           <p>Localização <%= empresa.localizacao %></p>
+           <p>Descrição <%= empresa.descricao %></p>
 
-            <h3> Estágios da Empresa</h3>
+            <h3> Vagas da Empresa</h3>
             <% empresa.vagas.forEach((vaga) => { %>
-                <%=vaga.titulo_vaga %>
+              <p>Vaga de:   <%=vaga.titulo_vaga %></p>
             <% }) %>
         <% }) %>
 

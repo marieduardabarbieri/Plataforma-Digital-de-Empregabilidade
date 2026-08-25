@@ -5,7 +5,7 @@ const getCandidato = async function (req, res, next) {
         include: [
             {
                 model: Curriculo,
-                as: 'curriculos'
+                as: 'curriculo'
             },
         ],
     });

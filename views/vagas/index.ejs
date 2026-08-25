@@ -11,13 +11,13 @@
     <%-include('../partials/header') %>
 
         <%vagas.forEach((vaga)=> { %>
-            <%=vaga.titulo_vaga %> <br />
-            <%=vaga.quantidade_vagas %> <br />
-            <%=vaga.salario %> <br />
-            <%=vaga.regime_contrato %> <br />
-            <%=vaga.tipo_trabalho %> <br />
-            <%=vaga.localizacao %> <br />
-            <%=vaga.descricao_vaga %> <br />
+           <p>Vaga: <%=vaga.titulo_vaga %> <br /></p>
+           <p>Quantidade de vagas: <%=vaga.quantidade_vagas %> <br /></p>
+           <p>Salário: <%=vaga.salario %> <br /></p>
+           <p>Regime do contrato: <%=vaga.regime_contrato %> <br /></p>
+           <p>Tipo de trabalho <%=vaga.tipo_trabalho %> <br /></p>
+           <p>Localização: <%=vaga.localizacao %> <br /></p>
+           <p>Descrição da vaga <%=vaga.descricao_vaga %> <br /></p>
         <% }) %>
 
     <%-include('../partials/footer') %>
