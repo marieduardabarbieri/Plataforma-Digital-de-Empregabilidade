@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'empresaId',
         as: 'empresa',
       });
+
+      Vaga.hasMany(models.Candidatura, {
+        foreignKey: 'vagaId',
+        as: 'candidaturas',
+      });
     }
   }
   Vaga.init({
