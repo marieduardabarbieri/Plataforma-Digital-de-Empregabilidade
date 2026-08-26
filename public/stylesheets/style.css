@@ -1,3 +1,277 @@
-body {
-  background-color: aquamarine;
+/* ================================
+   HEADER
+================================ */
+
+.site-header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8ebf2;
+  position: relative;
+  z-index: 100;
+}
+
+.header-container {
+  width: min(1200px, 92%);
+  min-height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 170px;
+  height: auto;
+  display: block;
+}
+
+/* Navegação */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  flex: 1;
+}
+
+.main-nav a {
+  position: relative;
+  color: #142957;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 32px 0;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #164bd8;
+}
+
+/* Link ativo */
+
+.main-nav a.active {
+  color: #0b3db8;
+  font-weight: 600;
+}
+
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 21px;
+  height: 2px;
+  background-color: #1748c9;
+  border-radius: 10px;
+}
+
+/* Botões */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-login,
+.btn-register {
+  height: 44px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-login {
+  color: #123a9e;
+  background-color: #ffffff;
+  border: 1px solid #8ba7ed;
+}
+
+.btn-login:hover {
+  background-color: #f3f6ff;
+}
+
+.btn-register {
+  color: #ffffff;
+  background-color: #103b9d;
+  border: 1px solid #103b9d;
+  box-shadow: 0 4px 10px rgba(16, 59, 157, 0.18);
+}
+
+.btn-register:hover {
+  background-color: #0b3185;
+  transform: translateY(-1px);
+}
+/* ================================
+   MENU HAMBÚRGUER
+================================ */
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background-color: #123a9e;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Botões que aparecem somente no menu mobile */
+
+.mobile-actions {
+  display: none;
+}
+
+/* ================================
+   HEADER RESPONSIVO
+================================ */
+
+@media (max-width: 900px) {
+  .header-container {
+    min-height: 75px;
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .main-nav {
+    gap: 20px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .btn-login,
+  .btn-register {
+    padding: 0 18px;
+    height: 40px;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-container {
+    width: 100%;
+    min-height: 72px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .logo img {
+    width: 145px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 5px 24px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .main-nav.menu-open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 17px 8px;
+    font-size: 16px;
+  }
+
+  .main-nav a.active {
+    color: #123fa5;
+    font-weight: 600;
+  }
+
+  .main-nav a.active::after {
+    display: none;
+  }
+
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .mobile-actions .btn-login,
+  .mobile-actions .btn-register {
+    width: 100%;
+    box-sizing: border-box;
+    height: 46px;
+  }
+
+  .mobile-actions .btn-register {
+    color: #ffffff;
+  }
+
+  .header-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    width: 100%;
+
+    .logo img {
+      width: 120px;
+    }
+    .main-nav {
+      gap: 15px;
+      overflow-x: auto;
+    }
+    .main-nav a {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .btn-login,
+    .btn-register {
+      padding: 0 11px;
+      font-size: 12px;
+    }
+  }
 }

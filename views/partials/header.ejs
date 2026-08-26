@@ -1,11 +1,41 @@
-<header>
-  <h1>Plataforma Digital de Empregos</h1>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/empresas">Empresas</a>
-    <a href="/vagas">Vagas</a>
-    <a href="/candidatos">Candidatos</a>
-    <a href="/curriculos">Curriculos</a>
-    <a href="/candidaturas">candidatura</a>
-  </nav>
+<header class="site-header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <img src="/images/vagacerta_logo_azul_transparente.png" alt="VagaCerta" />
+    </a>
+
+    <!-- Botão do menu mobile -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="/" class="active">Home</a>
+      <a href="/vagas">Vagas</a>
+      <a href="/sobre">Sobre nós</a>
+      <a href="/empresas">Para empresas</a>
+
+      <div class="mobile-actions">
+        <a href="/login" class="btn-login">Entrar</a>
+        <a href="/cadastro" class="btn-register">Cadastrar</a>
+      </div>
+    </nav>
+
+    <!-- Botões do desktop -->
+    <div class="header-actions">
+      <a href="/login" class="btn-login">Entrar</a>
+      <a href="/cadastro" class="btn-register">Cadastrar</a>
+    </div>
+  </div>
 </header>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNav = document.getElementById("main-nav");
+
+  menuToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("menu-open");
+  });
+</script>
