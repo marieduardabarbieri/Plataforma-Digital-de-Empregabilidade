@@ -2,51 +2,169 @@
 <html>
   <head>
     <title>Titulo da Página</title>
+
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   </head>
+
   <body>
     <%- include('./partials/header') %>
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <span class="hero-label">VAGACERTA</span>
+        <span class="section-label">VAGACERTA</span>
 
-        <h1>
+        <h1 class="page-title">
           Encontre a vaga<br />
           ideal para você.
         </h1>
 
-        <p>
-          Milhares de oprtunidades em empresas da sua região. Seu primeiro passo
-          começa aqui.
+        <p class="section-text">
+          Milhares de oportunidades em empresas da sua região. Seu primeiro
+          passo começa aqui.
         </p>
 
         <form class="search-box">
-          <div class="campo-busca">
+          <div class="search-field">
             <i class="fa-solid fa-briefcase"></i>
-            <input type="text" placeholder="Cargo ou palavra-chave" />
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Cargo ou palavra-chave"
+            />
           </div>
 
-          <div class="campo-busca">
+          <div class="search-field">
             <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Cidade ou região" />
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Cidade ou região"
+            />
           </div>
 
-          <button type="submit">Buscar vagas</button>
+          <button class="btn-primary" type="submit">Buscar vagas</button>
         </form>
-        <br />
 
         <span class="hero-info"> ✓ Novas oportunidades todos os dias </span>
       </div>
 
       <div class="hero-image">
         <img
-          src="/images/hero-vagacerta.jpg"
+          src="/images/hero-vagacerta.png"
           alt="Profissional em ambiente de trabalho"
         />
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre-home">
+      <div class="sobre-content">
+        <span class="section-label">VAGACERTA</span>
+
+        <h2 class="section-title">
+          Conectando talentos<br />
+          e oportunidades.
+        </h2>
+
+        <p class="section-text">
+          O VagaCerta foi desenvolvido para aproximar candidatos e empresas em
+          um único ambiente digital, facilitando a busca por oportunidades e
+          profissionais.
+        </p>
+
+        <p class="sobre-frase">
+          “Acreditamos que cada oportunidade pode transformar uma trajetória
+          profissional.”
+        </p>
+      </div>
+
+      <div class="sobre-image">
+        <img src="/images/paisagem-urbana.jpg" alt="Paisagem urbana" />
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <div class="beneficio">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Diversas vagas</h3>
+        <p>
+          Encontre oportunidades em diferentes áreas e níveis de experiência.
+        </p>
+      </div>
+
+      <div class="beneficio">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Busca regional</h3>
+        <p>Encontre vagas próximas de você com praticidade.</p>
+      </div>
+
+      <div class="beneficio">
+        <i class="fa-solid fa-building"></i>
+        <h3>Para empresas</h3>
+        <p>Publique vagas e encontre os talentos certos para sua empresa.</p>
+      </div>
+
+      <div class="beneficio">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Processo seguro</h3>
+        <p>Seus dados protegidos em todas as etapas do processo.</p>
+      </div>
+    </section>
+
+    <section class="destaques-home">
+      <div class="destaques-header">
+        <span class="section-label">VAGACERTA</span>
+
+        <h2>Tudo para facilitar sua próxima oportunidade.</h2>
+
+        <p>
+          Encontre vagas, descubra novas possibilidades e conecte-se com
+          empresas de forma simples e rápida.
+        </p>
+      </div>
+
+      <div class="destaques-cards">
+        <div class="destaque-card">
+          <div class="destaque-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <h3>Encontre oportunidades</h3>
+
+          <p>Pesquise vagas de acordo com sua área, localização e perfil.</p>
+
+          <a href="/vagas">Ver vagas →</a>
+        </div>
+
+        <div class="destaque-card">
+          <div class="destaque-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+
+          <h3>Mostre seu potencial</h3>
+
+          <p>Crie seu perfil e currículo para se destacar para as empresas.</p>
+
+          <a href="/candidatos">Criar perfil →</a>
+        </div>
+
+        <div class="destaque-card">
+          <div class="destaque-icon">
+            <i class="fa-solid fa-building"></i>
+          </div>
+
+          <h3>Encontre talentos</h3>
+
+          <p>Empresas podem divulgar oportunidades e encontrar candidatos.</p>
+
+          <a href="/empresas">Para empresas →</a>
+        </div>
       </div>
     </section>
 
