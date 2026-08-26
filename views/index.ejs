@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Titulo da Página</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
+  <head>
+    <title>Titulo da Página</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
     <%- include('./partials/header') %>
-  
-   
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-label">VAGACERTA</span>
+
+        <h1>
+          Encontre a vaga<br />
+          ideal para você.
+        </h1>
+
+        <p>
+          Milhares de oprtunidades em empresas da sua região. Seu primeiro passo
+          começa aqui.
+        </p>
+
+        <form class="search-box">
+          <div class="campo-busca">
+            <i class="fa-solid fa-briefcase"></i>
+            <input type="text" placeholder="Cargo ou palavra-chave" />
+          </div>
+
+          <div class="campo-busca">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Cidade ou região" />
+          </div>
+
+          <button type="submit">Buscar vagas</button>
+        </form>
+        <br />
+
+        <span class="hero-info"> ✓ Novas oportunidades todos os dias </span>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="/images/hero-vagacerta.jpg"
+          alt="Profissional em ambiente de trabalho"
+        />
+      </div>
+    </section>
 
     <%- include('./partials/footer') %>
-</body>
+  </body>
 </html>
