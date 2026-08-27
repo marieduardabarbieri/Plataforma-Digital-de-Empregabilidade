@@ -75,32 +75,6 @@
   gap: 14px;
 }
 
-.btn-login,
-.btn-register {
-  height: 35px;
-  padding: 0 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.btn-login {
-  color: #123a9e;
-  background: #ffffff;
-  border: 1px solid #8ba7ed;
-}
-
-.btn-register {
-  color: #ffffff;
-  background: #103b9d;
-  border: 1px solid #103b9d;
-  box-shadow: 0 4px 10px rgba(16, 59, 157, 0.18);
-}
-
 .menu-toggle {
   display: none;
   width: 42px;
@@ -160,20 +134,61 @@
    BOTÃO PADRÃO
 ================================ */
 
-.btn-primary {
-  padding: 0 22px;
-  border: none;
-  border-radius: 7px;
-  background: #123f9f;
-  color: #ffffff;
+.btn-login,
+.btn-register {
+  height: 38px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+
+  text-decoration: none;
+}
+
+.btn-login {
+  color: #123a9e;
+  background: #ffffff;
+  border: 1px solid #8ba7ed;
+}
+.btn-register {
+  color: #ffffff;
+  background: #103b9d;
+  border: 1px solid #103b9d;
+  box-shadow: 0 4px 10px rgba(16, 59, 157, 0.18);
+}
+
+#input-home {
+  height: 44px;
 }
 
 /* ================================
    CAMPOS DE FORMULÁRIO
 ================================ */
 
+.search-box {
+  display: flex;
+  gap: 10px;
+  max-width: 650px;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #d5dce8;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.search-field i {
+  color: #1746a2;
+  padding-right: 5px;
+}
 .form-input {
   border: none;
   outline: none;
@@ -201,26 +216,6 @@
 .hero p {
   max-width: 500px;
   margin-bottom: 28px;
-}
-
-.search-box {
-  display: flex;
-  gap: 10px;
-  max-width: 650px;
-}
-
-.search-field {
-  display: flex;
-  align-items: center;
-  height: 44px;
-  padding: 0 10px;
-  border: 1px solid #d5dce8;
-  border-radius: 8px;
-  background: #ffffff;
-}
-
-.search-field i {
-  color: #1746a2;
 }
 
 .hero-info {
@@ -308,12 +303,6 @@
   text-align: center;
 }
 
-.destaques-header p {
-  color: #68748a;
-  line-height: 1.7;
-  font-size: 16px;
-}
-
 .destaques-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -344,10 +333,7 @@
 }
 
 .destaque-card p {
-  color: #68748a;
   font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .destaque-card a {
@@ -356,7 +342,136 @@
   text-decoration: none;
   font-size: 14px;
 }
-/*RODAPE*/
+/*TELA DE RENDERIZAÇÃO DAS VAGAS*/
+
+/* FILTRO DE VAGAS */
+
+.filtro-vagas {
+  max-width: 1100px;
+  margin: 0px auto;
+  padding: 38px 45px;
+  background: #1746a2;
+  border-radius: 5px;
+  box-shadow: 0 8px 25px rgba(18, 63, 159, 0.15);
+}
+
+.filtro-titulo span {
+  color: #dbe6ff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.filtro-titulo h1 {
+  margin: 8px 0 25px;
+  color: white;
+  font-size: 27px;
+}
+
+.filtro-form {
+  display: flex;
+  gap: 12px;
+}
+
+.filtro-form button:hover {
+  background: white;
+  color: #123f9f;
+}
+
+/* LISTA DE VAGAS */
+
+.lista-vagas {
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.lista-titulo span {
+  color: #1746a2;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.lista-titulo h2 {
+  margin: 8px 0 30px;
+  color: #142957;
+  font-size: 32px;
+}
+
+.vagas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vaga-card {
+  padding: 25px 30px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(20, 41, 87, 0.07);
+}
+
+.vaga-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.vaga-topo h3 {
+  margin: 0;
+  color: #142957;
+  font-size: 22px;
+}
+
+.vaga-topo i {
+  color: #1746a2;
+  font-size: 22px;
+}
+
+.empresa {
+  margin: 6px 0 18px;
+  color: #68748a;
+}
+
+.vaga-info {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  color: #4f5d73;
+  font-size: 14px;
+}
+
+.vaga-info i,
+.vaga-salario i {
+  color: #1746a2;
+  margin-right: 5px;
+}
+
+.vaga-salario {
+  color: #142957;
+  font-weight: 600;
+}
+
+.vaga-descricao {
+  color: #68748a;
+  line-height: 1.5;
+}
+
+.vaga-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #edf0f5;
+}
+
+.vaga-rodape small {
+  color: #8993a5;
+}
+
+/*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {
   background: #fff;
@@ -449,14 +564,16 @@
     font-size: 32px;
   }
 
-  .search-box {
+  .search-box,
+  .filtro-form {
     flex-direction: column;
   }
 
   .search-box .btn-primary {
     height: 46px;
   }
-  .hero {
+  .hero,
+  .filtro-vagas {
     grid-template-columns: 1fr;
     padding: 45px 6%;
     gap: 35px;

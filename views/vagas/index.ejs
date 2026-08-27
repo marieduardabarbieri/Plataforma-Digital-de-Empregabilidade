@@ -1,26 +1,117 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Vagas</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
 
-<head>
-    <title>Titulo da Página</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <body>
+    <%- include('../partials/header') %>
 
-<body>
+    <section class="filtro-vagas">
+      <div class="filtro-titulo">
+        <span>OPORTUNIDADES</span>
+        <h1>Encontre a vaga ideal</h1>
+      </div>
 
-    <%-include('../partials/header') %>
+      <form class="filtro-form">
+        <div class="search-field">
+          <i class="fa-solid fa-briefcase"></i>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Cargo ou palavra-chave"
+          />
+        </div>
 
-        <%vagas.forEach((vaga)=> { %>
-           <p>Vaga: <%=vaga.titulo_vaga %> <br /></p>
-           <p>Quantidade de vagas: <%=vaga.quantidade_vagas %> <br /></p>
-           <p>Salário: <%=vaga.salario %> <br /></p>
-           <p>Regime do contrato: <%=vaga.regime_contrato %> <br /></p>
-           <p>Tipo de trabalho <%=vaga.tipo_trabalho %> <br /></p>
-           <p>Localização: <%=vaga.localizacao %> <br /></p>
-           <p>Descrição da vaga <%=vaga.descricao_vaga %> <br /></p>
+        <div class="search-field">
+          <i class="fa-solid fa-location-dot"></i>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Cidade ou região"
+          />
+        </div>
+
+        <button class="btn-login" type="submit">Buscar vagas</button>
+
+      </form>
+    </section>
+
+    <section class="lista-vagas">
+
+    <div class="lista-titulo">
+        <span>OPORTUNIDADES</span>
+        <h2>Vagas disponíveis</h2>
+    </div>
+
+    <div class="vagas-container">
+
+        <% vagas.forEach((vaga) => { %>
+
+            <div class="vaga-card">
+
+                <div class="vaga-topo">
+                    <div>
+                        <h3><%= vaga.titulo_vaga %></h3>
+                        <p class="empresa"><%= vaga.empresa.nome_empresa %></p>
+                    </div>
+
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <div class="vaga-info">
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <%= vaga.localizacao %>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-file-contract"></i>
+                        <%= vaga.regime_contrato %>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-building"></i>
+                        <%= vaga.tipo_trabalho %>
+                    </span>
+                </div>
+
+                <p class="vaga-salario">
+                    <i class="fa-solid fa-money-bill"></i>
+                    R$<%= vaga.salario %>,00
+                </p>
+
+                <p class="vaga-descricao">
+                    <%= vaga.descricao_vaga %>
+                </p>
+
+                <div class="vaga-rodape">
+                    <small>Publicada recentemente</small>
+                    <a href="/" class="btn-register">Candidatar-me</a>
+                </div>
+
+            </div>
+
         <% }) %>
 
-    <%-include('../partials/footer') %>
-</body>
+    </div>
 
+</section>
+
+    <%- include('../partials/footer') %>
+  </body>
 </html>
+<!-- <%vagas.forEach((vaga)=> { %>
+            <p>Vaga: <%=vaga.titulo_vaga %> <br /></p>
+            <p>Quantidade de vagas: <%=vaga.quantidade_vagas %> <br /></p>
+            <p>Salário: <%=vaga.salario %> <br /></p>
+            <p>Regime do contrato: <%=vaga.regime_contrato %> <br /></p>
+            <p>Tipo de trabalho <%=vaga.tipo_trabalho %> <br /></p>
+            <p>Localização: <%=vaga.localizacao %> <br /></p>
+            <p>Descrição da vaga <%=vaga.descricao_vaga %> <br /></p>
+            <% }) %>-->
