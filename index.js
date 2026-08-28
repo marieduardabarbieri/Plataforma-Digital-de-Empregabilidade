@@ -6,6 +6,7 @@ const vagasRoutes = require('./routes/vagas');
 const candidatosRoutes = require('./routes/candidatos');
 const curriculosRoutes = require('./routes/curriculos');
 const candidaturasRoutes = require('./routes/candidaturas');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use('/vagas', vagasRoutes);
 app.use('/candidatos', candidatosRoutes);
 app.use('/curriculos', curriculosRoutes);
 app.use('/candidaturas', candidaturasRoutes);
+app.use('/auth', authRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
