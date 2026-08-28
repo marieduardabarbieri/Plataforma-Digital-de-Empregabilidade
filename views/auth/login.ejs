@@ -4,12 +4,61 @@
     <title>Login - VagaCerta</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
-      rel="shortcut icon"
-      type="imagex/png"
-      href="/public/images/vagacerta_logo_azul_transparente.png"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
   </head>
   <body>
-    <%-include('../partials/header') %> <%-include('../partials/footer') %>
+    <%-include('../partials/header') %>
+
+    <main class="login-page">
+      <section class="login-card">
+        <h1>Entrar</h1>
+
+        <p class="section-text">Acesse sua conta para continuar.</p>
+
+        <form class="login-form">
+          <div class="login-field">
+            <label id="label" for="email">Email</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                placeholder="Digite seu e-mail..."
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="senha">Senha</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                class="form-input"
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha..."
+              />
+            </div>
+          </div>
+
+          <a href="#" class="forgot-password"> Esqueceu a senha? </a>
+
+          <button type="submit" class="btn-register" id="login-button">
+            Entrar
+          </button>
+          <hr class="linha" />
+          <span class="hero-info" style="text-align: center">
+            Senha nunca é armazenaada em texto puro
+          </span>
+        </form>
+      </section>
+    </main>
+    <%-include('../partials/footer') %>
   </body>
 </html>

@@ -161,6 +161,11 @@
   box-shadow: 0 4px 10px rgba(16, 59, 157, 0.18);
 }
 
+.btn-register:hover {
+  background: #f5f7fb;
+  color: #1746a2;
+}
+
 #input-home {
   height: 44px;
 }
@@ -469,6 +474,62 @@
 
 .vaga-rodape small {
   color: #8993a5;
+}
+
+/*TELA DE LOGIN*/
+/* LOGIN */
+
+.login-page {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f5f7fb;
+}
+
+.login-card {
+  width: min(330px, 100%);
+  padding: 45px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(20, 41, 87, 0.12);
+}
+
+.login-card h1 {
+  margin: 5px 0;
+  color: #142957;
+  font-size: 36px;
+}
+
+.login-field {
+  margin-bottom: 18px;
+}
+
+#label {
+  display: block;
+  margin-bottom: 7px;
+  color: #142957;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.forgot-password {
+  display: block;
+  margin: 5px 0 25px;
+  color: #1746a2;
+  font-size: 13px;
+  text-align: right;
+}
+
+#login-button {
+  width: 100%;
+}
+
+.linha {
+  width: 100%;
+  margin: 30px 0px;
+  color: #f4f5f8;
 }
 
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
