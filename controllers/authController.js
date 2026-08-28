@@ -1,7 +1,19 @@
-function getAuth(req, res) {
-    res.render('auth/login');
-}
+exports.cadastro = (req, res) => {
+    res.render('auth/cadastro');
+};
 
-module.exports = {
-    getAuth
+exports.cadastroCandidato = (req, res) => {
+    res.render('auth/cadastro-candidato');
+};
+
+exports.cadastroEmpresa = (req, res) => {
+    res.render('auth/cadastro-empresa');
+};
+
+exports.login = (req, res) => {
+    const perfil = req.query.perfil;
+
+    res.render('auth/login', {
+        perfil: perfil
+    });
 };
