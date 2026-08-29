@@ -13,4 +13,8 @@ const getEmpresa = async function (req, res, next) {
     res.render('empresas', { empresas })
 };
 
-module.exports = { getEmpresa };
+const cadastroEmpresa = async function (req, res) {
+    res.render('empresas/cadastro-empresa');
+};
+
+module.exports = { getEmpresa, cadastroEmpresa };
