@@ -522,7 +522,8 @@
   text-align: right;
 }
 
-#login-button {
+#login-button,
+#cadastro-button {
   width: 100%;
 }
 
@@ -883,6 +884,18 @@
   }
   .destaques-cards {
     grid-template-columns: 1fr;
+  }
+  .cadastro-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cadastro-card {
+    width: min(390px, 90%);
+  }
+
+  .cadastro-intro h1 {
+    font-size: 34px;
   }
 }
 

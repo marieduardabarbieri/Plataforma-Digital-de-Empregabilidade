@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titulo da Página</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%-include('../partials/header') %>
+
+    <main class="login-page">
+      <section class="login-card">
+        <h1>Criar conta</h1>
+
+        <p class="section-text">
+          Cadastre-se como candidato para encontrar novas oportunidades.
+        </p>
+        <div class="card-divider"></div>
+
+        <form class="login-form">
+          <!-- NOME -->
+          <div class="login-field">
+            <label for="nome">Nome</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-user"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="login-field">
+            <label for="email">Email</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- SENHA -->
+          <div class="login-field">
+            <label for="senha">Senha</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                class="form-input"
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- PERFIL -->
+          <div class="login-field">
+            <label>Perfil</label>
+
+            <div class="perfil-radio">
+              <label>
+                <input type="radio" name="perfil" value="candidato" checked />
+
+                Candidato
+              </label>
+            </div>
+          </div>
+
+          <!-- BOTÃO -->
+          <button type="submit" class="btn-register" id="cadastro-button">
+            Criar conta
+          </button>
+
+          <div class="card-divider"></div>
+
+          <span class="hero-info" style="text-align: center">
+            Seus dados serão armazenados de forma segura.
+          </span>
+        </form>
+      </section>
+    </main>
+    <%-include('../partials/footer') %>
+  </body>
+</html>
