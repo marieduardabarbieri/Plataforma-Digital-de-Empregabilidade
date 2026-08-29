@@ -1,20 +1,131 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Meu Perfil - VagaCerta</title>
 
-<head>
-    <title>Titulo da Página</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-    <body>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 
-        <%-include('../partials/header') %>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-        <% candidatos.forEach((candidato)=> { %>
-          <p>Candidato: <%= candidato.nome %> </p>
-          <p>Email: <%= candidato.email %> </p>
-          <p>Perfil: <%= candidato.perfil %> </p>
-        <% }) %>
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
 
-        <%-include('../partials/footer') %>
-    </body>
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="perfil-page">
+      <!-- PERFIL -->
+      <section class="perfil-card">
+        <div class="perfil-photo">
+          <img src="/images/paisagem-urbana.jpg" alt="Foto de perfil" />
+
+          <button class="photo-button">
+            <i class="fa-solid fa-camera"></i>
+          </button>
+        </div>
+
+     <% candidatos.forEach((candidato) => { %>
+        <div class="perfil-info">
+          <div class="perfil-name">
+            
+            <h1><%= candidato.nome %></h1>
+            <span class="perfil-badge">Candidato</span>
+          </div>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <%= candidato.email %>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            São Paulo - SP
+          </p>
+   
+          <p>
+            <i class="fa-solid fa-user"></i>
+            Perfil de candidato
+          </p>
+        </div>
+     <% }) %>
+
+        <a href="/candidatos/editar" class="btn-register">
+          <i class="fa-solid fa-pen"></i>
+          Alterar dados
+        </a>
+      </section>
+
+      <!-- RESUMO -->
+      <section class="perfil-section">
+        <h2>Resumo</h2>
+
+        <div class="profile-stats">
+          <div class="stat-card">
+            <i class="fa-solid fa-paper-plane"></i>
+
+            <div>
+              <strong>0</strong>
+              <span>Candidaturas</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-clock"></i>
+
+            <div>
+              <strong>0</strong>
+              <span>Em análise</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+              <strong>0</strong>
+              <span>Selecionadas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACESSOS -->
+      <section class="perfil-section">
+        <h2>Minha conta</h2>
+
+        <div class="profile-options">
+          <a href="/curriculos" class="profile-option">
+            <div class="option-icon">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <div>
+              <h3>Meu currículo</h3>
+              <p>Visualize e atualize seu currículo.</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right option-arrow"></i>
+          </a>
+
+          <a href="/candidaturas" class="profile-option">
+            <div class="option-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div>
+              <h3>Minhas candidaturas</h3>
+              <p>Acompanhe as vagas para as quais você se candidatou.</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right option-arrow"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
 </html>
