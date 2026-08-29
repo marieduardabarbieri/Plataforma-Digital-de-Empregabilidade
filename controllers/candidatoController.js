@@ -13,4 +13,8 @@ const getCandidato = async function (req, res, next) {
     res.render('candidatos', { candidatos })
 };
 
-module.exports = { getCandidato };
+const editar = async function (req, res) {
+    res.render('candidatos/editar');
+};
+
+module.exports = { getCandidato, editar };

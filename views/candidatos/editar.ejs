@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editar perfil - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="login-page">
+      <section class="login-card">
+        <h1>Editar perfil</h1>
+
+        <p class="section-text">Atualize seus dados pessoais.</p>
+
+        <form class="login-form">
+          <div class="login-field">
+            <label for="nome">Nome</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-user"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome..."
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="email">Email</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail..."
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="senha">Senha</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                class="form-input"
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite uma nova senha..."
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label>Perfil</label><br />
+
+            <label>
+              <input type="radio" name="perfil" value="candidato" checked />
+
+              Candidato
+            </label>
+          </div>
+
+          <button type="submit" class="btn-register" id="cadastro-button">
+            Salvar alterações
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
