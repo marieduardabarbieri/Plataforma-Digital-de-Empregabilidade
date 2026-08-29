@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cadastro de Empresa - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="login-page">
+      <section class="login-card cadastro-empresa-card">
+        <h1>Criar conta</h1>
+
+        <p class="section-text">
+          Cadastre sua empresa e encontre os melhores talentos.
+        </p>
+
+        <form class="login-form" action="/auth/cadastro/empresa" method="POST">
+          <!-- NOME DA EMPRESA -->
+          <div class="login-field">
+            <label for="nome_empresa">Nome da empresa</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-building"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="nome_empresa"
+                name="nome_empresa"
+                placeholder="Digite o nome da empresa..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- CNPJ -->
+          <div class="login-field">
+            <label for="cnpj">CNPJ</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-id-card"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="cnpj"
+                name="cnpj"
+                placeholder="Digite o CNPJ..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="login-field">
+            <label for="email">Email</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite o e-mail da empresa..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- TELEFONE -->
+          <div class="login-field">
+            <label for="telefone">Telefone</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-phone"></i>
+
+              <input
+                class="form-input"
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="Digite o telefone..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- ÁREA DE ATUAÇÃO -->
+          <div class="login-field">
+            <label for="area_atuacao">Área de atuação</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-briefcase"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="area_atuacao"
+                name="area_atuacao"
+                placeholder="Ex.: Tecnologia, Saúde..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- CIDADE -->
+          <div class="login-field">
+            <label for="cidade">Cidade</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-location-dot"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Digite a cidade..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- UF -->
+          <div class="login-field">
+            <label for="uf">Estado (UF)</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-map"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="uf"
+                name="uf"
+                maxlength="2"
+                placeholder="Ex.: SP"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- LOCALIZAÇÃO -->
+          <div class="login-field">
+            <label for="localizacao">Localização</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-map-location-dot"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="localizacao"
+                name="localizacao"
+                placeholder="Endereço ou localização..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- DESCRIÇÃO -->
+          <div class="login-field">
+            <label for="descricao">Descrição da empresa</label>
+
+            <div class="search-field descricao-field">
+              <i class="fa-solid fa-align-left"></i>
+
+              <textarea
+                class="form-input descricao-input"
+                id="descricao"
+                name="descricao"
+                placeholder="Conte um pouco sobre sua empresa..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- PERFIL -->
+          <div class="login-field">
+            <label>Perfil</label>
+
+            <div class="perfil-radio">
+              <label>
+                <input type="radio" name="perfil" value="empresa" checked />
+
+                Empresa
+              </label>
+            </div>
+          </div>
+
+          <!-- BOTÃO -->
+          <button type="submit" class="btn-register" id="cadastro-button">
+            Criar conta
+          </button>
+
+          <hr class="linha" />
+
+          <span class="hero-info" style="text-align: center">
+            Seus dados serão armazenados de forma segura.
+          </span>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
