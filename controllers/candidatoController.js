@@ -13,8 +13,13 @@ const getCandidato = async function (req, res, next) {
     res.render('candidatos', { candidatos })
 };
 
+const cadastroCandidato = async function (req, res) {
+    res.render('candidatos/cadastro-candidato');
+};
+
 const editar = async function (req, res) {
     res.render('candidatos/editar');
 };
 
-module.exports = { getCandidato, editar };
+
+module.exports = { getCandidato, cadastroCandidato, editar };
