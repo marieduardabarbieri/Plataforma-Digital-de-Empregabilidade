@@ -532,6 +532,170 @@
   color: #f4f5f8;
 }
 
+/* =========================
+   TELA DE CADASTRO CENTRAL
+========================= */
+
+.cadastro-page {
+  min-height: 650px;
+  padding: 55px 20px 60px;
+  background: #f5f8fd;
+  text-align: center;
+}
+
+.cadastro-intro span {
+  color: #1554d1;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.cadastro-intro h1 {
+  margin: 10px 0 5px;
+  color: #102957;
+  font-size: 42px;
+}
+
+.cadastro-intro p {
+  margin: 0 0 35px;
+  color: #667085;
+  font-size: 17px;
+}
+
+/* CARDS */
+
+.cadastro-cards {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  max-width: 750px;
+  margin: auto;
+}
+
+.cadastro-card {
+  width: 390px;
+  padding: 30px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(20, 45, 90, 0.1);
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.cadastro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(20, 45, 90, 0.16);
+}
+
+/* ÍCONE */
+
+.cadastro-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.candidato .cadastro-icon {
+  background: #e8efff;
+  color: #1554d1;
+}
+
+.empresa .cadastro-icon {
+  background: #dff8ec;
+  color: #08b86c;
+}
+
+/* TEXTO */
+
+.cadastro-card h2 {
+  margin: 5px 0 8px;
+  color: #102957;
+  font-size: 27px;
+}
+
+.cadastro-card > p {
+  min-height: 48px;
+  margin: 0;
+  color: #667085;
+  line-height: 1.5;
+}
+
+/* DIVISÃO */
+
+.card-divider {
+  height: 1px;
+  background: #e6eaf0;
+  margin: 22px 0;
+}
+
+/* LISTA */
+
+.cadastro-card ul {
+  padding: 0;
+  margin: 0 0 25px;
+  list-style: none;
+  text-align: left;
+}
+
+.cadastro-card li {
+  margin: 12px 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.cadastro-card li i {
+  margin-right: 9px;
+}
+
+.candidato li i {
+  color: #1554d1;
+}
+
+.empresa li i {
+  color: #08b86c;
+}
+
+/* BOTÃO */
+
+.card-button {
+  padding: 13px;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.candidato .card-button {
+  background: #1554d1;
+}
+
+.empresa .card-button {
+  background: #08b86c;
+}
+
+/* LINK PARA LOGIN */
+
+.login-link {
+  margin-top: 30px;
+  color: #667085;
+}
+
+.login-link a {
+  color: #1554d1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {

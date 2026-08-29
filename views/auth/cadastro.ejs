@@ -12,15 +12,74 @@
   <body>
     <%-include('../partials/header') %>
 
-    <a href="/auth/cadastro/candidato" class="card-perfil">
-      <h2>Candidato</h2>
-      <p>Encontre oportunidades</p>
-    </a>
+    <main class="cadastro-page">
+      <section class="cadastro-intro">
+        <span>CADASTRE-SE</span>
+        <h1>Crie sua conta</h1>
+        <p>Escolha o perfil que melhor se encaixa em você.</p>
+      </section>
 
-    <a href="/auth/cadastro/empresa" class="card-perfil">
-      <h2>Empresa</h2>
-      <p>Encontre profissionais</p>
-    </a>
+      <section class="cadastro-cards">
+        <!-- CANDIDATO -->
+        <a href="/auth/cadastro/candidato" class="cadastro-card candidato">
+          <div class="cadastro-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <h2>Candidato</h2>
+
+          <p>Encontre oportunidades de emprego e impulsione sua carreira.</p>
+
+          <div class="card-divider"></div>
+
+          <ul>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Buscar vagas gratuitas
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Candidatar-se facilmente
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Acompanhar suas
+              candidaturas
+            </li>
+          </ul>
+
+          <div class="card-button">Quero ser candidato</div>
+        </a>
+
+        <!-- EMPRESA -->
+        <a href="/auth/cadastro/empresa" class="cadastro-card empresa">
+          <div class="cadastro-icon">
+            <i class="fa-solid fa-building"></i>
+          </div>
+
+          <h2>Empresa</h2>
+
+          <p>Publique vagas e encontre os melhores talentos.</p>
+
+          <div class="card-divider"></div>
+
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Publicar vagas</li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Gerenciar candidatos
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Encontrar talentos
+              qualificados
+            </li>
+          </ul>
+
+          <div class="card-button">Quero cadastrar minha empresa</div>
+        </a>
+      </section>
+
+      <p class="login-link">
+        Já tem uma conta?
+        <a href="/auth/login">Entrar</a>
+      </p>
+    </main>
     <%-include('../partials/footer') %>
   </body>
 </html>
