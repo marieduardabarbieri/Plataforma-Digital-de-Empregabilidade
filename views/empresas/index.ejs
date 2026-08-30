@@ -1,32 +1,130 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Perfil da Empresa - VagaCerta</title>
 
-<head>
-    <title>Titulo da Página</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-    <body>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 
-        <%-include('../partials/header') %>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-        <% empresas.forEach((empresa)=> { %>
-            <h1><%= empresa.nome_empresa %></h1> 
-           <p>Cnpj: <%= empresa.cnpj %> </p>
-           <p>Email: <%= empresa.email %> </p>
-           <p>Telefone: <%= empresa.telefone %> </p>
-           <p>Area de atuação <%= empresa.area_atuacao %> </p>
-           <p>Perfil: <%= empresa.perfil %> </p>
-           <p>Cidade: <%= empresa.cidade %></p>
-           <p>UF: <%= empresa.uf %> </p>
-           <p>Localização <%= empresa.localizacao %></p>
-           <p>Descrição <%= empresa.descricao %></p>
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
 
-            <h3> Vagas da Empresa</h3>
-            <% empresa.vagas.forEach((vaga) => { %>
-              <p>Vaga de:   <%=vaga.titulo_vaga %></p>
-            <% }) %>
-        <% }) %>
+  <body>
+    <%- include('../partials/header') %>
 
-        <%-include('../partials/footer') %>
-    </body>
+    <main class="perfil-page">
+      <!-- Perfil -->
+      <section class="perfil-card">
+        <div class="perfil-photo">
+          <img src="/images/google.png" alt="Logo da empresa" />
+
+          <button class="photo-button">
+            <i class="fa-solid fa-camera"></i>
+          </button>
+        </div>
+
+        <div class="perfil-info">
+          <div class="perfil-name">
+            <h1>Google Assistent</h1>
+            <span class="perfil-badge">Empresa</span>
+          </div>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            google.assistent@gmail.com
+          </p>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            São Paulo - SP
+          </p>
+
+          <p>
+            <i class="fa-solid fa-building"></i>
+            Tecnologia
+          </p>
+        </div>
+
+        <a href="/empresas/editar" class="btn-register">
+          <i class="fa-solid fa-pen"></i>
+          Alterar dados
+        </a>
+      </section>
+
+      <!-- Informações -->
+      <section class="profile-details">
+        <h2>Informações da empresa</h2>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <span>CNPJ</span>
+            <strong>20.182.807/0004-42</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Telefone</span>
+            <strong>(11) 3441-2020</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Área de atuação</span>
+            <strong>Tecnologia</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Localização</span>
+            <strong>Rua Antônio Mota, 981</strong>
+          </div>
+        </div>
+
+        <div class="company-description">
+          <span>Sobre a empresa</span>
+
+          <p>
+            O Google é uma grande empresa de tecnologia dos Estados Unidos que
+            ficou famosa mundialmente pelo seu mecanismo de busca na internet.
+          </p>
+        </div>
+      </section>
+
+      <!-- Minha conta -->
+      <section class="perfil-section">
+        <h2>Minha conta</h2>
+
+        <div class="profile-options">
+          <a href="/vagas/minhas-vagas" class="profile-option">
+            <div class="option-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div>
+              <h3>Vagas publicadas</h3>
+              <p>Visualize e gerencie as vagas publicadas pela sua empresa.</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right account-arrow"></i>
+          </a>
+
+          <a href="/vagas/cadastro" class="profile-option">
+            <div class="option-icon">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div>
+              <h3>Cadastrar nova vaga</h3>
+              <p>Publique uma nova oportunidade para encontrar candidatos.</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right account-arrow"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
 </html>

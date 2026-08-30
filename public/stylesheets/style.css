@@ -919,6 +919,62 @@
   color: #1745aa;
 }
 
+/*PERFIL DE EMPRESA*/
+
+/* INFORMAÇÕES */
+
+.profile-details {
+  margin-top: 38px;
+}
+
+.profile-details h2,
+.account-section h2 {
+  color: #123b82;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.detail-item {
+  background: #fff;
+  border: 1px solid #dce3ef;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.detail-item span,
+.company-description span {
+  display: block;
+  color: #6d7785;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.detail-item strong {
+  color: #26364d;
+  font-size: 14px;
+}
+
+.company-description {
+  background: #fff;
+  border: 1px solid #dce3ef;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.company-description p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {
@@ -1110,7 +1166,8 @@
     grid-template-columns: 1fr;
   }
   .cadastro-cards,
-  .perfil-card {
+  .perfil-card,
+  .profile-card {
     flex-direction: column;
     align-items: center;
   }
@@ -1122,6 +1179,9 @@
   .cadastro-intro h1 {
     font-size: 34px;
   }
+  
+.details-grid {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 480px) {
