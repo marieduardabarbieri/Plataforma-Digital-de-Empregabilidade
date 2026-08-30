@@ -17,4 +17,9 @@ const cadastroEmpresa = async function (req, res) {
     res.render('empresas/cadastro-empresa');
 };
 
-module.exports = { getEmpresa, cadastroEmpresa };
+const editar = async function (req, res) {
+    res.render('empresas/editar');
+};
+
+
+module.exports = { getEmpresa, cadastroEmpresa, editar };
