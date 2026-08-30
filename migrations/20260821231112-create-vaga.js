@@ -16,14 +16,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Vagas',
+          model: 'Empresas',
           key: 'id',
         },
         onUpdate: 'RESTRICT',
         onDelete: 'RESTRICT',
       },
       quantidade_vagas: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       salario: {
         type: Sequelize.FLOAT

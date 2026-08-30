@@ -13,13 +13,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       cnpj: {
-        type: Sequelize.FLOAT
+        type: Sequelize.STRING
       },
       email: {
         type: Sequelize.STRING
       },
       telefone: {
-        type: Sequelize.NUMBER
+        type: Sequelize.STRING
       },
       area_atuacao: {
         type: Sequelize.STRING

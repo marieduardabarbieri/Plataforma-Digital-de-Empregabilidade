@@ -8,7 +8,7 @@ module.exports = {
 
     const empresa = await Empresa.findOne({
       where: {
-        nome_empresa: 'Empresa da Maria',
+        nome_empresa: 'Google Assistent',
       },
     });
     await queryInterface.bulkInsert('Vagas', [{

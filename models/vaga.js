@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   Vaga.init({
     titulo_vaga: DataTypes.STRING,
     empresaId: DataTypes.INTEGER,
-    quantidade_vagas: DataTypes.NUMBER,
+    quantidade_vagas: DataTypes.INTEGER,
     salario: DataTypes.FLOAT,
     regime_contrato: DataTypes.STRING,
     tipo_trabalho: DataTypes.STRING,
