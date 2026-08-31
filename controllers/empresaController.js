@@ -34,5 +34,8 @@ const minhas_vagas = async function (req, res) {
     });
 };
 
+const cadastro_vaga = async function (req, res) {
+    res.render('empresas/cadastro-vaga');
+};
 
-module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas };
+module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga };
