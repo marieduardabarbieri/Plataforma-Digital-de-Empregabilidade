@@ -1,4 +1,4 @@
-const { Empresa, Vaga } = require('../models');
+const { Empresa, Vaga, Candidatura } = require('../models');
 
 const getEmpresa = async function (req, res, next) {
     const empresas = await Empresa.findAll({
@@ -21,5 +21,18 @@ const editar = async function (req, res) {
     res.render('empresas/editar');
 };
 
+const minhas_vagas = async function (req, res) {
+    const vagas = await Vaga.findAll();
 
-module.exports = { getEmpresa, cadastroEmpresa, editar };
+    const totalVagas = vagas.length;
+    const totalCandidaturas = await Candidatura.count();
+
+    res.render('empresas/minhas-vagas', {
+        vagas,
+        totalVagas,
+        totalCandidaturas
+    });
+};
+
+
+module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas };

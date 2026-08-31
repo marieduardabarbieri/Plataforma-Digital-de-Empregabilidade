@@ -110,13 +110,6 @@
   letter-spacing: 3px;
 }
 
-.page-title {
-  margin: 14px 0;
-  color: #142957;
-  font-size: clamp(38px, 4vw, 58px);
-  line-height: 1.08;
-}
-
 .section-title {
   color: #142b5f;
   font-size: 42px;
@@ -975,6 +968,451 @@
   margin: 0;
 }
 
+/* TELA DE MINHAS VAGAS - VAGAS DA EMPRESA*/
+.minhas-vagas-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 45px 30px 70px;
+}
+
+.vagas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.vagas-header h1 {
+  margin: 0 0 8px;
+  color: #123b82;
+}
+
+.vagas-header p {
+  margin: 0;
+  color: #666;
+}
+
+.vagas-header .btn-register {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* RESUMO */
+
+.vagas-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 45px;
+}
+
+.resumo-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #dce3ef;
+  border-radius: 12px;
+}
+
+.resumo-card > i {
+  color: #1746a2;
+  font-size: 22px;
+}
+
+.resumo-card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.resumo-card strong {
+  font-size: 22px;
+  color: #123b82;
+}
+
+.resumo-card span {
+  font-size: 13px;
+  color: #777;
+}
+
+/* LISTA */
+
+.vagas-lista {
+  margin-top: 10px;
+}
+
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.lista-header h2 {
+  margin: 0;
+  color: #123b82;
+}
+
+.vagas-filtro {
+  display: flex;
+  gap: 8px;
+}
+
+.vagas-filtro button {
+  border: none;
+  background: transparent;
+  color: #666;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.vagas-filtro .filtro-ativo {
+  background: #eaf0ff;
+  color: #1746a2;
+  font-weight: bold;
+}
+
+/* CARD DA VAGA */
+
+.vaga-card {
+  background: white;
+  border: 1px solid #dce3ef;
+  border-radius: 14px;
+  padding: 25px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.vaga-card-top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vaga-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #16833b;
+  font-weight: bold;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22a447;
+}
+
+.vaga-status.encerrada {
+  color: #777;
+}
+
+.vaga-status.encerrada .status-dot {
+  background: #999;
+}
+
+.vaga-info h3 {
+  margin: 5px 0 8px;
+  color: #173d7a;
+  font-size: 21px;
+}
+
+.vaga-local {
+  margin: 0 0 18px;
+  color: #666;
+}
+
+.vaga-local i {
+  color: #1746a2;
+  margin-right: 6px;
+}
+
+.vaga-detalhes {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.vaga-detalhes span {
+  color: #666;
+  font-size: 14px;
+}
+
+.vaga-detalhes i {
+  color: #1746a2;
+  margin-right: 5px;
+}
+
+/* CANDIDATURAS */
+
+.vaga-candidaturas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 14px;
+  background: #f6f8fc;
+  border-radius: 9px;
+}
+
+.vaga-candidaturas > i {
+  color: #1746a2;
+  font-size: 19px;
+}
+
+.vaga-candidaturas div {
+  display: flex;
+  flex-direction: column;
+}
+
+.vaga-candidaturas strong {
+  color: #333;
+}
+
+.vaga-candidaturas span {
+  color: #777;
+  font-size: 12px;
+}
+
+/* BOTÕES */
+
+.vaga-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* VAGA ENCERRADA */
+
+.vaga-encerrada {
+  opacity: 0.78;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+  .vagas-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .vagas-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .vaga-acoes {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-align: center;
+  }
+}
+
+/*TELA DE MINHAS VAGAS*/
+.minhas-vagas-page {
+  background: #f5f7fb;
+  padding: 50px 8%;
+  min-height: 70vh;
+}
+
+.page-title,
+.section-header,
+.vaga-top,
+.vaga-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-title {
+  margin-bottom: 35px;
+}
+
+.page-title h1,
+.section-header h2 {
+  color: #123b82;
+  margin: 0;
+}
+
+.page-title p,
+.section-header p {
+  color: #68758a;
+  margin-top: 8px;
+}
+
+/* RESUMO */
+
+.vagas-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.resumo-card {
+  background: white;
+  border: 1px solid #dce3ef;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.resumo-icon,
+.vaga-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eaf0ff;
+  color: #1749a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.resumo-card strong {
+  display: block;
+  font-size: 24px;
+  color: #123b82;
+}
+
+.resumo-card span {
+  color: #68758a;
+  font-size: 14px;
+}
+
+/* VAGAS */
+
+.vagas-section {
+  background: white;
+  border: 1px solid #dce3ef;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.vagas-count {
+  background: #edf2ff;
+  color: #1749a5;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.vagas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.vaga-card {
+  border: 1px solid #dce3ef;
+  border-radius: 14px;
+  padding: 24px;
+  background: #fbfcff;
+}
+
+.vaga-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.vaga-title h3 {
+  margin: 0 0 7px;
+  color: #173b78;
+  font-size: 20px;
+}
+
+.vaga-title span {
+  color: #68758a;
+  font-size: 14px;
+}
+
+.vaga-title i {
+  color: #1749a5;
+}
+
+.vaga-status {
+  color: #16833b;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.vaga-status i {
+  font-size: 8px;
+}
+
+/* INFORMAÇÕES */
+
+.vaga-info {
+  display: flex;
+  gap: 35px;
+  border-top: 1px solid #e4e8f0;
+  border-bottom: 1px solid #e4e8f0;
+  padding: 18px 0;
+  margin: 22px 0;
+}
+
+.vaga-info div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #526176;
+  font-size: 14px;
+}
+
+.vaga-info i {
+  color: #1749a5;
+}
+
+/* RODAPÉ DA VAGA */
+
+.vaga-footer span {
+  color: #7a8596;
+  font-size: 13px;
+}
+
+.vaga-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* VAZIO */
+
+.empty-vagas {
+  text-align: center;
+  padding: 60px 20px;
+  color: #68758a;
+}
+
+.empty-vagas i {
+  font-size: 40px;
+  color: #1749a5;
+}
+
+.empty-vagas h3 {
+  color: #173b78;
+}
+
+/* RESPONSIVO */
+
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {
@@ -1083,10 +1521,26 @@
     gap: 35px;
   }
 
+  .vaga-top,
+  .vaga-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .vaga-info {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .vaga-actions {
+    width: 100%;
+  }
   .hero-image img {
     display: none;
   }
-  .footer-content {
+  .footer-content,
+  .vagas-resumo {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -1167,7 +1621,8 @@
   }
   .cadastro-cards,
   .perfil-card,
-  .profile-card {
+  .profile-card,
+  .vaga-footer {
     flex-direction: column;
     align-items: center;
   }
@@ -1179,9 +1634,10 @@
   .cadastro-intro h1 {
     font-size: 34px;
   }
-  
-.details-grid {
-  grid-template-columns: repeat(2, 1fr);
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
