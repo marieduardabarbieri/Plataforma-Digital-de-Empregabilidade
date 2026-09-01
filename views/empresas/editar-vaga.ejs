@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editar vaga - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="login-page">
+      <section class="login-card">
+        <h1>Editar vaga</h1>
+
+        <p class="section-text">Atualize as informações da sua oportunidade.</p>
+
+        <form
+          class="login-form"
+          action="/empresas/minhas-vagas/<%= vaga.id %>/editar"
+          method="POST"
+        >
+          <div class="login-field">
+            <label for="titulo_vaga">Título da vaga</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-briefcase"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="titulo_vaga"
+                name="titulo_vaga"
+                value="<%= vaga.titulo_vaga %>"
+                placeholder="Digite o título da vaga..."
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="quantidade_vagas">Quantidade de vagas</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-users"></i>
+
+              <input
+                class="form-input"
+                type="number"
+                id="quantidade_vagas"
+                name="quantidade_vagas"
+                value="<%= vaga.quantidade_vagas %>"
+                placeholder="Ex.: 2"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="salario">Salário</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-money-bill"></i>
+
+              <input
+                class="form-input"
+                type="number"
+                step="0.01"
+                id="salario"
+                name="salario"
+                value="<%= vaga.salario %>"
+                placeholder="Ex.: 2500"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="regime_contrato">Regime de contrato</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-file-signature"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="regime_contrato"
+                name="regime_contrato"
+                value="<%= vaga.regime_contrato %>"
+                placeholder="Ex.: CLT, Estágio..."
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="tipo_trabalho">Tipo de trabalho</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-house"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="tipo_trabalho"
+                name="tipo_trabalho"
+                value="<%= vaga.tipo_trabalho %>"
+                placeholder="Ex.: Auxiliar, Analista..."
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="localizacao">Localização</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-location-dot"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="localizacao"
+                name="localizacao"
+                value="<%= vaga.localizacao %>"
+                placeholder="Digite a localização..."
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="descricao_vaga">Descrição da vaga</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-align-left"></i>
+
+              <textarea
+                class="form-input"
+                id="descricao_vaga"
+                name="descricao_vaga"
+                placeholder="Descreva a oportunidade..."
+                required
+              >
+                    <%= vaga.descricao_vaga %></textarea
+              >
+            </div>
+          </div>
+
+          <button type="submit" class="btn-register">
+            <i class="fa-solid fa-check"></i>
+            Salvar alterações
+          </button>
+
+          <a href="/empresas/minhas-vagas/<%= vaga.id %>" class="btn-login">
+            Voltar
+          </a>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
