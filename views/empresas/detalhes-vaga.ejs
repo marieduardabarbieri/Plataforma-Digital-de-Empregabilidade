@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalhes da vaga - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="login-page">
+      <section class="login-card">
+        <div class="vaga-title">
+          <div class="vaga-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+
+          <div>
+            <h1><%= vaga.titulo_vaga %></h1>
+
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              <%= vaga.localizacao %>
+            </span>
+          </div>
+        </div>
+
+        <div class="vaga-info">
+          <div>
+            <i class="fa-solid fa-house"></i>
+            <span><%= vaga.tipo_trabalho %></span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-money-bill"></i>
+            <span>R$ <%= vaga.salario %></span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-users"></i>
+            <span><%= vaga.quantidade_vagas %> vagas</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-file-signature"></i>
+            <span><%= vaga.regime_contrato %></span>
+          </div>
+        </div>
+
+        <div class="login-field">
+          <label>Descrição da vaga</label>
+
+          <p class="section-text"><%= vaga.descricao_vaga %></p>
+        </div>
+
+        <div class="login-field">
+          <label>Status</label>
+
+          <p class="section-text">
+            <i class="fa-solid fa-circle"></i>
+            Em andamento
+          </p>
+        </div>
+
+        <div class="vaga-actions">
+          <a href="/empresas/minhas-vagas" class="btn-login"> Voltar </a>
+
+          <a
+            href="/empresas/minhas-vagas/<%= vaga.id %>/editar"
+            class="btn-register"
+          >
+            <i class="fa-solid fa-pen"></i>
+            Editar vaga
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
