@@ -38,4 +38,10 @@ const cadastro_vaga = async function (req, res) {
     res.render('empresas/cadastro-vaga');
 };
 
-module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga };
+const detalhesVaga = async function (req, res) {
+    const vaga = await Vaga.findByPk(req.params.id);
+
+    res.render('empresas/detalhes-vaga', { vaga });
+};
+
+module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga, detalhesVaga };
