@@ -27,26 +27,30 @@
           </button>
         </div>
 
+  <% empresas.forEach((empresa)=> { %>
         <div class="perfil-info">
           <div class="perfil-name">
-            <h1>Google Assistent</h1>
-            <span class="perfil-badge">Empresa</span>
+            <h1><%= empresa.nome_empresa %></h1>
+
+            <span class="perfil-badge"> <%= empresa.perfil %> </span>
           </div>
 
           <p>
             <i class="fa-solid fa-envelope"></i>
-            google.assistent@gmail.com
+            <%= empresa.email %>
           </p>
 
           <p>
             <i class="fa-solid fa-location-dot"></i>
-            São Paulo - SP
+            <%= empresa.cidade %> - <%= empresa.uf %>
           </p>
 
           <p>
             <i class="fa-solid fa-building"></i>
-            Tecnologia
+           <%= empresa.descricao %>
           </p>
+
+          
         </div>
 
         <a href="/empresas/editar" class="btn-register">
@@ -62,35 +66,44 @@
         <div class="details-grid">
           <div class="detail-item">
             <span>CNPJ</span>
-            <strong>20.182.807/0004-42</strong>
+            <strong><%= empresa.cnpj %></strong>
           </div>
 
           <div class="detail-item">
             <span>Telefone</span>
-            <strong>(11) 3441-2020</strong>
+            <strong><%= empresa.telefone %></strong>
           </div>
 
           <div class="detail-item">
             <span>Área de atuação</span>
-            <strong>Tecnologia</strong>
+            <strong><%= empresa.area_atuacao %></strong>
           </div>
 
           <div class="detail-item">
-            <span>Localização</span>
-            <strong>Rua Antônio Mota, 981</strong>
+            <span>CEP</span>
+            <strong><%= empresa.cep %></strong>
           </div>
-        </div>
 
-        <div class="company-description">
-          <span>Sobre a empresa</span>
+          <div class="detail-item">
+            <span>Rua</span>
+            <strong><%= empresa.rua %>, <%= empresa.numero %> </strong>
+          </div>
 
-          <p>
-            O Google é uma grande empresa de tecnologia dos Estados Unidos que
-            ficou famosa mundialmente pelo seu mecanismo de busca na internet.
-          </p>
-        </div>
+
+          <div class="detail-item">
+            <span>Bairro</span>
+            <strong><%= empresa.bairro %></strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Complemento</span>
+            <strong><%= empresa.complemento || 'Não informado' %></strong>
+          </div>
+
+        
+
       </section>
-
+    <% }) %>
       <!-- Minha conta -->
       <section class="perfil-section">
         <h2>Minha conta</h2>

@@ -79,6 +79,24 @@
             </div>
           </div>
 
+          <!-- SENHA -->
+          <div class="login-field">
+            <label for="senha">Senha</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                class="form-input"
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha..."
+                required
+              />
+            </div>
+          </div>
+
           <!-- TELEFONE -->
           <div class="login-field">
             <label for="telefone">Telefone</label>
@@ -113,6 +131,11 @@
                 required
               />
             </div>
+          </div>
+
+          <div class="localizacao">
+            <i class="fa-solid fa-map-pin"></i>
+            <p class="section-text">Localização</p>
           </div>
 
           <!-- CIDADE -->
@@ -152,20 +175,114 @@
             </div>
           </div>
 
-          <!-- LOCALIZAÇÃO -->
+          <!-- RUA -->
           <div class="login-field">
-            <label for="localizacao">Localização</label>
+            <label for="rua">Rua</label>
 
             <div class="search-field">
-              <i class="fa-solid fa-map-location-dot"></i>
+              <i class="fa-solid fa-road"></i>
 
               <input
                 class="form-input"
                 type="text"
-                id="localizacao"
-                name="localizacao"
-                placeholder="Endereço ou localização..."
+                id="rua"
+                name="rua"
+                placeholder="Digite o nome da rua..."
                 required
+              />
+            </div>
+          </div>
+
+          <!-- NÚMERO -->
+          <div class="login-field">
+            <label for="numero">Número</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-hashtag"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="numero"
+                name="numero"
+                placeholder="Ex.: 123"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- BAIRRO -->
+          <div class="login-field">
+            <label for="bairro">Bairro</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-map-pin"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="bairro"
+                name="bairro"
+                placeholder="Digite o bairro..."
+                required
+              />
+            </div>
+          </div>
+
+          <!-- COMPLEMENTO -->
+          <div class="login-field">
+            <label for="complemento">Complemento</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-location-arrow"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="complemento"
+                name="complemento"
+                placeholder="Ex.: Sala 201, Bloco A..."
+              />
+            </div>
+          </div>
+
+          <!-- CEP -->
+          <div class="login-field">
+            <label for="cep">CEP</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelopes-bulk"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="cep"
+                name="cep"
+                maxlength="9"
+                placeholder="Ex.: 01001-000"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="localizacao">
+            <i class="fa-solid fa-building iconeverde"></i>
+            <p class="section-text">Sobre a empresa</p>
+          </div>
+
+          <!-- LINK EMPRESA -->
+          <div class="login-field">
+            <label for="cep">Link da Empresa (Opcional)</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelopes-bulk"></i>
+
+              <input
+                class="form-input"
+                type="text"
+                id="link_empresa"
+                name="link_empresa"
+                placeholder="Ex.: www.gogle.com"
               />
             </div>
           </div>

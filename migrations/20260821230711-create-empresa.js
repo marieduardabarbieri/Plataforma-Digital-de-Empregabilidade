@@ -18,6 +18,9 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      senha: {
+        type: Sequelize.STRING
+      },
       telefone: {
         type: Sequelize.STRING
       },
@@ -33,7 +36,25 @@ module.exports = {
       uf: {
         type: Sequelize.STRING
       },
-      localizacao: {
+      imagem_empresa: {
+        type: Sequelize.STRING
+      },
+      rua: {
+        type: Sequelize.STRING
+      },
+      numero: {
+        type: Sequelize.STRING
+      },
+      bairro: {
+        type: Sequelize.STRING
+      },
+      complemento: {
+        type: Sequelize.STRING
+      },
+      cep: {
+        type: Sequelize.STRING
+      },
+      link_empresa: {
         type: Sequelize.STRING
       },
       descricao: {

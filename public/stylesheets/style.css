@@ -1404,6 +1404,28 @@
   color: #173b78;
 }
 
+.localizacao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 0 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.localizacao i {
+  color: rgb(161, 31, 31);
+  font-size: 20px;
+}
+
+.localizacao .section-text {
+  margin: 0;
+  font-size: 20px;
+}
+
+.localizacao .iconeverde {
+  color: rgb(9, 9, 132);
+}
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {
