@@ -1,22 +1,166 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Minhas candidaturas - VagaCerta</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
 
-<head>
-    <title>Titulo da Página</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <body>
+    <%- include('../partials/header') %>
 
-<body>
+    <main class="minhas-vagas-page">
+      <!-- CABEÇALHO -->
+      <div class="vagas-header">
+        <div>
+          <h1>Minhas candidaturas</h1>
+          <p>
+            Acompanhe as oportunidades para as quais você se candidatou.
+          </p>
+        </div>
 
-          <%-include('../partials/header') %>  
-         <% candidaturas.forEach((candidatura)=> { %>
-            <p> Candidato: <%= candidatura.candidato.nome %>   </p>
-            <p> Vaga: <%= candidatura.vaga.titulo_vaga %> </p>
-            <p> Status: <%= candidatura.status %> </p>
+        <a href="/vagas" class="btn-register">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Encontrar vagas
+        </a>
+      </div>
 
+      <!-- RESUMO -->
+      <section class="vagas-resumo">
+        <div class="resumo-card">
+          <div class="resumo-icon">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <div>
+            <strong><%= candidaturas.length %></strong>
+            <span>Candidaturas enviadas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTA -->
+      <section class="vagas-section">
+        <div class="section-header">
+          <div>
+            <h2>Suas candidaturas</h2>
+            <p>
+              Veja o status e as informações das vagas.
+            </p>
+          </div>
+
+          <span class="vagas-count">
+            <%= candidaturas.length %> candidaturas
+          </span>
+        </div>
+
+        <% if (candidaturas.length === 0) { %>
+          <!-- ESTADO VAZIO -->
+          <div class="empty-vagas">
+            <i class="fa-solid fa-file-circle-xmark"></i>
+            <h3>Nenhuma candidatura encontrada</h3>
+
+            <p>
+              Você ainda não se candidatou a nenhuma vaga.
+            </p>
+
+            <a href="/vagas" class="btn-register">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              Encontrar vagas
+            </a>
+          </div>
+
+        <% } else { %>
+          <!-- CANDIDATURAS -->
+
+          <div class="vagas-list">
+            <% candidaturas.forEach(candidatura => { %>
+              <article class="vaga-card">
+
+                <!-- TOPO -->
+                <div class="vaga-top ">
+                  <div class="vaga-title">
+                    <div class="vaga-icon">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+
+                      <h3>
+                        <%= candidatura.vaga.titulo_vaga %>
+                      </h3>
+
+                      <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <%= candidatura.vaga.localizacao %>
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- STATUS -->
+                  <span class="vaga-status">
+                    <i class="fa-solid fa-circle"></i>
+                    <%= candidatura.status %>
+                  </span>
+                </div>
+
+                <!-- INFORMAÇÕES -->
+                <div class="vaga-info">
+                  <div>
+                    <i class="fa-solid fa-money-bill"></i>
+                    <span>
+                      R$ <%= candidatura.vaga.salario %>
+                    </span>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>
+                      <%= candidatura.vaga.tipo_trabalho %>
+                    </span>
+                  </div>
+                  <div>
+
+                    <i class="fa-solid fa-file-signature"></i>
+
+                    <span>
+                      <%= candidatura.vaga.regime_contrato %>
+                    </span>
+                  </div>
+                  <div>
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                      <%= candidatura.vaga.quantidade_vagas %> vagas
+                    </span>
+                  </div>
+                </div>
+
+                <!-- RODAPÉ -->
+                <div class="vaga-footer">
+                  <span>
+                    <i class="fa-solid fa-clock"></i>
+                    Candidatura enviada
+                  </span>
+
+                  <div class="vaga-actions">
+                    <a
+                      href="/vagas/<%= candidatura.vaga.id %>"
+                      class="btn-login"
+                    >
+                      Ver vaga
+                    </a>
+                  </div>
+                </div>
+              </article>
             <% }) %>
-
-                <%-include('../partials/footer') %>
-</body>
-
+          </div>
+        <% } %>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
 </html>

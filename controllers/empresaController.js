@@ -50,4 +50,6 @@ const editarVaga = async function (req, res) {
     res.render('empresas/editar-vaga', { vaga });
 };
 
+
+
 module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga, detalhesVaga, editarVaga };

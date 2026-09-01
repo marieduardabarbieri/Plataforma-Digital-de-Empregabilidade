@@ -1299,13 +1299,6 @@
 
 /* VAGAS */
 
-.vagas-section {
-  background: white;
-  border: 1px solid #dce3ef;
-  border-radius: 16px;
-  padding: 30px;
-}
-
 .vagas-count {
   background: #edf2ff;
   color: #1749a5;
@@ -1315,8 +1308,8 @@
 }
 
 .vagas-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-top: 25px;
 }
@@ -1614,7 +1607,8 @@
   }
   .destaques-cards,
   .profile-stats,
-  .profile-options {
+  .profile-options,
+  .vagas-list {
     grid-template-columns: 1fr;
   }
   .cadastro-cards,
