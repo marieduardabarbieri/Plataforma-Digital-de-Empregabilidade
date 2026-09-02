@@ -137,6 +137,57 @@
           </div>
 
           <div class="login-field">
+            <label>Status da Vaga</label><br />
+
+            <label>
+              <input type="radio" name="status_vaga" value="em_andamento" />
+              Em andamento
+            </label>
+
+            <label>
+              <input type="radio" name="status_vaga" value="encerrada" />
+              Encerrada
+            </label>
+
+            <label>
+              <input type="radio" name="status_vaga" value="cancelada" />
+              Cancelada
+            </label>
+          </div>
+
+          <div class="login-field">
+            <label for="status_vaga">Data para início das candidaturas</label>
+            <div class="search-field">
+              <label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="data_inicio_candidatura"
+                  name="data_inicio_candidatura"
+                  value="data_inicio_candidatura"
+                  required
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="status_vaga">Data para fim das candidaturas</label>
+            <div class="search-field">
+              <label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="data_fim_candidatura"
+                  name="data_fim_candidatura"
+                  value="data_fim_candidatura"
+                  required
+                />
+              </label>
+            </div>
+          </div>
+
+          <div class="login-field">
             <label for="descricao_vaga">Descrição da vaga</label>
 
             <div class="search-field">

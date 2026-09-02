@@ -16,9 +16,12 @@ module.exports = {
       empresaId: empresa.id,
       quantidade_vagas: 2,
       salario: 1000,
-      regime_contrato: 'hibrido',
-      tipo_trabalho: 'Auxiliar',
+      regime_contrato: 'Estágio',
+      tipo_trabalho: 'Híbrido',
       localizacao: "Nova Andradina - MS",
+      status_vaga: "Em andamento",
+      data_inicio_candidatura: '2026-09-01',
+      data_fim_candidatura: '2026-09-30',
       descricao_vaga: "Esta vaga está sujeita a..."
     }], {});
   },

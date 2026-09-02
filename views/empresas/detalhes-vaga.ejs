@@ -56,18 +56,26 @@
         </div>
 
         <div class="login-field">
-          <label>Descrição da vaga</label>
-
-          <p class="section-text"><%= vaga.descricao_vaga %></p>
+          <label>Status</label>
+          <p class="section-text">
+            <i class="fa-solid fa-circle"></i>
+            <%= vaga.status_vaga %>
+          </p>
         </div>
 
         <div class="login-field">
-          <label>Status</label>
+          <i class="fa-regular fa-calendar calendario"></i>
+          <label>Período de candidaturas: </label>
 
           <p class="section-text">
-            <i class="fa-solid fa-circle"></i>
-            Em andamento
+            <%= vaga.dataInicioFormatada %> até <%= vaga.dataFimFormatada %>
           </p>
+        </div>
+
+        <hr class="linha" />
+        <div class="login-field">
+          <label>Descrição da Vaga:</label>
+          <p class="section-text"><%= vaga.descricao_vaga %></p>
         </div>
 
         <div class="vaga-actions">

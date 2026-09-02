@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Vagas</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <%- include('../partials/header') %>
+<head>
+  <title>Vagas</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+  <%- include('../partials/header') %>
 
     <section class="filtro-vagas">
       <div class="filtro-titulo">
@@ -21,20 +19,12 @@
       <form class="filtro-form">
         <div class="search-field">
           <i class="fa-solid fa-briefcase"></i>
-          <input
-            class="form-input"
-            type="text"
-            placeholder="Cargo ou palavra-chave"
-          />
+          <input class="form-input" type="text" placeholder="Cargo ou palavra-chave" />
         </div>
 
         <div class="search-field">
           <i class="fa-solid fa-location-dot"></i>
-          <input
-            class="form-input"
-            type="text"
-            placeholder="Cidade ou região"
-          />
+          <input class="form-input" type="text" placeholder="Cidade ou região" />
         </div>
 
         <button class="btn-login" type="submit">Buscar vagas</button>
@@ -44,67 +34,117 @@
 
     <section class="lista-vagas">
 
-    <div class="lista-titulo">
+      <div class="lista-titulo">
         <span>OPORTUNIDADES</span>
         <h2>Vagas disponíveis</h2>
+      </div>
+
+      <div class="vagas-container">
+
+        <% vagas.forEach((vaga)=> { %>
+
+         <div class="vaga-card">
+
+  <div class="vaga-topo">
+
+    <div class="vaga-identificacao">
+
+      <img
+        class="vaga-empresa-imagem"
+        src="<%= vaga.empresa.imagem || '/images/google.png' %>"
+        alt="Logo da <%= vaga.empresa.nome_empresa %>"
+      />
+
+      <div>
+        <h3><%= vaga.titulo_vaga %></h3>
+
+        <p class="empresa">
+          <%= vaga.empresa.nome_empresa %>
+        </p>
+      </div>
+
     </div>
 
-    <div class="vagas-container">
+    <div class="vaga-status">
+      <i class="fa-solid fa-circle"></i>
+      <%= vaga.status_vaga %>
+    </div>
 
-        <% vagas.forEach((vaga) => { %>
+  </div>
 
-            <div class="vaga-card">
 
-                <div class="vaga-topo">
-                    <div>
-                        <h3><%= vaga.titulo_vaga %></h3>
-                        <p class="empresa"><%= vaga.empresa.nome_empresa %></p>
-                    </div>
+            <!-- INFORMAÇÕES -->
+            <div class="vaga-info">
 
-                    <i class="fa-solid fa-briefcase"></i>
-                </div>
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+                <%= vaga.localizacao %>
+              </span>
 
-                <div class="vaga-info">
-                    <span>
-                        <i class="fa-solid fa-location-dot"></i>
-                        <%= vaga.localizacao %>
-                    </span>
+              <span>
+                <i class="fa-solid fa-file-contract"></i>
+                <%= vaga.regime_contrato %>
+              </span>
 
-                    <span>
-                        <i class="fa-solid fa-file-contract"></i>
-                        <%= vaga.regime_contrato %>
-                    </span>
+              <span>
+                <i class="fa-solid fa-laptop"></i>
+                <%= vaga.tipo_trabalho %>
+              </span>
 
-                    <span>
-                        <i class="fa-solid fa-building"></i>
-                        <%= vaga.tipo_trabalho %>
-                    </span>
-                </div>
+              <span>
+                <i class="fa-solid fa-users"></i>
+                <%= vaga.quantidade_vagas %>
+                  <%= vaga.quantidade_vagas==1 ? 'vaga' : 'vagas' %>
+              </span>
 
-                <p class="vaga-salario">
-                    <i class="fa-solid fa-money-bill"></i>
-                    R$<%= vaga.salario %>,00
-                </p>
+                  <span>
+                <i class="fa-solid fa-money-bill"></i>
+                Salário: R$<%= Number(vaga.salario).toFixed(2).replace('.', ',' ) %>
+              </span>
 
-                <p class="vaga-descricao">
-                    <%= vaga.descricao_vaga %>
-                </p>
+              
+            </div>
 
-                <div class="vaga-rodape">
-                    <small>Publicada recentemente</small>
-                    <a href="/" class="btn-register">Candidatar-me</a>
-                </div>
+
+            <!-- SALÁRIO E DESCRIÇÃO -->
+            <div class="vaga-conteudo">
+
+              <p class="vaga-descricao">
+                <%= vaga.descricao_vaga %>
+              </p>
+
+                <span class="vaga-descricao ">
+                <i class="fa-regular fa-calendar"></i>
+                 Período de candidaturas:      <%= vaga.dataInicioFormatada %> até   <%= vaga.dataFimFormatada %>
+                </span>
+            </div>
+
+
+            <!-- RODAPÉ -->
+            <div class="vaga-rodape">
+
+              <small>
+                <i class="fa-regular fa-clock"></i>
+                Publicada recentemente
+              </small>
+
+              <a href="/" class="btn-register">
+                Candidatar-me
+              </a>
 
             </div>
 
-        <% }) %>
+          </div>
 
-    </div>
+          <% }) %>
 
-</section>
+      </div>
+
+    </section>
 
     <%- include('../partials/footer') %>
-  </body>
+</body>
+
 </html>
 <!-- <%vagas.forEach((vaga)=> { %>
             <p>Vaga: <%=vaga.titulo_vaga %> <br /></p>

@@ -407,70 +407,138 @@
 }
 
 .vaga-card {
-  padding: 25px 30px;
+  padding: 24px 30px;
   background: #fff;
   border: 1px solid #e1e6f0;
   border-radius: 14px;
   box-shadow: 0 5px 18px rgba(20, 41, 87, 0.07);
 }
 
+/* TOPO DA VAGA */
+
 .vaga-topo {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
+  gap: 20px;
 }
 
-.vaga-topo h3 {
-  margin: 0;
+.vaga-identificacao {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vaga-empresa-imagem {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid #e1e6f0;
+  background: #fff;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.vaga-identificacao h3 {
+  margin: 0 0 4px;
   color: #142957;
-  font-size: 22px;
+  font-size: 25px;
 }
 
-.vaga-topo i {
-  color: #1746a2;
-  font-size: 22px;
-}
-
-.empresa {
-  margin: 6px 0 18px;
+.vaga-identificacao .empresa {
+  margin: 0;
   color: #68748a;
+  font-size: 16px;
 }
+
+/* STATUS */
+
+.vaga-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 20px;
+  background: #edf8f0;
+  color: #16833b;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vaga-status i {
+  color: #1746a2;
+  font-size: 9px;
+}
+
+/* INFORMAÇÕES */
 
 .vaga-info {
   display: flex;
-  gap: 25px;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 0;
   color: #4f5d73;
-  font-size: 14px;
+  font-size: 15px;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.vaga-info span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
 .vaga-info i,
+.calendario {
+  color: #1746a2;
+}
+
+/* SALÁRIO */
+
+.vaga-salario {
+  margin: 16px 0 10px;
+  color: #142957;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .vaga-salario i {
   color: #1746a2;
   margin-right: 5px;
 }
 
-.vaga-salario {
-  color: #142957;
-  font-weight: 600;
-}
+/* DESCRIÇÃO */
 
 .vaga-descricao {
+  margin: 0;
   color: #68748a;
   line-height: 1.5;
 }
 
+/* RODAPÉ */
+
 .vaga-rodape {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #edf0f5;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e4e8f0;
 }
 
 .vaga-rodape small {
-  color: #8993a5;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #68748a;
+}
+
+.vaga-rodape .btn-register {
+  min-width: 170px;
+  text-align: center;
 }
 
 /*TELA DE LOGIN*/
@@ -527,7 +595,7 @@
 .linha {
   width: 100%;
   margin: 30px 0px;
-  color: #f4f5f8;
+  color: #f4f4f5;
 }
 
 .descricao-field {
@@ -1082,25 +1150,43 @@
   background: white;
   border: 1px solid #dce3ef;
   border-radius: 14px;
-  padding: 25px;
+  padding: 28px 32px;
   margin-bottom: 18px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .vaga-card-top {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.vaga-topo .empresa {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
+.vaga-topo .empresa i {
+  font-size: 14px;
+}
 .vaga-status {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 13px;
-  color: #16833b;
-  font-weight: bold;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: #edf8f0;
+  color: #16833a;
 }
-
+.vaga-status i {
+  font-size: 7px;
+}
 .status-dot {
   width: 8px;
   height: 8px;
@@ -1119,7 +1205,7 @@
 .vaga-info h3 {
   margin: 5px 0 8px;
   color: #173d7a;
-  font-size: 21px;
+  font-size: 25px;
 }
 
 .vaga-local {
@@ -1147,7 +1233,78 @@
   color: #1746a2;
   margin-right: 5px;
 }
+.vaga-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid #e4e8f0;
+  border-bottom: 1px solid #e4e8f0;
+}
 
+.vaga-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.vaga-info i {
+  color: #1749a8;
+  width: 18px;
+}
+
+.vaga-periodo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f7f9fc;
+}
+
+.vaga-periodo > i {
+  color: #1749a8;
+  font-size: 19px;
+}
+
+.vaga-periodo div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vaga-periodo strong {
+  font-size: 14px;
+}
+
+.vaga-periodo span {
+  font-size: 14px;
+}
+.vaga-conteudo {
+  padding: 4px 0 18px;
+}
+
+.vaga-salario {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.vaga-salario i {
+  color: #1749a8;
+}
+
+.vaga-descricao {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
 /* CANDIDATURAS */
 
 .vaga-candidaturas {

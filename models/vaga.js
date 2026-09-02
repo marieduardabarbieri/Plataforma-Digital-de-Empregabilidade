@@ -29,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
     regime_contrato: DataTypes.STRING,
     tipo_trabalho: DataTypes.STRING,
     localizacao: DataTypes.STRING,
+    status_vaga: DataTypes.STRING,
+    data_inicio_candidatura: DataTypes.DATE,
+    data_fim_candidatura: DataTypes.DATE,
     descricao_vaga: DataTypes.STRING
   }, {
     sequelize,

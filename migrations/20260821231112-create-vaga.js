@@ -37,6 +37,15 @@ module.exports = {
       localizacao: {
         type: Sequelize.STRING
       },
+      status_vaga: {
+        type: Sequelize.STRING
+      },
+      data_inicio_candidatura: {
+        type: Sequelize.DATE
+      },
+      data_fim_candidatura: {
+        type: Sequelize.DATE
+      },
       descricao_vaga: {
         type: Sequelize.STRING
       },
