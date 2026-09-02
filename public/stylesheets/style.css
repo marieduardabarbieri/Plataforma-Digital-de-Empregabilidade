@@ -1,3 +1,8 @@
+body {
+  background: #f4f7fc;
+  margin: 0px;
+  padding: 0px;
+}
 /* ================================
    HEADER
 ================================ */
@@ -130,16 +135,19 @@
 .btn-login,
 .btn-register {
   height: 38px;
-  padding: 0 28px;
+  padding: 0 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
-
   text-decoration: none;
+}
+.btn-login i,
+.btn-register i {
+  padding-right: 10px;
 }
 
 .btn-login {
@@ -1348,6 +1356,259 @@
 
 .vaga-encerrada {
   opacity: 0.78;
+}
+/*TELA DE DETALHES DE UMA VAGA*/
+.detalhes-vaga-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.detalhes-vaga-card {
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 18px;
+  padding: 32px 38px;
+  box-shadow: 0 8px 25px rgba(20, 41, 87, 0.08);
+}
+
+/* CABEÇALHO */
+
+.detalhes-vaga-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.detalhes-identificacao {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.detalhes-empresa-imagem {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 40px;
+  border: 1px solid #e1e6f0;
+  padding: 7px;
+}
+
+.detalhes-identificacao h1 {
+  margin: 0 0 6px;
+  color: #142957;
+  font-size: 32px;
+}
+
+.detalhes-identificacao p {
+  margin: 0;
+  color: #68748a;
+  font-size: 17px;
+}
+
+.detalhes-identificacao p i {
+  color: #1746a2;
+  margin-right: 6px;
+}
+
+/* STATUS */
+
+.detalhes-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 20px;
+  background: #edf8f0;
+  color: #16833b;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.detalhes-status i {
+  color: #1746a2;
+  font-size: 8px;
+}
+
+/* INFORMAÇÕES */
+
+.detalhes-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 25px 0;
+  background: #e1e6f0;
+  border: 1px solid #e1e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.detalhe-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  background: #fff;
+}
+
+.detalhe-info-item > i {
+  color: #1746a2;
+  font-size: 19px;
+}
+
+.detalhe-info-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detalhe-info-item span {
+  color: #68748a;
+  font-size: 12px;
+}
+
+.detalhe-info-item strong {
+  color: #142957;
+  font-size: 15px;
+}
+
+/* SEÇÕES */
+
+.detalhes-secao {
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.detalhes-secao-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.detalhes-secao-titulo i {
+  color: #1746a2;
+  font-size: 19px;
+}
+
+.detalhes-secao-titulo h2 {
+  margin: 0;
+  color: #142957;
+  font-size: 19px;
+}
+
+/* DATAS */
+
+.periodo-datas {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 16px 20px;
+  background: #f7f9fc;
+  border-radius: 10px;
+}
+
+.periodo-datas div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.periodo-datas span {
+  color: #68748a;
+  font-size: 12px;
+}
+
+.periodo-datas strong {
+  color: #142957;
+  font-size: 16px;
+}
+
+.periodo-datas > i {
+  color: #1746a2;
+}
+
+/* DESCRIÇÃO */
+
+.detalhes-descricao {
+  margin: 0;
+  color: #4f5d73;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* EMPRESA */
+
+.empresa-detalhes {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px;
+  background: #f7f9fc;
+  border-radius: 12px;
+}
+
+.empresa-detalhes img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  padding: 5px;
+}
+
+.empresa-detalhes h3 {
+  margin: 0 0 6px;
+  color: #142957;
+}
+
+.empresa-detalhes p {
+  margin: 0 0 10px;
+  color: #68748a;
+  line-height: 1.5;
+}
+
+.empresa-detalhes span {
+  color: #68748a;
+  font-size: 14px;
+}
+
+.empresa-detalhes span i {
+  color: #1746a2;
+}
+
+/* AÇÕES */
+
+.detalhes-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 25px;
+}
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 130px;
+  padding: 12px 20px;
+  border: 1px solid #1746a2;
+  border-radius: 7px;
+  color: #1746a2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.detalhes-acoes .btn-register {
+  min-width: 150px;
+  text-align: center;
 }
 
 /* RESPONSIVO */

@@ -39,7 +39,14 @@ const cadastro_vaga = async function (req, res) {
 };
 
 const detalhesVaga = async function (req, res) {
-    const vaga = await Vaga.findByPk(req.params.id);
+    const vaga = await Vaga.findByPk(req.params.id, {
+        include: [
+            {
+                model: Empresa,
+                as: 'empresa'
+            }
+        ]
+    });
 
     res.render('empresas/detalhes-vaga', { vaga });
 };

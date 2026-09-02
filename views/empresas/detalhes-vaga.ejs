@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Detalhes da vaga - VagaCerta</title>
+    <title><%= vaga.titulo_vaga %> - VagaCerta</title>
 
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
@@ -16,70 +16,147 @@
   <body>
     <%- include('../partials/header') %>
 
-    <main class="login-page">
-      <section class="login-card">
-        <div class="vaga-title">
-          <div class="vaga-icon">
-            <i class="fa-solid fa-briefcase"></i>
+    <main class="detalhes-vaga-page">
+      <section class="detalhes-vaga-card">
+        <!-- CABEÇALHO -->
+        <div class="detalhes-vaga-header">
+          <div class="detalhes-identificacao">
+            <img
+              class="detalhes-empresa-imagem"
+              src="<%= vaga.empresa.imagem || '/images/google.png' %>"
+              alt="Logo da <%= vaga.empresa.nome_empresa %>"
+            />
+
+            <div>
+              <h1><%= vaga.titulo_vaga %></h1>
+
+              <p>
+                <i class="fa-solid fa-building"></i>
+                <%= vaga.empresa.nome_empresa %>
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h1><%= vaga.titulo_vaga %></h1>
-
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              <%= vaga.localizacao %>
-            </span>
-          </div>
-        </div>
-
-        <div class="vaga-info">
-          <div>
-            <i class="fa-solid fa-house"></i>
-            <span><%= vaga.tipo_trabalho %></span>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-money-bill"></i>
-            <span>R$ <%= vaga.salario %></span>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-users"></i>
-            <span><%= vaga.quantidade_vagas %> vagas</span>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-file-signature"></i>
-            <span><%= vaga.regime_contrato %></span>
-          </div>
-        </div>
-
-        <div class="login-field">
-          <label>Status</label>
-          <p class="section-text">
+          <span class="detalhes-status">
             <i class="fa-solid fa-circle"></i>
             <%= vaga.status_vaga %>
-          </p>
+          </span>
         </div>
 
-        <div class="login-field">
-          <i class="fa-regular fa-calendar calendario"></i>
-          <label>Período de candidaturas: </label>
+        <!-- INFORMAÇÕES PRINCIPAIS -->
+        <div class="detalhes-info">
+          <div class="detalhe-info-item">
+            <i class="fa-solid fa-location-dot"></i>
 
-          <p class="section-text">
-            <%= vaga.dataInicioFormatada %> até <%= vaga.dataFimFormatada %>
-          </p>
+            <div>
+              <span>Localização</span>
+              <strong><%= vaga.localizacao %></strong>
+            </div>
+          </div>
+
+          <div class="detalhe-info-item">
+            <i class="fa-solid fa-file-contract"></i>
+
+            <div>
+              <span>Regime de contrato</span>
+              <strong><%= vaga.regime_contrato %></strong>
+            </div>
+          </div>
+
+          <div class="detalhe-info-item">
+            <i class="fa-solid fa-laptop"></i>
+
+            <div>
+              <span>Tipo de trabalho</span>
+              <strong><%= vaga.tipo_trabalho %></strong>
+            </div>
+          </div>
+
+          <div class="detalhe-info-item">
+            <i class="fa-solid fa-users"></i>
+
+            <div>
+              <span>Vagas disponíveis</span>
+              <strong><%= vaga.quantidade_vagas %></strong>
+            </div>
+          </div>
+
+          <div class="detalhe-info-item">
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            <div>
+              <span>Salário</span>
+              <strong
+                >R$ <%= vaga.salario.toFixed(2).replace('.', ',') %></strong
+              >
+            </div>
+          </div>
         </div>
 
-        <hr class="linha" />
-        <div class="login-field">
-          <label>Descrição da Vaga:</label>
-          <p class="section-text"><%= vaga.descricao_vaga %></p>
-        </div>
+        <!-- PERÍODO -->
+        <section class="detalhes-secao">
+          <div class="detalhes-secao-titulo">
+            <i class="fa-regular fa-calendar"></i>
+            <h2>Período de candidaturas</h2>
+          </div>
 
-        <div class="vaga-actions">
-          <a href="/empresas/minhas-vagas" class="btn-login"> Voltar </a>
+          <div class="periodo-datas">
+            <div>
+              <span>Início</span>
+              <strong><%= vaga.dataInicioFormatada %></strong>
+            </div>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <div>
+              <span>Encerramento</span>
+              <strong><%= vaga.dataFimFormatada %></strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- DESCRIÇÃO -->
+        <section class="detalhes-secao">
+          <div class="detalhes-secao-titulo">
+            <i class="fa-solid fa-align-left"></i>
+            <h2>Descrição da vaga</h2>
+          </div>
+
+          <p class="detalhes-descricao"><%= vaga.descricao_vaga %></p>
+        </section>
+
+        <!-- EMPRESA -->
+        <section class="detalhes-secao empresa-vaga">
+          <div class="detalhes-secao-titulo">
+            <i class="fa-solid fa-building"></i>
+            <h2>Sobre a empresa</h2>
+          </div>
+
+          <div class="empresa-detalhes">
+            <img
+              src="<%= vaga.empresa.imagem || '/images/google.png' %>"
+              alt="Logo da empresa"
+            />
+
+            <div>
+              <h3><%= vaga.empresa.nome_empresa %></h3>
+
+              <p><%= vaga.empresa.descricao %></p>
+
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+                <%= vaga.empresa.cidade %> - <%= vaga.empresa.uf %>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- AÇÕES -->
+        <div class="detalhes-acoes">
+          <a href="/empresas/minhas-vagas" class="btn-login">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar
+          </a>
 
           <a
             href="/empresas/minhas-vagas/<%= vaga.id %>/editar-vaga"

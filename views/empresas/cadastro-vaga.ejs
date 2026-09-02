@@ -43,7 +43,9 @@
           </div>
 
           <div class="login-field">
-            <label for="quantidade_vagas">Quantidade de vagas</label>
+            <label for="quantidade_vagas"
+              >Quantidade de vagas disponíveis</label
+            >
 
             <div class="search-field">
               <i class="fa-solid fa-users"></i>
@@ -142,28 +144,32 @@
           </div>
 
           <div class="login-field">
-            <label>Data de início</label>
-
-            <div class="perfil-radio">
+            <label for="status_vaga">Data para início das candidaturas</label>
+            <div class="search-field">
               <label>
                 <input
+                  class="form-input"
                   type="date"
+                  id="data_inicio_candidatura"
                   name="data_inicio_candidatura"
                   value="data_inicio_candidatura"
+                  required
                 />
               </label>
             </div>
           </div>
 
           <div class="login-field">
-            <label>Data final</label>
-
-            <div class="perfil-radio">
+            <label for="status_vaga">Data para fim das candidaturas</label>
+            <div class="search-field">
               <label>
                 <input
+                  class="form-input"
                   type="date"
+                  id="data_fim_candidatura"
                   name="data_fim_candidatura"
                   value="data_fim_candidatura"
+                  required
                 />
               </label>
             </div>
@@ -185,6 +191,7 @@
               ></textarea>
             </div>
           </div>
+          <br />
 
           <button type="submit" class="btn-register" id="cadastro-button">
             Cadastrar vaga
