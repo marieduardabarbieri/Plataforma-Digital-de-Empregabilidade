@@ -20,7 +20,7 @@
       <!-- PERFIL -->
       <section class="perfil-card">
         <div class="perfil-photo">
-          <img src="/images/paisagem-urbana.jpg" alt="Foto de perfil" />
+          <img src="/images/candidato.png" alt="Foto de perfil" />
 
           <button class="photo-button">
             <i class="fa-solid fa-camera"></i>
@@ -42,7 +42,12 @@
 
           <p>
             <i class="fa-solid fa-location-dot"></i>
-            São Paulo - SP
+            <%= candidato.cidade_candidato %> -  <%= candidato.uf_candidato %> 
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            <%= candidato.telefone %> 
           </p>
    
           <p>

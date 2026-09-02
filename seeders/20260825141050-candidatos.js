@@ -8,7 +8,11 @@ module.exports = {
         nome: 'Maria',
         email: "maria@gmail.com",
         senha: 123,
-        perfil: "candidato"
+        perfil: "candidato",
+        imagem_candidato: '/images/candidato.png',
+        telefone: '(67) 99980-9654',
+        cidade_candidato: 'São Paulo',
+        uf_candidato: "SP"
       }
     ])
   },

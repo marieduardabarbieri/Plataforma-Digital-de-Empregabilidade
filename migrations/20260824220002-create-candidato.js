@@ -21,6 +21,18 @@ module.exports = {
       perfil: {
         type: Sequelize.STRING
       },
+      imagem_candidato: {
+        type: Sequelize.STRING
+      },
+      telefone: {
+        type: Sequelize.STRING
+      },
+      cidade_candidato: {
+        type: Sequelize.STRING
+      },
+      uf_candidato: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
