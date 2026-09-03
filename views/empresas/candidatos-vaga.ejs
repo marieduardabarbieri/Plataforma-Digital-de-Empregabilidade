@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Candidatos - <%= vaga.titulo_vaga %> - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="candidatos-vaga-page">
+
+      <!-- CABEÇALHO -->
+      <section class="candidatos-vaga-header">
+
+        <a href="/empresas/minhas-vagas/<%= vaga.id %>" class="btn-voltar">
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar para a vaga
+        </a>
+        <h1>Candidatos da vaga</h1>
+        <p>
+          <strong><%= vaga.titulo_vaga %></strong>
+        </p>
+      </section>
+
+      <!-- RESUMO -->
+      <section class="candidatos-resumo">
+        <div class="candidato-stat">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <strong><%= candidaturas.length %></strong>
+            <span>Total</span>
+          </div>
+        </div>
+
+
+        <div class="candidato-stat status-analise">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <strong>
+              <%= candidaturas.filter(c => c.status === 'Em análise').length %>
+            </strong>
+            <span>Em análise</span>
+          </div>
+        </div>
+
+        <div class="candidato-stat status-selecionado">
+          <i class="fa-solid fa-circle-check"></i>
+          <div>
+            <strong>
+              <%= candidaturas.filter(c => c.status === 'Selecionado').length %>
+            </strong>
+            <span>Selecionados</span>
+          </div>
+        </div>
+
+        <div class="candidato-stat status-recusado">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <div>
+            <strong>
+              <%= candidaturas.filter(c => c.status === 'Recusado').length %>
+            </strong>
+
+            <span>Recusados</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CANDIDATOS -->
+      <section class="candidatos-tabela-section">
+        <div class="candidatos-tabela-header">
+          <div>
+            <h2>Candidatos inscritos</h2>
+            <p>
+              Confira os candidatos que se candidataram a esta vaga.
+            </p>
+          </div>
+        </div>
+
+        <% if (candidaturas.length === 0) { %>
+          <div class="candidatos-vazio">
+            <i class="fa-solid fa-user-slash"></i>
+            <h2>Nenhum candidato ainda</h2>
+            <p>
+              Esta vaga ainda não recebeu nenhuma candidatura.
+            </p>
+          </div>
+
+        <% } else { %>
+
+          <div class="candidatos-tabela-wrapper">
+            <table class="candidatos-tabela">
+
+              <thead>
+                <tr>
+                  <th>Candidato</th>
+                  <th>Localização</th>
+                  <th>Contato</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% candidaturas.forEach((candidatura) => { %>
+                  <tr>
+                    <!-- CANDIDATO -->
+                    <td>
+                      <div class="tabela-candidato">
+                        <img
+                          src="<%= candidatura.candidato.imagem || '/images/candidato.png' %>"
+                          alt="Foto de <%= candidatura.candidato.nome %>"
+                        />
+                        <div>
+                          <strong>
+                            <%= candidatura.candidato.nome %>
+                          </strong>
+                          <span>
+                            Candidato
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+
+                    <!-- LOCALIZAÇÃO -->
+                    <td>
+                      <div class="tabela-localizacao">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>
+                          <%= candidatura.candidato.cidade_candidato %> -
+                          <%= candidatura.candidato.uf_candidato %>
+                        </span>
+                      </div>
+                    </td>
+
+
+                    <!-- CONTATO -->
+                    <td>
+                      <div class="tabela-contato">
+                        <span>
+                          <i class="fa-solid fa-envelope"></i>
+                          <%= candidatura.candidato.email %>
+                        </span>
+                        <span>
+                          <i class="fa-solid fa-phone"></i>
+                          <%= candidatura.candidato.telefone %>
+                        </span>
+                      </div>
+                    </td>
+
+                    <!-- STATUS -->
+                    <td>
+                      <span class="candidato-status
+                        <%= candidatura.status === 'Selecionado'
+                          ? 'status-selecionado'
+                          : candidatura.status === 'Recusado'
+                          ? 'status-recusado'
+                          : 'status-analise' %>">
+
+                        <i class="fa-solid fa-circle"></i>
+                        <%= candidatura.status %>
+                      </span>
+                    </td>
+
+
+                    <!-- AÇÕES -->
+                    <td>
+                      <div class="tabela-acoes">
+                        <a
+                          href="/candidatos/<%= candidatura.candidato.id %>/curriculo"
+                          class="btn-curriculo"
+                        >
+                          <i class="fa-solid fa-file-lines"></i>
+                          Ver currículo
+                        </a>
+
+                        <% if (candidatura.status === 'Em análise') { %>
+
+                          <button class="btn-selecionar">
+                            <i class="fa-solid fa-check"></i>
+                          </button>
+
+                          <button class="btn-recusar">
+                            <i class="fa-solid fa-xmark"></i>
+                          </button>
+                        <% } %>
+                      </div>
+                    </td>
+                  </tr>
+
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        <% } %>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

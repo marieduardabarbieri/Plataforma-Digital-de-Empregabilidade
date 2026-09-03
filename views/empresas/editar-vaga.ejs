@@ -16,6 +16,10 @@
   <body>
     <%- include('../partials/header') %>
 
+    <a href="/empresas/minhas-vagas" class="btn-voltar space">
+      <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+    </a>
     <main class="login-page">
       <section class="login-card">
         <h1>Editar vaga</h1>
@@ -205,15 +209,7 @@
             </div>
           </div>
 
-          <button
-            href="/empresas/minhas-vagas/<%= vaga.id %>"
-            class="btn-login"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-            Voltar
-          </button>
-
-          <button type="submit" class="btn-register">
+          <button type="submit" class="btn-register" id="cadastro-button">
             <i class="fa-solid fa-check"></i>
             Salvar alterações
           </button>

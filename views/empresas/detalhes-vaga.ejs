@@ -16,6 +16,11 @@
   <body>
     <%- include('../partials/header') %>
 
+    <a href="/empresas/minhas-vagas" class="btn-voltar space">
+      <i class="fa-solid fa-arrow-left"></i>
+      Voltar
+    </a>
+
     <main class="detalhes-vaga-page">
       <section class="detalhes-vaga-card">
         <!-- CABEÇALHO -->
@@ -153,13 +158,9 @@
 
         <!-- AÇÕES -->
         <div class="detalhes-acoes">
-          <a href="/empresas/minhas-vagas" class="btn-login">
-            <i class="fa-solid fa-arrow-left"></i>
-            Voltar
-          </a>
           <a
             href="/empresas/minhas-vagas/<%= vaga.id %>/candidatos"
-            class="btn-register"
+            class="btn-login"
           >
             <i class="fa-solid fa-users"></i>
             Ver candidatos

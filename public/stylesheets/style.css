@@ -145,6 +145,28 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
+
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 130px;
+  padding: 12px 20px;
+  border: 1px solid #1746a2;
+  border-radius: 7px;
+  color: #1746a2;
+  text-decoration: none;
+  font-weight: 600;
+}
+.space {
+  margin: 30px 0px 0px 40px;
+}
+#login-button,
+#cadastro-button {
+  width: 100%;
+  margin-top: 10px;
+}
 .btn-login i,
 .btn-register i {
   padding-right: 10px;
@@ -593,11 +615,6 @@ body {
   color: #1746a2;
   font-size: 13px;
   text-align: right;
-}
-
-#login-button,
-#cadastro-button {
-  width: 100%;
 }
 
 .linha {
@@ -1592,20 +1609,6 @@ body {
   padding-top: 25px;
 }
 
-.btn-voltar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 130px;
-  padding: 12px 20px;
-  border: 1px solid #1746a2;
-  border-radius: 7px;
-  color: #1746a2;
-  text-decoration: none;
-  font-weight: 600;
-}
-
 .detalhes-acoes .btn-register {
   min-width: 150px;
   text-align: center;
@@ -1844,6 +1847,382 @@ body {
 .localizacao .iconeverde {
   color: rgb(9, 9, 132);
 }
+/* =========================================
+   CANDIDATOS DA VAGA
+========================================= */
+
+.candidatos-vaga-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* CABEÇALHO */
+
+.candidatos-vaga-header {
+  margin-bottom: 28px;
+}
+
+.candidatos-vaga-header .btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.candidatos-vaga-header h1 {
+  margin: 0 0 6px;
+  color: #142957;
+  font-size: 30px;
+}
+
+.candidatos-vaga-header p {
+  margin: 0 0 10px;
+  color: #4f5d73;
+  font-size: 17px;
+}
+
+.candidatos-vaga-header span {
+  color: #68748a;
+  font-size: 14px;
+}
+
+.candidatos-vaga-header span i {
+  color: #1746a2;
+  margin-right: 5px;
+}
+
+/* =========================================
+   RESUMO
+========================================= */
+
+.candidatos-resumo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.candidato-stat {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(20, 41, 87, 0.06);
+}
+
+.candidato-stat > i {
+  color: #1746a2;
+  font-size: 22px;
+}
+
+.candidato-stat div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.candidato-stat strong {
+  color: #142957;
+  font-size: 23px;
+}
+
+.candidato-stat span {
+  color: #68748a;
+  font-size: 13px;
+}
+
+/* =========================================
+   SEÇÃO DA TABELA
+========================================= */
+
+.candidatos-tabela-section {
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+  box-shadow: 0 7px 22px rgba(20, 41, 87, 0.07);
+  overflow: hidden;
+}
+
+.candidatos-tabela-header {
+  padding: 24px 26px;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.candidatos-tabela-header h2 {
+  margin: 0 0 5px;
+  color: #142957;
+  font-size: 20px;
+}
+
+.candidatos-tabela-header p {
+  margin: 0;
+  color: #68748a;
+  font-size: 14px;
+}
+
+/* =========================================
+   TABELA
+========================================= */
+
+.candidatos-tabela-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.candidatos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.candidatos-tabela th {
+  padding: 15px 20px;
+  background: #f7f9fc;
+  color: #68748a;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.candidatos-tabela td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #edf0f5;
+  color: #4f5d73;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.candidatos-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.candidatos-tabela tbody tr:hover {
+  background: #fafbfe;
+}
+
+/* =========================================
+   CANDIDATO
+========================================= */
+
+.tabela-candidato {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+
+.tabela-candidato img {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #e1e6f0;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.tabela-candidato div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tabela-candidato strong {
+  color: #142957;
+  font-size: 15px;
+}
+
+.tabela-candidato span {
+  color: #8a94a6;
+  font-size: 12px;
+}
+
+/* =========================================
+   LOCALIZAÇÃO
+========================================= */
+
+.tabela-localizacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.tabela-localizacao i {
+  color: #1746a2;
+}
+
+/* =========================================
+   CONTATO
+========================================= */
+
+.tabela-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 190px;
+}
+
+.tabela-contato span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #68748a;
+  font-size: 13px;
+}
+
+.tabela-contato i {
+  width: 14px;
+  color: #1746a2;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.candidato-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.candidato-status i {
+  font-size: 7px;
+}
+
+/* Em análise */
+
+.status-analise {
+  background: #fff6df;
+  color: #a46b00;
+}
+
+.status-analise i {
+  color: #d89a00;
+}
+
+/* Selecionado */
+
+.status-selecionado {
+  background: #edf8f0;
+  color: #16833b;
+}
+
+.status-selecionado i {
+  color: #16833b;
+}
+
+/* Recusado */
+
+.status-recusado {
+  background: #fff0f0;
+  color: #c03939;
+}
+
+.status-recusado i {
+  color: #c03939;
+}
+
+/* =========================================
+   AÇÕES
+========================================= */
+
+.tabela-acoes {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.btn-curriculo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid #1746a2;
+  border-radius: 6px;
+  background: #fff;
+  color: #1746a2;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-curriculo:hover {
+  background: #1746a2;
+  color: #fff;
+}
+
+.btn-selecionar,
+.btn-recusar {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-selecionar {
+  border: 1px solid #16833b;
+  background: #edf8f0;
+  color: #16833b;
+}
+
+.btn-selecionar:hover {
+  background: #16833b;
+  color: #fff;
+}
+
+.btn-recusar {
+  border: 1px solid #c03939;
+  background: #fff0f0;
+  color: #c03939;
+}
+
+.btn-recusar:hover {
+  background: #c03939;
+  color: #fff;
+}
+
+/* =========================================
+   NENHUM CANDIDATO
+========================================= */
+
+.candidatos-vazio {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.candidatos-vazio > i {
+  color: #1746a2;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.candidatos-vazio h2 {
+  margin: 0 0 8px;
+  color: #142957;
+  font-size: 20px;
+}
+
+.candidatos-vazio p {
+  margin: 0;
+  color: #68748a;
+  font-size: 14px;
+}
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {
@@ -1970,6 +2349,13 @@ body {
   .hero-image img {
     display: none;
   }
+  .candidatos-resumo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .candidatos-tabela {
+    min-width: 900px;
+  }
   .footer-content,
   .vagas-resumo {
     grid-template-columns: 1fr 1fr;
@@ -2048,7 +2434,8 @@ body {
   .destaques-cards,
   .profile-stats,
   .profile-options,
-  .vagas-list {
+  .vagas-list,
+  .candidatos-resumo {
     grid-template-columns: 1fr;
   }
   .cadastro-cards,
@@ -2063,7 +2450,8 @@ body {
     width: min(390px, 90%);
   }
 
-  .cadastro-intro h1 {
+  .cadastro-intro h1,
+  .candidatos-vaga-header h1 {
     font-size: 34px;
   }
 
