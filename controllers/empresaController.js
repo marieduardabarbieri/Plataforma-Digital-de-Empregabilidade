@@ -1,4 +1,4 @@
-const { Empresa, Vaga, Candidatura } = require('../models');
+const { Empresa, Vaga, Candidatura, Candidato } = require('../models');
 
 const getEmpresa = async function (req, res, next) {
     const empresas = await Empresa.findAll({
@@ -57,6 +57,30 @@ const editarVaga = async function (req, res) {
     res.render('empresas/editar-vaga', { vaga });
 };
 
+const candidatosDaVaga = async function (req, res) {
+    const vaga = await Vaga.findByPk(req.params.id, {
+        include: [
+            {
+                model: Candidatura,
+                as: 'candidaturas',
+                include: [
+                    {
+                        model: Candidato,
+                        as: 'candidato'
+                    }
+                ]
+            }
+        ]
+    });
 
+    if (!vaga) {
+        return res.status(404).send('Vaga não encontrada');
+    }
 
-module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga, detalhesVaga, editarVaga };
+    res.render('empresas/candidatos-vaga', {
+        vaga,
+        candidaturas: vaga.candidaturas
+    });
+};
+
+module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga };
