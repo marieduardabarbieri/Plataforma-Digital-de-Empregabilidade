@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Redefinir senha - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <a href="/auth/login" class="btn-voltar space">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="recuperar-senha-page">
+      <section class="recuperar-senha-card">
+        <div class="recuperar-senha-icon">
+          <i class="fa-solid fa-key"></i>
+        </div>
+
+        <div class="recuperar-senha-header">
+          <h1>Redefinir senha</h1>
+
+          <p class="text">
+            Crie uma nova senha para recuperar o acesso à sua conta.
+          </p>
+        </div>
+
+        <form class="recuperar-senha-form">
+          <div class="login-field">
+            <label for="senha"> Nova senha </label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                class="form-input"
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua nova senha"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="confirmarSenha"> Confirmar nova senha </label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                class="form-input"
+                type="password"
+                id="confirmarSenha"
+                name="confirmarSenha"
+                placeholder="Digite a senha novamente"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="senha-requisitos">
+            <p>
+              <i class="fa-solid fa-circle-info"></i>
+              A nova senha deve ser segura e diferente da anterior.
+            </p>
+          </div>
+
+          <button type="submit" class="btn-register" id="cadastro-button">
+            <i class="fa-solid fa-key"></i>
+            Redefinir senha
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -13,3 +13,7 @@ exports.login = (req, res) => {
 exports.recuperarSenha = (req, res) => {
     res.render('auth/recuperar-senha');
 };
+
+exports.redefinirSenha = (req, res) => {
+    res.render('auth/redefinir-senha');
+};
