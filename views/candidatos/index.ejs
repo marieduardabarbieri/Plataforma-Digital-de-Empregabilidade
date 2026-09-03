@@ -27,10 +27,8 @@
           </button>
         </div>
 
-     <% candidatos.forEach((candidato) => { %>
         <div class="perfil-info">
           <div class="perfil-name">
-            
             <h1><%= candidato.nome %></h1>
             <span class="perfil-badge">Candidato</span>
           </div>
@@ -42,20 +40,19 @@
 
           <p>
             <i class="fa-solid fa-location-dot"></i>
-            <%= candidato.cidade_candidato %> -  <%= candidato.uf_candidato %> 
+            <%= candidato.cidade_candidato %> - <%= candidato.uf_candidato %>
           </p>
 
           <p>
             <i class="fa-solid fa-phone"></i>
-            <%= candidato.telefone %> 
+            <%= candidato.telefone %>
           </p>
-   
+
           <p>
             <i class="fa-solid fa-user"></i>
             Perfil de candidato
           </p>
         </div>
-     <% }) %>
 
         <a href="/candidatos/editar" class="btn-register">
           <i class="fa-solid fa-pen"></i>
