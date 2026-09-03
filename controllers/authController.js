@@ -9,3 +9,7 @@ exports.login = (req, res) => {
         perfil: perfil
     });
 };
+
+exports.recuperarSenha = (req, res) => {
+    res.render('auth/recuperar-senha');
+};

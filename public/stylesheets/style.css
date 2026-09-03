@@ -128,6 +128,14 @@ body {
   line-height: 1.7;
 }
 
+.text {
+  max-width: 410px;
+  margin: 0 auto;
+  color: #68748a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 /* ================================
    BOTÃO PADRÃO
 ================================ */
@@ -151,10 +159,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-width: 130px;
-  padding: 12px 20px;
+  padding: 12px;
   border: 1px solid #1746a2;
-  border-radius: 7px;
+  border-radius: 33px;
   color: #1746a2;
   text-decoration: none;
   font-weight: 600;
@@ -630,6 +637,57 @@ body {
 .descricao-field i,
 .descricao-input {
   margin-top: 8px;
+}
+/* =========================================================
+   RECUPERAR SENHA
+========================================================= */
+
+.recuperar-senha-page {
+  max-width: 520px;
+  margin: 0px auto 70px auto;
+  padding: 0 20px;
+}
+
+/* CARD */
+
+.recuperar-senha-card {
+  padding: 38px 40px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(20, 41, 87, 0.08);
+  text-align: center;
+}
+
+/* ÍCONE */
+
+.recuperar-senha-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background: #eef4ff;
+  color: #1746a2;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+/* CABEÇALHO */
+
+.recuperar-senha-header h1 {
+  margin: 0 0 10px;
+  color: #142957;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* FORMULÁRIO */
+
+.recuperar-senha-form {
+  margin-top: 28px;
+  text-align: left;
 }
 
 /* =========================
@@ -2699,6 +2757,18 @@ body {
 
   .btn-upload-curriculo {
     margin-left: 61px;
+  }
+  .recuperar-senha-page {
+    margin: 55px auto;
+    padding: 0 15px;
+  }
+
+  .recuperar-senha-card {
+    padding: 30px 24px;
+  }
+
+  .recuperar-senha-header h1 {
+    font-size: 23px;
   }
 }
 

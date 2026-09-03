@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Recuperar senha - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <a href="/auth/login" class="btn-voltar space">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <main class="recuperar-senha-page">
+      <section class="recuperar-senha-card">
+        <div class="recuperar-senha-icon">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <div class="recuperar-senha-header">
+          <h1>Esqueceu sua senha?</h1>
+
+          <p class="text">
+            Não se preocupe. Informe o e-mail associado à sua conta e enviaremos
+            as instruções para recuperar o acesso.
+          </p>
+        </div>
+
+        <form class="recuperar-senha-form">
+          <div class="login-field">
+            <label for="email" id="label"> E-mail </label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-register" id="cadastro-button">
+            <i class="fa-solid fa-paper-plane"></i>
+            Enviar instruções
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
