@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Meu Currículo - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="curriculo-page">
+      <!-- CABEÇALHO -->
+      <section class="curriculo-page-header">
+        <div>
+          <h1 class="section-title">Meu currículo</h1>
+
+          <p>Gerencie o currículo que será utilizado nas suas candidaturas.</p>
+        </div>
+      </section>
+
+      <!-- INFORMAÇÕES -->
+      <section class="curriculo-info">
+        <div class="curriculo-info-icon">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div>
+          <strong>Mantenha seu currículo atualizado</strong>
+
+          <p>
+            Seu currículo poderá ser consultado pelas empresas durante o
+            processo de seleção das vagas.
+          </p>
+        </div>
+      </section>
+
+      <!-- CURRÍCULO CADASTRADO -->
+      <section class="curriculo-card">
+        <div class="curriculo-card-header">
+          <div>
+            <h2>Currículo cadastrado</h2>
+
+            <p>Este é o currículo atualmente associado ao seu perfil.</p>
+          </div>
+
+          <span class="curriculo-status">
+            <i class="fa-solid fa-circle-check"></i>
+            Cadastrado
+          </span>
+        </div>
+
+        <div class="curriculo-arquivo">
+          <div class="curriculo-arquivo-icon">
+            <i class="fa-solid fa-file-pdf"></i>
+          </div>
+
+          <div class="curriculo-arquivo-info">
+            <strong> <%= curriculo.curriculo_pdf %> </strong>
+
+            <span>
+              <i class="fa-solid fa-file"></i>
+              Documento PDF
+            </span>
+          </div>
+        </div>
+
+        <div class="curriculo-acoes">
+          <a href="#" class="btn-register">
+            <i class="fa-solid fa-eye"></i>
+            Visualizar currículo
+          </a>
+
+          <button type="button" class="btn-login">
+            <i class="fa-solid fa-rotate"></i>
+            Substituir currículo
+          </button>
+        </div>
+      </section>
+
+      <!-- ORIENTAÇÕES -->
+      <section class="curriculo-orientacoes">
+        <div class="curriculo-orientacoes-header">
+          <i class="fa-solid fa-lightbulb"></i>
+
+          <div>
+            <h2>Dicas para o seu currículo</h2>
+
+            <p>
+              Algumas recomendações para aumentar suas chances nas candidaturas.
+            </p>
+          </div>
+        </div>
+
+        <div class="curriculo-dicas">
+          <div class="curriculo-dica">
+            <i class="fa-solid fa-check"></i>
+
+            <div>
+              <strong>Mantenha as informações atualizadas</strong>
+
+              <p>
+                Confira se seus dados de contato e experiências estão corretos.
+              </p>
+            </div>
+          </div>
+
+          <div class="curriculo-dica">
+            <i class="fa-solid fa-check"></i>
+
+            <div>
+              <strong>Utilize um currículo profissional</strong>
+
+              <p>
+                Prefira um documento organizado, claro e fácil de ser analisado.
+              </p>
+            </div>
+          </div>
+
+          <div class="curriculo-dica">
+            <i class="fa-solid fa-check"></i>
+
+            <div>
+              <strong>Atualize sempre que necessário</strong>
+
+              <p>
+                Substitua seu currículo quando tiver novas experiências, cursos
+                ou qualificações.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÁREA DE ENVIO -->
+      <section class="curriculo-upload">
+        <div class="curriculo-upload-icon">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+
+        <div class="curriculo-upload-text">
+          <h2>Precisa atualizar seu currículo?</h2>
+
+          <p>Envie uma nova versão do seu currículo em formato PDF.</p>
+        </div>
+
+        <button type="button" class="btn-register">
+          <i class="fa-solid fa-upload"></i>
+          Enviar novo currículo
+        </button>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

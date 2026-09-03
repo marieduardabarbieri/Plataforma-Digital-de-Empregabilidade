@@ -1,7 +1,10 @@
 const { Curriculo, Candidato } = require('../models');
 
 const getCurriculo = async function (req, res, next) {
-    const curriculos = await Curriculo.findAll({
+    const curriculo = await Curriculo.findOne({
+        where: {
+            candidatoId: 1
+        },
         include: [
             {
                 model: Candidato,
@@ -10,7 +13,7 @@ const getCurriculo = async function (req, res, next) {
         ],
     });
 
-    res.render('curriculos', { curriculos })
+    res.render('candidatos/curriculo', { curriculo })
 };
 
 module.exports = { getCurriculo };

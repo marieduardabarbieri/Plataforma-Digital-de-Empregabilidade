@@ -116,7 +116,7 @@ body {
 }
 
 .section-title {
-  color: #142b5f;
+  color: #b7becf;
   font-size: 42px;
   line-height: 1.15;
   margin: 15px 0 25px;
@@ -2223,6 +2223,325 @@ body {
   color: #68748a;
   font-size: 14px;
 }
+
+/* =========================================================
+   MEU CURRÍCULO
+========================================================= */
+
+.curriculo-page {
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* CABEÇALHO */
+
+.curriculo-page-header {
+  margin-bottom: 25px;
+}
+
+.curriculo-page-header h1 {
+  margin: 0 0 7px;
+  color: #142957;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.curriculo-page-header p {
+  margin: 0;
+  color: #68748a;
+  font-size: 15px;
+}
+
+/* INFORMAÇÃO */
+
+.curriculo-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 17px 20px;
+  margin-bottom: 22px;
+
+  background: #f1f6ff;
+  border: 1px solid #dce7f8;
+  border-radius: 10px;
+}
+
+.curriculo-info-icon {
+  color: #1746a2;
+  font-size: 18px;
+  padding-top: 2px;
+}
+
+.curriculo-info strong {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #142957;
+  font-size: 14px;
+}
+
+.curriculo-info p {
+  margin: 0;
+
+  color: #68748a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* CARD PRINCIPAL */
+
+.curriculo-card {
+  background: #fff;
+
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+
+  box-shadow: 0 7px 22px rgba(20, 41, 87, 0.07);
+
+  overflow: hidden;
+}
+
+/* CABEÇALHO DO CARD */
+
+.curriculo-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 26px;
+  border-bottom: 1px solid #e8ecf3;
+}
+
+.curriculo-card-header h2 {
+  margin: 0 0 5px;
+
+  color: #142957;
+  font-size: 20px;
+}
+
+.curriculo-card-header p {
+  margin: 0;
+  color: #68748a;
+  font-size: 13px;
+}
+
+/* STATUS */
+
+.curriculo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  background: #edf8f0;
+  color: #16833b;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.curriculo-status i {
+  font-size: 8px;
+}
+
+/* ARQUIVO */
+
+.curriculo-arquivo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 24px 26px;
+  padding: 18px;
+  background: #f8f9fc;
+  border: 1px solid #e5e9f1;
+  border-radius: 10px;
+}
+
+.curriculo-arquivo-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff0f0;
+  color: #d43f3f;
+  border-radius: 9px;
+  font-size: 23px;
+  flex-shrink: 0;
+}
+
+.curriculo-arquivo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.curriculo-arquivo-info strong {
+  color: #142957;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.curriculo-arquivo-info span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #8a94a6;
+  font-size: 12px;
+}
+
+.curriculo-arquivo-info span i {
+  font-size: 11px;
+}
+
+/* AÇÕES */
+
+.curriculo-acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 26px 24px;
+}
+
+/* =========================================================
+   ORIENTAÇÕES
+========================================================= */
+
+.curriculo-orientacoes {
+  margin-top: 22px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.curriculo-orientacoes-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 21px 24px;
+  border-bottom: 1px solid #e8ecf3;
+}
+
+.curriculo-orientacoes-header > i {
+  color: #1746a2;
+  font-size: 19px;
+
+  margin-top: 2px;
+}
+
+.curriculo-orientacoes-header h2 {
+  margin: 0 0 5px;
+  color: #142957;
+  font-size: 17px;
+}
+
+.curriculo-orientacoes-header p {
+  margin: 0;
+
+  color: #68748a;
+  font-size: 13px;
+}
+
+/* DICAS */
+
+.curriculo-dicas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.curriculo-dica {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 20px 22px;
+}
+
+.curriculo-dica + .curriculo-dica {
+  border-left: 1px solid #e8ecf3;
+}
+
+.curriculo-dica > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #edf8f0;
+  color: #16833b;
+  border-radius: 50%;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.curriculo-dica strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #142957;
+  font-size: 13px;
+}
+
+.curriculo-dica p {
+  margin: 0;
+
+  color: #68748a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   UPLOAD
+========================================================= */
+
+.curriculo-upload {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 22px 24px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(20, 41, 87, 0.04);
+}
+
+.curriculo-upload-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef4ff;
+  color: #1746a2;
+  border-radius: 9px;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.curriculo-upload-text {
+  flex: 1;
+}
+
+.curriculo-upload-text h2 {
+  margin: 0 0 4px;
+
+  color: #142957;
+  font-size: 15px;
+}
+
+.curriculo-upload-text p {
+  margin: 0;
+
+  color: #68748a;
+  font-size: 12px;
+}
+
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {
@@ -2360,6 +2679,27 @@ body {
   .vagas-resumo {
     grid-template-columns: 1fr 1fr;
   }
+  .curriculo-dicas {
+    grid-template-columns: 1fr;
+  }
+
+  .curriculo-dica + .curriculo-dica {
+    border-left: none;
+    border-top: 1px solid #e8ecf3;
+  }
+
+  .curriculo-upload {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .curriculo-upload-text {
+    min-width: calc(100% - 65px);
+  }
+
+  .btn-upload-curriculo {
+    margin-left: 61px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -2457,6 +2797,42 @@ body {
 
   .details-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .curriculo-page {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .curriculo-page-header h1 {
+    font-size: 25px;
+  }
+
+  .curriculo-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .curriculo-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-curriculo-principal,
+  .btn-curriculo-secundario {
+    width: 100%;
+  }
+
+  .curriculo-upload {
+    flex-direction: column;
+  }
+
+  .curriculo-upload-text {
+    min-width: 0;
+  }
+
+  .btn-upload-curriculo {
+    margin-left: 0;
+    width: 100%;
   }
 }
 
