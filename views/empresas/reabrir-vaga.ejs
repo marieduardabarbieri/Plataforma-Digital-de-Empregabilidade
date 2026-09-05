@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reabrir vaga - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="reabrir-vaga-page">
+      <!-- CABEÇALHO -->
+      <section class="vagas-encerradas-header">
+        <a href="/empresas/vagas-encerradas" class="btn-voltar margin">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <div class="vagas-header vagas-encerradas-titulo">
+          <div>
+            <span section-label>GERENCIAMENTO DE VAGA</span>
+            <h1>Reabrir vaga</h1>
+            <p>
+              Configure um novo período de candidaturas para esta oportunidade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTEÚDO -->
+      <section class="reabrir-vaga-content">
+        <!-- DADOS DA VAGA -->
+        <div class="reabrir-vaga-card">
+          <div class="reabrir-vaga-card-header">
+            <div class="reabrir-vaga-card-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div>
+              <h2><%= vaga.titulo_vaga %></h2>
+
+              <span>
+                <i class="fa-solid fa-location-dot"></i>
+                <%= vaga.localizacao %>
+              </span>
+            </div>
+          </div>
+
+          <div class="reabrir-vaga-dados">
+            <div class="reabrir-vaga-dado">
+              <i class="fa-solid fa-file-signature"></i>
+
+              <div>
+                <span>Regime de contrato</span>
+                <strong><%= vaga.regime_contrato %></strong>
+              </div>
+            </div>
+
+            <div class="reabrir-vaga-dado">
+              <i class="fa-solid fa-house"></i>
+
+              <div>
+                <span>Modalidade</span>
+                <strong><%= vaga.tipo_trabalho %></strong>
+              </div>
+            </div>
+
+            <div class="reabrir-vaga-dado">
+              <i class="fa-solid fa-users"></i>
+
+              <div>
+                <span>Quantidade de vagas</span>
+                <strong><%= vaga.quantidade_vagas %></strong>
+              </div>
+            </div>
+
+            <div class="reabrir-vaga-dado">
+              <i class="fa-solid fa-money-bill"></i>
+
+              <div>
+                <span>Salário</span>
+                <strong>R$ <%= vaga.salario %></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOVO PERÍODO -->
+        <div class="reabrir-vaga-card">
+          <div class="reabrir-vaga-section-title">
+            <div class="reabrir-vaga-section-icon">
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <div>
+              <h2>Novo período de candidaturas</h2>
+
+              <p>
+                Defina o período em que os candidatos poderão se inscrever
+                novamente.
+              </p>
+            </div>
+          </div>
+
+          <div class="reabrir-vaga-form">
+            <div class="reabrir-vaga-field">
+              <label for="data_inicio"> Data de início </label>
+
+              <div class="reabrir-vaga-input">
+                <i class="fa-regular fa-calendar"></i>
+
+                <input type="date" id="data_inicio" name="data_inicio" />
+              </div>
+            </div>
+
+            <div class="reabrir-vaga-field">
+              <label for="data_fim"> Data de encerramento </label>
+
+              <div class="reabrir-vaga-input">
+                <i class="fa-regular fa-calendar-check"></i>
+
+                <input type="date" id="data_fim" name="data_fim" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AVISO -->
+        <div class="reabrir-vaga-aviso">
+          <div class="reabrir-vaga-aviso-icon">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+
+          <div>
+            <strong>Sobre a reabertura da vaga</strong>
+
+            <p>
+              Ao reabrir esta vaga, um novo período de candidaturas será
+              iniciado. As informações do processo seletivo anterior serão
+              mantidas.
+            </p>
+          </div>
+        </div>
+
+        <!-- AÇÕES -->
+        <div class="reabrir-vaga-actions">
+          <a
+            href="/empresas/vagas-encerradas"
+            class="btn-cancelar btn-cancelar-reabrir"
+          >
+            Cancelar
+          </a>
+
+          <button type="button" class="btn-register btn-confirmar-reabrir">
+            <i class="fa-solid fa-rotate-right"></i>
+            Reabrir vaga
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

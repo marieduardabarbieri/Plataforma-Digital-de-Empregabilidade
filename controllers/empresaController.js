@@ -47,17 +47,7 @@ const minhas_vagas = async function (req, res) {
     });
 };
 
-const vagas_encerradas = async function (req, res) {
-    const vagas = await Vaga.findAll({
-        where: {
-            status_vaga: 'Encerrada'
-        }
-    });
 
-    res.render('empresas/vagas-encerradas', {
-        vagas
-    });
-};
 
 const cadastro_vaga = async function (req, res) {
     res.render('empresas/cadastro-vaga');
@@ -108,4 +98,26 @@ const candidatosDaVaga = async function (req, res) {
     });
 };
 
-module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, vagas_encerradas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga };
+const vagas_encerradas = async function (req, res) {
+    const vagas = await Vaga.findAll({
+        where: {
+            status_vaga: 'Encerrada'
+        }
+    });
+
+    res.render('empresas/vagas-encerradas', {
+        vagas
+    });
+};
+
+const reabrirVaga = async function (req, res) {
+    const vaga = await Vaga.findByPk(req.params.id);
+
+    if (!vaga) {
+        return res.status(404).send('Vaga não encontrada');
+    }
+
+    res.render('empresas/reabrir-vaga', { vaga });
+};
+
+module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, vagas_encerradas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga, reabrirVaga };
