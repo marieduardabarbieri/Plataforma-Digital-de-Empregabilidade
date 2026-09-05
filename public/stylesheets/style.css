@@ -1379,8 +1379,8 @@ body {
 /* RESUMO */
 
 .vagas-resumo {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   gap: 18px;
   margin-bottom: 45px;
 }
@@ -1389,10 +1389,15 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 20px;
+  padding: 10px 20px;
   background: white;
   border: 1px solid #dce3ef;
   border-radius: 12px;
+}
+.vagas-resumo .resumo-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .resumo-card > i {
@@ -1414,7 +1419,29 @@ body {
   font-size: 13px;
   color: #777;
 }
+.resumo-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
 
+.resumo-card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(20, 41, 87, 0.1);
+}
+
+.resumo-card-link small {
+  margin-top: 6px;
+  color: #1746a2;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.resumo-card-link small i {
+  margin-left: 4px;
+}
 /* LISTA */
 
 .vagas-lista {
@@ -2416,6 +2443,17 @@ body {
 
 .status-recusado i {
   color: #c03939;
+}
+
+/* Encerrado */
+
+.status-encerrado {
+  background: rgb(225, 225, 225);
+  color: gray;
+}
+
+.status-encerrado i {
+  color: gray;
 }
 
 /* =========================================

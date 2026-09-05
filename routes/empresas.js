@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga } = require('../controllers/empresaController')
+const { getEmpresa, cadastroEmpresa, editar, minhas_vagas, vagas_encerradas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga } = require('../controllers/empresaController')
 
 router.get('/', getEmpresa);
 router.get('/cadastro/empresa', cadastroEmpresa);
@@ -9,8 +9,7 @@ router.get('/minhas-vagas', minhas_vagas);
 router.get('/cadastro-vaga', cadastro_vaga);
 router.get('/minhas-vagas/:id', detalhesVaga);
 router.get('/minhas-vagas/:id/editar-vaga', editarVaga);
-router.get(
-    '/minhas-vagas/:id/candidatos',
-    candidatosDaVaga
-);
+router.get('/minhas-vagas/:id/candidatos', candidatosDaVaga);
+router.get('/vagas-encerradas', vagas_encerradas);
+
 module.exports = router;

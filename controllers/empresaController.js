@@ -24,13 +24,38 @@ const editar = async function (req, res) {
 const minhas_vagas = async function (req, res) {
     const vagas = await Vaga.findAll();
 
+    const vagasAndamento = vagas.filter(
+        vaga => vaga.status === 'Em andamento'
+    );
+
     const totalVagas = vagas.length;
+
+    const totalVagasAndamento = vagasAndamento.length;
+
+    const totalVagasEncerradas = vagas.filter(
+        vaga => vaga.status === 'Encerrada'
+    ).length;
+
     const totalCandidaturas = await Candidatura.count();
 
     res.render('empresas/minhas-vagas', {
-        vagas,
+        vagas: vagasAndamento,
         totalVagas,
+        totalVagasAndamento,
+        totalVagasEncerradas,
         totalCandidaturas
+    });
+};
+
+const vagas_encerradas = async function (req, res) {
+    const vagas = await Vaga.findAll({
+        where: {
+            status: 'Encerrada'
+        }
+    });
+
+    res.render('empresas/vagas-encerradas', {
+        vagas
     });
 };
 
@@ -83,4 +108,4 @@ const candidatosDaVaga = async function (req, res) {
     });
 };
 
-module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga };
+module.exports = { getEmpresa, cadastroEmpresa, editar, minhas_vagas, vagas_encerradas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga };

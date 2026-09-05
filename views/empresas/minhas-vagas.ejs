@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Minhas vagas - VagaCerta</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
-  </head>
 
-  <body>
-    <%- include('../partials/header') %>
+<head>
+  <title>Minhas vagas - VagaCerta</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+</head>
+
+<body>
+  <%- include('../partials/header') %>
 
     <main class="minhas-vagas-page">
       <div class="vagas-header">
@@ -34,31 +32,53 @@
           </div>
 
           <div>
-            <strong><%= totalVagas %></strong>
+            <strong>
+              <%= totalVagas %>
+            </strong>
             <span>Vagas publicadas</span>
           </div>
         </div>
 
-        <div class="resumo-card">
+        <div class="resumo-card status-selecionado">
           <div class="resumo-icon">
             <i class="fa-solid fa-users"></i>
           </div>
 
           <div>
-            <strong><%= totalCandidaturas %></strong>
+            <strong>
+              <%= totalCandidaturas %>
+            </strong>
             <span>Candidaturas recebidas</span>
           </div>
         </div>
 
-        <div class="resumo-card">
+        <div class="resumo-card status-analise">
           <div class="resumo-icon">
             <i class="fa-solid fa-circle-check"></i>
           </div>
           <div>
-            <strong><%= totalVagas %></strong>
+            <strong>
+              <%= totalVagasAndamento %>
+            </strong>
             <span>Vagas em andamento</span>
           </div>
         </div>
+
+        <a href="/empresas/vagas-encerradas" class="resumo-card resumo-card-link status-encerrado">
+          <div class="resumo-icon ">
+            <i class="fa-solid fa-box-archive"></i>
+          </div>
+          <div>
+            <strong>
+              <%= totalVagasEncerradas %>
+            </strong>
+            <span>Vagas encerradas</span>
+            <small>
+              Ver vagas encerradas
+              <i class="fa-solid fa-arrow-right"></i>
+            </small>
+          </div>
+        </a>
       </section>
 
       <!-- VAGAS -->
@@ -75,7 +95,7 @@
           </span>
         </div>
 
-        <% if (vagas.length === 0) { %>
+        <% if (vagas.length===0) { %>
           <div class="empty-vagas">
             <i class="fa-solid fa-briefcase"></i>
 
@@ -85,98 +105,106 @@
               Você ainda não publicou nenhuma oportunidade.
             </p>
 
-            <a href="/empresas/cadastro/empresa" class="btn-register">
+            <a href="/empresas/cadastro-vaga" class="btn-register">
               Cadastrar primeira vaga
             </a>
           </div>
 
-        <% } else { %>
+          <% } else { %>
 
-          <div class="vagas-list">
-            <% vagas.forEach(vaga => { %>
+            <div class="vagas-list">
+              <% vagas.forEach(vaga=> { %>
 
-              <article class="vaga-card">
-                <div class="vaga-top">
-                  <div class="vaga-title">
+                <article class="vaga-card">
+                  <div class="vaga-top">
+                    <div class="vaga-title">
 
-                    <div class="vaga-icon">
-                      <i class="fa-solid fa-briefcase"></i>
+                      <div class="vaga-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                      </div>
+
+                      <div>
+                        <h3>
+                          <%= vaga.titulo_vaga %>
+                        </h3>
+                        <span>
+                          <i class="fa-solid fa-location-dot"></i>
+                          <%= vaga.localizacao %>
+                        </span>
+                      </div>
+                    </div>
+
+                    <span class="vaga-status">
+                      <i class="fa-solid fa-circle"></i>
+                      <span>
+                        <%= vaga.status_vaga %>
+                      </span>
+                    </span>
+
+                  </div>
+
+                  <div class="vaga-info">
+
+                    <div>
+                      <i class="fa-solid fa-house"></i>
+                      <span>
+                        <%= vaga.tipo_trabalho %>
+                      </span>
                     </div>
 
                     <div>
-                      <h3><%= vaga.titulo_vaga %></h3>
+                      <i class="fa-solid fa-money-bill"></i>
+                      <span>R$ <%= vaga.salario %></span>
+                    </div>
+
+                    <div>
+                      <i class="fa-solid fa-users"></i>
                       <span>
-                        <i class="fa-solid fa-location-dot"></i>
-                       <%= vaga.localizacao %>
+                        <%= vaga.quantidade_vagas %> vagas
                       </span>
                     </div>
+
+                    <div>
+                      <i class="fa-solid fa-file-signature"></i>
+                      <span>
+                        <%= vaga.regime_contrato %>
+                      </span>
+                    </div>
+
+                    <div>
+                      <span class="vaga-descricao ">
+                        <i class="fa-regular fa-calendar"></i>
+                        Período de candidaturas: <%= vaga.dataInicioFormatada %> até <%= vaga.dataFimFormatada %>
+                      </span>
+                    </div>
+
                   </div>
 
-                  <span class="vaga-status">
-                    <i class="fa-solid fa-circle"></i>
-                    <span><%= vaga.status_vaga %></span>
-                  </span>
+                  <div class="vaga-footer">
+                    <span>
+                      <i class="fa-solid fa-clock"></i>
+                      Oportunidade disponível
+                    </span>
 
-                </div>
+                    <div class="vaga-actions">
+                      <a href="/empresas/minhas-vagas/<%= vaga.id %>" class="btn-login">
+                        Ver detalhes
+                      </a>
 
-                <div class="vaga-info">
 
-                  <div>
-                    <i class="fa-solid fa-house"></i>
-                    <span><%= vaga.tipo_trabalho %></span>
+                      <a href="/empresas/minhas-vagas/<%= vaga.id %>/candidatos" class="btn-register">
+                        <i class="fa-solid fa-users"></i>
+                        Ver candidatos
+                      </a>
+                    </div>
                   </div>
-
-                  <div>
-                    <i class="fa-solid fa-money-bill"></i>
-                    <span>R$ <%= vaga.salario %></span>
-                  </div>
-
-                  <div>
-                    <i class="fa-solid fa-users"></i>
-                    <span><%= vaga.quantidade_vagas %> vagas</span>
-                  </div>
-
-                  <div>
-                    <i class="fa-solid fa-file-signature"></i>
-                    <span><%= vaga.regime_contrato %></span>
-                  </div>
-
-                  <div>
-                     <span class="vaga-descricao ">
-                <i class="fa-regular fa-calendar"></i>
-                 Período de candidaturas:      <%= vaga.dataInicioFormatada %> até   <%= vaga.dataFimFormatada %>
-                </span>
-                  </div>
-          
-                </div>
-
-                <div class="vaga-footer">
-                  <span>
-                    <i class="fa-solid fa-clock"></i>
-                    Oportunidade disponível
-                  </span>
-
-                  <div class="vaga-actions">
-                    <a href="/empresas/minhas-vagas/<%= vaga.id %>" class="btn-login">
-                      Ver detalhes
-                    </a>
-
-              
-                     <a
-                       href="/empresas/minhas-vagas/<%= vaga.id %>/candidatos"
-                     class="btn-register"
-                        >
-                       <i class="fa-solid fa-users"></i>
-                             Ver candidatos
-                          </a>
-                  </div>
-                </div>
-              </article>
-            <% }) %>
-          </div>
-        <% } %>
+                </article>
+                <% }) %>
+            </div>
+            <% } %>
       </section>
     </main>
     <%- include('../partials/footer') %>
-  </body>
+</body>
+
 </html>
