@@ -1401,7 +1401,6 @@ body {
 }
 
 .resumo-card > i {
-  color: #1746a2;
   font-size: 22px;
 }
 
@@ -1412,7 +1411,6 @@ body {
 
 .resumo-card strong {
   font-size: 22px;
-  color: #123b82;
 }
 
 .resumo-card span {
@@ -1434,7 +1432,7 @@ body {
 
 .resumo-card-link small {
   margin-top: 6px;
-  color: #1746a2;
+  color: #001239;
   font-size: 12px;
   font-weight: 600;
 }
@@ -1925,35 +1923,6 @@ body {
   text-align: center;
 }
 
-/* RESPONSIVO */
-
-@media (max-width: 800px) {
-  .vagas-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .vagas-resumo {
-    grid-template-columns: 1fr;
-  }
-
-  .lista-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .vaga-acoes {
-    flex-direction: column;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    text-align: center;
-  }
-}
-
 /*TELA DE MINHAS VAGAS*/
 .minhas-vagas-page {
   background: #f5f7fb;
@@ -2158,6 +2127,266 @@ body {
 .localizacao .iconeverde {
   color: rgb(9, 9, 132);
 }
+
+/*
+  =========================================
+  VAGAS
+  ENCERRADAS
+  =========================================
+  */
+.vagas-encerradas-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* CABEÇALHO */
+
+.vagas-encerradas-header {
+  margin-bottom: 35px;
+}
+
+.vagas-encerradas-titulo > div:first-child span {
+  color: #68748a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.vagas-encerradas-titulo h1 {
+  margin: 7px 0;
+  color: #142957;
+  font-size: 30px;
+}
+.margin {
+  margin-bottom: 20px;
+}
+/* TOTAL */
+
+.vagas-encerradas-total {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  background: #f7f9fc;
+  border: 1px solid #dce3ef;
+  border-radius: 12px;
+}
+
+.vagas-encerradas-total > i {
+  color: #68748a;
+  font-size: 24px;
+}
+
+.vagas-encerradas-total div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.vagas-encerradas-total strong {
+  color: #142957;
+  font-size: 22px;
+}
+
+.vagas-encerradas-total span {
+  color: #68748a;
+  font-size: 12px;
+}
+
+/* SEÇÃO */
+
+.vagas-encerradas-section {
+  background: #fff;
+  border: 1px solid #dce3ef;
+  border-radius: 16px;
+  box-shadow: 0 7px 22px rgba(20, 41, 87, 0.06);
+  overflow: hidden;
+}
+
+.vagas-encerradas-section .section-header {
+  padding: 24px 26px;
+  border-bottom: 1px solid #e5e9f0;
+}
+
+.vagas-encerradas-section .section-header h2 {
+  margin: 0 0 5px;
+  color: #142957;
+  font-size: 20px;
+}
+
+.vagas-encerradas-section .section-header p {
+  margin: 0;
+  color: #68748a;
+  font-size: 14px;
+}
+
+/* LISTA */
+
+.vagas-encerradas-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* CARD */
+
+.vaga-encerrada-card {
+  padding: 24px 26px;
+  border-bottom: 1px solid #e5e9f0;
+  background: #fafbfc;
+}
+
+.vaga-encerrada-card:last-child {
+  border-bottom: none;
+}
+
+/* TOPO */
+
+.vaga-encerrada-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.vaga-encerrada-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vaga-encerrada-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: #eef1f5;
+  border-radius: 10px;
+  color: #68748a;
+  font-size: 19px;
+}
+
+.vaga-encerrada-title h3 {
+  margin: 0 0 5px;
+  color: #39465a;
+  font-size: 17px;
+}
+
+.vaga-encerrada-title span {
+  color: #7a8494;
+  font-size: 13px;
+}
+
+.vaga-encerrada-title span i {
+  margin-right: 5px;
+}
+
+/* STATUS */
+
+.vaga-encerrada-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  background: #eef1f5;
+  border-radius: 20px;
+  color: #68748a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vaga-encerrada-status i {
+  font-size: 7px;
+  color: #8a94a6;
+}
+
+/* INFORMAÇÕES */
+
+.vaga-encerrada-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 17px 0;
+  border-top: 1px solid #e5e9f0;
+  border-bottom: 1px solid #e5e9f0;
+}
+
+.vaga-encerrada-info > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #68748a;
+  font-size: 13px;
+}
+
+.vaga-encerrada-info i {
+  color: #8a94a6;
+}
+
+/* RODAPÉ */
+
+.vaga-encerrada-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 18px;
+}
+
+.vaga-encerrada-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7a8494;
+  font-size: 12px;
+}
+
+.vaga-encerrada-footer > span i {
+  color: #8a94a6;
+}
+
+/* AÇÕES */
+
+.vaga-encerrada-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ESTADO VAZIO */
+
+.empty-vagas-encerradas {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.empty-encerradas-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 18px;
+  background: #f1f3f6;
+  border-radius: 50%;
+  color: #8a94a6;
+  font-size: 27px;
+}
+
+.empty-vagas-encerradas h3 {
+  margin: 0 0 8px;
+  color: #39465a;
+  font-size: 20px;
+}
+
+.empty-vagas-encerradas p {
+  margin: 0 0 22px;
+  color: #68748a;
+  font-size: 14px;
+}
+
 /* =========================================
    CANDIDATOS DA VAGA
 ========================================= */
@@ -3114,7 +3343,8 @@ body {
   .profile-stats,
   .profile-options,
   .vagas-list,
-  .candidatos-resumo {
+  .candidatos-resumo,
+  .vagas-resumo {
     grid-template-columns: 1fr;
   }
   .cadastro-cards,
@@ -3166,7 +3396,8 @@ body {
   }
 
   .curriculo-upload,
-  .vaga-topo {
+  .vaga-topo,
+  .vaga-acoes {
     flex-direction: column;
   }
 
@@ -3197,6 +3428,13 @@ body {
   .vaga-rodape .btn-register {
     width: 100%;
     text-align: center;
+  }
+
+  .vagas-header,
+  .lista-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 }
 

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vagas encerradas - VagaCerta</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="/images/icon.png"
+    />
+  </head>
+  <body>
+
+    <%- include('../partials/header') %>
+
+    <main class="vagas-encerradas-page">
+      <!-- CABEÇALHO -->
+      <section class="vagas-encerradas-header">
+        <a href="/empresas/minhas-vagas" class="btn-voltar margin">
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar para minhas vagas
+        </a>
+        <div class="vagas-header vagas-encerradas-titulo">
+          <div>
+            <span class="section-label">HISTÓRICO DE OPORTUNIDADES</span>
+            <h1>Vagas encerradas</h1>
+            <p>
+              Consulte as oportunidades que já foram encerradas
+              e reabra uma vaga quando necessário.
+            </p>
+          </div>
+
+          <div class="vagas-encerradas-total">
+            <i class="fa-solid fa-box-archive"></i>
+            <div>
+              <strong><%= vagas.length %></strong>
+              <span>vagas encerradas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTA DE VAGAS -->
+      <section class="vagas-encerradas-section">
+        <div class="section-header">
+          <div>
+            <h2>Oportunidades encerradas</h2>
+            <p>
+              Veja os detalhes das vagas que não estão mais recebendo candidaturas.
+            </p>
+          </div>
+        </div>
+
+        <% if (vagas.length === 0) { %>
+
+          <!-- ESTADO VAZIO -->
+          <div class="empty-vagas-encerradas">
+            <div class="empty-encerradas-icon">
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+            <h3>Nenhuma vaga encerrada</h3>
+            <p>
+              As vagas que forem encerradas aparecerão aqui.
+            </p>
+            <a
+              href="/empresas/minhas-vagas"
+              class="btn-login"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+              Voltar para minhas vagas
+            </a>
+          </div>
+
+        <% } else { %>
+
+
+          <div class="vagas-encerradas-list">
+            <% vagas.forEach(vaga => { %>
+
+              <article class="vaga-encerrada-card">
+                <!-- TOPO -->
+                <div class="vaga-encerrada-top">
+                  <div class="vaga-encerrada-title">
+                    <div class="vaga-encerrada-icon">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                      <h3>
+                        <%= vaga.titulo_vaga %>
+                      </h3>
+                      <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <%= vaga.localizacao %>
+                      </span>
+                    </div>
+                  </div>
+
+                  <span class="vaga-encerrada-status">
+                    <i class="fa-solid fa-circle"></i>
+                    Encerrada
+                  </span>
+                </div>
+
+                <!-- INFORMAÇÕES -->
+                <div class="vaga-encerrada-info">
+                  <div>
+                    <i class="fa-solid fa-house"></i>
+                    <span>
+                      <%= vaga.tipo_trabalho %>
+                    </span>
+                  </div>
+
+                  <div>
+                    <i class="fa-solid fa-money-bill"></i>
+                    <span>
+                      R$ <%= vaga.salario %>
+                    </span>
+                  </div>
+
+                  <div>
+                    <i class="fa-solid fa-users"></i>
+                    <span>
+                      <%= vaga.quantidade_vagas %> vagas
+                    </span>
+                  </div>
+
+                  <div>
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span>
+                      <%= vaga.regime_contrato %>
+                    </span>
+                  </div>
+
+                  <div>
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>
+                      Período:
+                      <%= vaga.data_inicio_candidatura
+                        ? new Date(vaga.data_inicio_candidatura).toLocaleDateString('pt-BR', { timeZone: 'UTC' })
+                        : 'Não informado'
+                      %>
+                      até
+                      <%= vaga.data_fim_candidatura
+                        ? new Date(vaga.data_fim_candidatura).toLocaleDateString('pt-BR', { timeZone: 'UTC' })
+                        : 'Não informado'
+                      %>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- RODAPÉ -->
+                <div class="vaga-encerrada-footer">
+                  <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Processo seletivo encerrado
+                  </span>
+
+                  <div class="vaga-encerrada-actions">
+                    <a
+                      href="/empresas/minhas-vagas/<%= vaga.id %>"
+                      class="btn-login"
+                    >
+                      Ver detalhes
+                    </a>
+
+                    <a
+                      href="/empresas/minhas-vagas/<%= vaga.id %>/candidatos"
+                      class="btn-register"
+                    >
+                      <i class="fa-solid fa-users"></i>
+                      Ver candidatos
+                    </a>
+
+                    <a
+                      href="#"
+                      class="btn-login"
+                    >
+                      <i class="fa-solid fa-rotate-right"></i>
+                      Reabrir vaga
+                    </a>
+                  </div>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        <% } %>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

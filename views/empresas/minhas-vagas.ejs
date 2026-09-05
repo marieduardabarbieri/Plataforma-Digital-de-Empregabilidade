@@ -134,13 +134,16 @@
                       </div>
                     </div>
 
-                    <span class="vaga-status">
-                      <i class="fa-solid fa-circle"></i>
-                      <span>
+                     <span class="vaga-status candidato-status
+                        <%= vaga.status_vaga === 'Em andamento'
+                          ? 'status-analise'
+                          : vaga.status_vaga === 'Cancelada'
+                          ? 'status-recusado'
+                          : 'status-analise' %>">
+
+                        <i class="fa-solid fa-circle"></i>
                         <%= vaga.status_vaga %>
                       </span>
-                    </span>
-
                   </div>
 
                   <div class="vaga-info">

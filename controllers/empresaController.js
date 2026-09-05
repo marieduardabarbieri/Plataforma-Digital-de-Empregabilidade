@@ -25,7 +25,7 @@ const minhas_vagas = async function (req, res) {
     const vagas = await Vaga.findAll();
 
     const vagasAndamento = vagas.filter(
-        vaga => vaga.status === 'Em andamento'
+        vaga => vaga.status_vaga === 'Em andamento'
     );
 
     const totalVagas = vagas.length;
@@ -33,7 +33,7 @@ const minhas_vagas = async function (req, res) {
     const totalVagasAndamento = vagasAndamento.length;
 
     const totalVagasEncerradas = vagas.filter(
-        vaga => vaga.status === 'Encerrada'
+        vaga => vaga.status_vaga === 'Encerrada'
     ).length;
 
     const totalCandidaturas = await Candidatura.count();
@@ -50,7 +50,7 @@ const minhas_vagas = async function (req, res) {
 const vagas_encerradas = async function (req, res) {
     const vagas = await Vaga.findAll({
         where: {
-            status: 'Encerrada'
+            status_vaga: 'Encerrada'
         }
     });
 
