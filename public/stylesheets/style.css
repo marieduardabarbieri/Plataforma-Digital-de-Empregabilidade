@@ -116,7 +116,7 @@ body {
 }
 
 .section-title {
-  color: #b7becf;
+  color: #123b82;
   font-size: 42px;
   line-height: 1.15;
   margin: 15px 0 25px;
@@ -149,9 +149,11 @@ body {
   justify-content: center;
   border-radius: 5px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+  font-family: inherit;
+  transition: 0.2s;
 }
 
 .btn-voltar {
@@ -381,178 +383,374 @@ body {
   text-decoration: none;
   font-size: 14px;
 }
-/*TELA DE RENDERIZAÇÃO DAS VAGAS*/
+/* =========================================================
+   PÁGINA DE VAGAS
+========================================================= */
 
-/* FILTRO DE VAGAS */
-
-.filtro-vagas {
-  max-width: 1100px;
-  margin: 0px auto;
-  padding: 38px 45px;
-  background: #1746a2;
-  border-radius: 5px;
-  box-shadow: 0 8px 25px rgba(18, 63, 159, 0.15);
+.vagas-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 30px 60px;
 }
 
-.filtro-titulo span {
-  color: #dbe6ff;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
+/* =========================================================
+   BUSCA
+========================================================= */
+
+.vagas-busca {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-bottom: 30px;
 }
 
-.filtro-titulo h1 {
-  margin: 8px 0 25px;
-  color: white;
-  font-size: 27px;
-}
-
-.filtro-form {
-  display: flex;
-  gap: 12px;
-}
-
-.filtro-form button:hover {
-  background: white;
-  color: #123f9f;
-}
-
-/* LISTA DE VAGAS */
-
-.lista-vagas {
-  max-width: 1100px;
-  margin: 60px auto;
-}
-
-.lista-titulo span {
+.vagas-busca-titulo span,
+.vagas-listagem-header span,
+.mapa-vagas-header span,
+.filtros-header span {
   color: #1746a2;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.lista-titulo h2 {
-  margin: 8px 0 30px;
+.vagas-busca-titulo h1 {
+  margin: 6px 0 5px;
   color: #142957;
   font-size: 32px;
 }
 
-.vagas-container {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.vagas-busca-titulo p {
+  margin: 0;
+  color: #68748a;
+  font-size: 15px;
+}
+.vagas-busca-titulo {
+  text-align: center;
+  width: 100%;
 }
 
-.vaga-card {
-  padding: 24px 30px;
+.vagas-busca-form {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px;
+  width: 100%;
+  margin-top: 10px;
+}
+.vagas-busca-form input {
+  width: 250px;
+}
+
+/* =========================================================
+   MAPA
+========================================================= */
+
+.mapa-vagas-section {
+  margin-bottom: 35px;
   background: #fff;
   border: 1px solid #e1e6f0;
   border-radius: 14px;
-  box-shadow: 0 5px 18px rgba(20, 41, 87, 0.07);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(20, 41, 87, 0.06);
 }
 
-/* TOPO DA VAGA */
-
-.vaga-topo {
+.mapa-vagas-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e8ecf3;
+}
+
+.mapa-vagas-header h2 {
+  margin: 5px 0 0;
+  color: #142957;
+  font-size: 19px;
+}
+
+.mapa-legenda {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #68748a;
+  font-size: 13px;
+}
+
+.mapa-legenda i {
+  color: #1746a2;
+}
+
+#mapa-vagas {
+  width: 100%;
+  height: 330px;
+}
+
+/* =========================================================
+   FILTROS + VAGAS
+========================================================= */
+
+.vagas-resultados {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 25px;
+  align-items: start;
+}
+
+/* =========================================================
+   SIDEBAR DE FILTROS
+========================================================= */
+
+.filtros-sidebar {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(20, 41, 87, 0.06);
+  position: sticky;
+  top: 20px;
+}
+
+.filtros-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8ecf3;
+}
+
+.filtros-header h2 {
+  margin: 5px 0 0;
+  color: #142957;
+  font-size: 19px;
+}
+
+.filtros-header a {
+  color: #1746a2;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.filtro-grupo {
+  margin-bottom: 22px;
+}
+
+.filtro-grupo > label:first-child {
+  display: block;
+  margin-bottom: 9px;
+  color: #142957;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filtro-input {
+  position: relative;
+}
+
+.filtro-input i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a94a6;
+  font-size: 13px;
+}
+
+.filtro-input input,
+.filtro-grupo select {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 12px 0 35px;
+  border: 1px solid #d7ddea;
+  border-radius: 7px;
+  background: #fff;
+  color: #4f5d73;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.filtro-grupo select {
+  padding-left: 12px;
+}
+
+.filtro-input input:focus,
+.filtro-grupo select:focus {
+  border-color: #1746a2;
+  box-shadow: 0 0 0 3px rgba(23, 70, 162, 0.07);
+}
+
+/* CHECKBOX */
+
+.checkbox-filtro {
+  display: flex !important;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+  color: #4f5d73 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+
+.checkbox-filtro input {
+  width: 15px;
+  height: 15px;
+  accent-color: #1746a2;
+  cursor: pointer;
+}
+
+/* =========================================================
+   LISTAGEM
+========================================================= */
+
+.vagas-listagem {
+  min-width: 0;
+}
+
+.vagas-listagem-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: 20px;
+  margin-bottom: 10px;
+}
+
+.vagas-listagem-header h2 {
+  margin: 5px 0;
+  color: #142957;
+  font-size: 23px;
+}
+
+.vagas-listagem-header p {
+  margin: 0;
+  color: #68748a;
+  font-size: 13px;
+}
+
+.ordenar-vagas {
+  height: 40px;
+  padding: 0 35px 0 12px;
+  border: 1px solid #d7ddea;
+  border-radius: 7px;
+  background: #fff;
+  color: #4f5d73;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+/* =========================================================
+   CARD DA VAGA
+========================================================= */
+
+.vagas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.vaga-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 13px;
+  box-shadow: 0 5px 17px rgba(20, 41, 87, 0.05);
+  transition: 0.2s;
+}
+
+.vaga-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .vaga-identificacao {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 13px;
 }
 
 .vaga-empresa-imagem {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
-  border-radius: 50%;
-  border: 1px solid #e1e6f0;
-  background: #fff;
-  padding: 6px;
-  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 39px;
+  border: 2px solid #e1e6f0;
 }
 
 .vaga-identificacao h3 {
   margin: 0 0 4px;
   color: #142957;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .vaga-identificacao .empresa {
   margin: 0;
   color: #68748a;
-  font-size: 16px;
+  font-size: 15px;
 }
-
-/* STATUS */
 
 .vaga-status {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 15px;
+  gap: 6px;
+  padding: 6px 10px;
   border-radius: 20px;
   background: #edf8f0;
   color: #16833b;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
   white-space: nowrap;
 }
 
 .vaga-status i {
-  color: #1746a2;
-  font-size: 9px;
+  font-size: 6px;
+  color: #16833b;
 }
 
 /* INFORMAÇÕES */
 
 .vaga-info {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 18px 0;
-  color: #4f5d73;
-  font-size: 15px;
-  border-bottom: 1px solid #e1e6f0;
 }
 
 .vaga-info span {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
+  background: #f6f8fb;
+  border-radius: 5px;
+  color: #68748a;
+  font-size: 11px;
 }
 
-.vaga-info i,
-.calendario {
+.vaga-info i {
   color: #1746a2;
 }
 
-/* SALÁRIO */
+/* CONTEÚDO */
 
-.vaga-salario {
-  margin: 16px 0 10px;
-  color: #142957;
-  font-weight: 600;
-  font-size: 16px;
+.vaga-conteudo {
+  border-bottom: 1px solid #edf0f5;
 }
-
-.vaga-salario i {
-  color: #1746a2;
-  margin-right: 5px;
-}
-
-/* DESCRIÇÃO */
 
 .vaga-descricao {
-  margin: 0;
   color: #68748a;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.vaga-salario,
+.vaga-periodo {
+  display: block;
+  color: #4f5d73;
+  font-size: 12px;
 }
 
 /* RODAPÉ */
@@ -561,21 +759,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding-top: 18px;
-  border-top: 1px solid #e4e8f0;
+  gap: 15px;
 }
 
 .vaga-rodape small {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: #68748a;
+  color: #8a94a6;
+  font-size: 11px;
 }
 
-.vaga-rodape .btn-register {
-  min-width: 170px;
-  text-align: center;
+.vaga-rodape small i {
+  margin-right: 5px;
+}
+
+.vaga-rodape {
+  padding: 9px 16px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 /*TELA DE LOGIN*/
@@ -2743,7 +2946,8 @@ body {
     gap: 15px;
   }
 
-  .vaga-actions {
+  .vaga-actions,
+  .vagas-busca-form .btn-login {
     width: 100%;
   }
   .hero-image img {
@@ -2752,7 +2956,9 @@ body {
   .candidatos-resumo {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  .filtros-sidebar {
+    position: static;
+  }
   .candidatos-tabela {
     min-width: 900px;
   }
@@ -2760,7 +2966,9 @@ body {
   .vagas-resumo {
     grid-template-columns: 1fr 1fr;
   }
-  .curriculo-dicas {
+  .curriculo-dicas,
+  .vagas-resultados,
+  .vagas-busca-form {
     grid-template-columns: 1fr;
   }
 
@@ -2900,7 +3108,10 @@ body {
     font-size: 25px;
   }
 
-  .curriculo-card-header {
+  .curriculo-card-header,
+  .mapa-vagas-header,
+  .vagas-listagem-header,
+  .vaga-rodape {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -2911,11 +3122,13 @@ body {
   }
 
   .btn-curriculo-principal,
-  .btn-curriculo-secundario {
+  .btn-curriculo-secundario,
+  .ordenar-vagas {
     width: 100%;
   }
 
-  .curriculo-upload {
+  .curriculo-upload,
+  .vaga-topo {
     flex-direction: column;
   }
 
@@ -2926,6 +3139,26 @@ body {
   .btn-upload-curriculo {
     margin-left: 0;
     width: 100%;
+  }
+  .vagas-page {
+    padding: 30px 15px 50px;
+  }
+
+  .vagas-busca-titulo h1 {
+    font-size: 26px;
+  }
+
+  #mapa-vagas {
+    height: 260px;
+  }
+
+  .vaga-status {
+    align-self: flex-start;
+  }
+
+  .vaga-rodape .btn-register {
+    width: 100%;
+    text-align: center;
   }
 }
 

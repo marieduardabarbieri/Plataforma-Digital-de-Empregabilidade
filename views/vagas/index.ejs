@@ -1,157 +1,323 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-  <title>Vagas</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas disponíveis - VagaCerta</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="shortcut icon" type="imagex/png" href="/images/icon.png">
 </head>
 
 <body>
   <%- include('../partials/header') %>
 
-    <section class="filtro-vagas">
-      <div class="filtro-titulo">
+  <main class="vagas-page">
+    <!-- =====================================================
+         BUSCA
+    ====================================================== -->
+    <section class="vagas-busca">
+      <div class="vagas-busca-titulo">
         <span>OPORTUNIDADES</span>
         <h1>Encontre a vaga ideal</h1>
-      </div>
+        <p>
+          Encontre oportunidades próximas de você.
+        </p>
+      </div><br>
 
-      <form class="filtro-form">
-        <div class="search-field">
+      <form class="search-box vagas-busca-form">
+        <div class="search-field form-vagas">
           <i class="fa-solid fa-briefcase"></i>
-          <input class="form-input" type="text" placeholder="Cargo ou palavra-chave" />
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Cargo ou palavra-chave"
+          >
         </div>
 
         <div class="search-field">
           <i class="fa-solid fa-location-dot"></i>
-          <input class="form-input" type="text" placeholder="Cidade ou região" />
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Cidade ou região"
+          >
         </div>
-
-        <button class="btn-login" type="submit">Buscar vagas</button>
-
+        <button class="btn-login" type="submit" id="buscador-vagas">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Buscar
+        </button>
       </form>
     </section>
 
-    <section class="lista-vagas">
 
-      <div class="lista-titulo">
-        <span>OPORTUNIDADES</span>
-        <h2>Vagas disponíveis</h2>
+    <!-- =====================================================
+         MAPA
+    ====================================================== -->
+    <section class="mapa-vagas-section">
+      <div class="mapa-vagas-header">
+        <div>
+          <span>LOCALIZAÇÃO</span>
+          <h2>Vagas próximas de você</h2>
+        </div>
+
+        <div class="mapa-legenda">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Vagas disponíveis</span>
+        </div>
       </div>
-
-      <div class="vagas-container">
-
-        <% vagas.forEach((vaga)=> { %>
-
-         <div class="vaga-card">
-
-  <div class="vaga-topo">
-
-    <div class="vaga-identificacao">
-
-      <img
-        class="vaga-empresa-imagem"
-        src="<%= vaga.empresa.imagem || '/images/google.png' %>"
-        alt="Logo da <%= vaga.empresa.nome_empresa %>"
-      />
-
-      <div>
-        <h3><%= vaga.titulo_vaga %></h3>
-
-        <p class="empresa">
-          <%= vaga.empresa.nome_empresa %>
-        </p>
-      </div>
-
-    </div>
-
-    <div class="vaga-status">
-      <i class="fa-solid fa-circle"></i>
-      <%= vaga.status_vaga %>
-    </div>
-
-  </div>
-
-
-            <!-- INFORMAÇÕES -->
-            <div class="vaga-info">
-
-              <span>
-                <i class="fa-solid fa-location-dot"></i>
-                <%= vaga.localizacao %>
-              </span>
-
-              <span>
-                <i class="fa-solid fa-file-contract"></i>
-                <%= vaga.regime_contrato %>
-              </span>
-
-              <span>
-                <i class="fa-solid fa-laptop"></i>
-                <%= vaga.tipo_trabalho %>
-              </span>
-
-              <span>
-                <i class="fa-solid fa-users"></i>
-                <%= vaga.quantidade_vagas %>
-                  <%= vaga.quantidade_vagas==1 ? 'vaga' : 'vagas' %>
-              </span>
-
-                  <span>
-                <i class="fa-solid fa-money-bill"></i>
-                Salário: R$<%= Number(vaga.salario).toFixed(2).replace('.', ',' ) %>
-              </span>
-
-              
-            </div>
-
-
-            <!-- SALÁRIO E DESCRIÇÃO -->
-            <div class="vaga-conteudo">
-
-              <p class="vaga-descricao">
-                <%= vaga.descricao_vaga %>
-              </p>
-
-                <span class="vaga-descricao ">
-                <i class="fa-regular fa-calendar"></i>
-                 Período de candidaturas:      <%= vaga.dataInicioFormatada %> até   <%= vaga.dataFimFormatada %>
-                </span>
-            </div>
-
-
-            <!-- RODAPÉ -->
-            <div class="vaga-rodape">
-
-              <small>
-                <i class="fa-regular fa-clock"></i>
-                Publicada recentemente
-              </small>
-
-              <a href="/" class="btn-register">
-                Candidatar-me
-              </a>
-
-            </div>
-
-          </div>
-
-          <% }) %>
-
-      </div>
-
+      <div id="mapa-vagas"></div>
     </section>
 
-    <%- include('../partials/footer') %>
-</body>
+    <!-- =====================================================
+         FILTROS + LISTA
+    ====================================================== -->
+    <section class="vagas-resultados">
 
+      <!-- ================= FILTROS ================= -->
+      <aside class="filtros-sidebar">
+        <div class="filtros-header">
+          <div>
+            <span>FILTROS</span>
+            <h2>Refine sua busca</h2>
+          </div>
+          <a href="#">
+            Limpar
+          </a>
+        </div>
+
+        <div class="filtro-grupo">
+          <label>Palavra-chave</label>
+          <div class="filtro-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              placeholder="Ex: desenvolvedor..."
+            >
+          </div>
+        </div>
+
+        <div class="filtro-grupo">
+          <label>Localização</label>
+          <div class="filtro-input">
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="text"
+              placeholder="Ex: Nova Andradina, MS"
+            >
+          </div>
+        </div>
+
+        <div class="filtro-grupo">
+          <label>Tipo de contrato</label>
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>CLT</span>
+          </label>
+
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>Estágio</span>
+          </label>
+
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>PJ</span>
+          </label>
+
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>Freelancer</span>
+          </label>
+        </div>
+
+        <div class="filtro-grupo">
+          <label>Modalidade</label>
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>Presencial</span>
+          </label>
+
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>Híbrido</span>
+          </label>
+
+          <label class="checkbox-filtro">
+            <input type="checkbox">
+            <span>Remoto</span>
+          </label>
+        </div>
+
+        <div class="filtro-grupo">
+          <label>Área de atuação</label>
+          <select>
+            <option value="">Todas as áreas</option>
+            <option>Tecnologia</option>
+            <option>Administração</option>
+            <option>Marketing</option>
+            <option>Engenharia</option>
+            <option>Finanças</option>
+            <option>Recursos Humanos</option>
+          </select>
+        </div>
+
+        <div class="filtro-grupo">
+          <label>Faixa salarial</label>
+          <select>
+            <option value="">Qualquer faixa</option>
+            <option>Até R$ 1.500</option>
+            <option>R$ 1.500 - R$ 3.000</option>
+            <option>R$ 3.000 - R$ 5.000</option>
+            <option>Acima de R$ 5.000</option>
+          </select>
+        </div>
+
+        <button class="btn-register" type="button" id="cadastro-button">
+          <i class="fa-solid fa-filter"></i>
+          Aplicar filtros
+        </button>
+      </aside>
+
+      <!-- ================= VAGAS ================= -->
+      <div class="vagas-listagem">
+        <div class="vagas-listagem-header">
+          <div>
+            <span>OPORTUNIDADES</span>
+            <h2>Vagas disponíveis</h2>
+            <p>
+              Encontre oportunidades que combinam com seu perfil.
+            </p>
+          </div>
+
+          <select class="ordenar-vagas">
+            <option>Mais recentes</option>
+            <option>Maior salário</option>
+            <option>Menor salário</option>
+          </select>
+        </div>
+
+        <div class="vagas-container">
+          <% vagas.forEach((vaga) => { %>
+            <article class="vaga-card">
+
+              <!-- TOPO -->
+              <div class="vaga-topo">
+                <div class="vaga-identificacao">
+                  <img
+                    class="vaga-empresa-imagem"
+                    src="<%= vaga.empresa.imagem || '/images/google.png' %>"
+                    alt="Logo da <%= vaga.empresa.nome_empresa %>"
+                  >
+                  <div>
+
+                    <h3>
+                      <%= vaga.titulo_vaga %>
+                    </h3>
+
+                    <p class="empresa">
+                      <%= vaga.empresa.nome_empresa %>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="vaga-status">
+                  <i class="fa-solid fa-circle"></i>
+                  <%= vaga.status_vaga %>
+                </div>
+              </div>
+
+              <!-- INFORMAÇÕES -->
+              <div class="vaga-info">
+                <span>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <%= vaga.localizacao %>
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-file-contract"></i>
+                  <%= vaga.regime_contrato %>
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-laptop"></i>
+                  <%= vaga.tipo_trabalho %>
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-users"></i>
+                  <%= vaga.quantidade_vagas %>
+                  <%= vaga.quantidade_vagas == 1 ? 'vaga' : 'vagas' %> disponiveis
+                </span>
+
+                 <span >
+                  <i class="fa-solid fa-money-bill"></i>
+                  Salário: R$
+                  <%= Number(vaga.salario)
+                    .toFixed(2)
+                    .replace('.', ',') %>
+                </span>
+              </div>
+
+              <!-- CONTEÚDO -->
+              <div class="vaga-conteudo">
+                <p class="vaga-descricao">
+                  <%= vaga.descricao_vaga %>
+                </p>
+
+                <span class="vaga-periodo">
+                  <i class="fa-regular fa-calendar"></i>
+                  Candidaturas:
+                  <%= vaga.dataInicioFormatada %>
+                  até
+                  <%= vaga.dataFimFormatada %>
+                </span>
+              </div>
+
+              <!-- RODAPÉ -->
+              <div class="vaga-rodape">
+                <small>
+                  <i class="fa-regular fa-clock"></i>
+                  Publicada recentemente
+                </small>
+
+                <button class="btn-register" type="submit" > <i class="fa-solid fa-users"></i>
+                  Candidatar-me
+                </button>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('../partials/footer') %>
+
+  <!-- LEAFLET -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const mapa = L.map('mapa-vagas').setView(
+      [-22.2329, -53.3438],
+      12
+    );
+
+    L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {
+        attribution: '&copy; OpenStreetMap contributors'
+      }
+    ).addTo(mapa);
+
+    L.marker([-22.2329, -53.3438])
+      .addTo(mapa)
+      .bindPopup(
+        '<strong>VagaCerta</strong><br>Oportunidades próximas de você.'
+      );
+  </script>
+</body>
 </html>
-<!-- <%vagas.forEach((vaga)=> { %>
-            <p>Vaga: <%=vaga.titulo_vaga %> <br /></p>
-            <p>Quantidade de vagas: <%=vaga.quantidade_vagas %> <br /></p>
-            <p>Salário: <%=vaga.salario %> <br /></p>
-            <p>Regime do contrato: <%=vaga.regime_contrato %> <br /></p>
-            <p>Tipo de trabalho <%=vaga.tipo_trabalho %> <br /></p>
-            <p>Localização: <%=vaga.localizacao %> <br /></p>
-            <p>Descrição da vaga <%=vaga.descricao_vaga %> <br /></p>
-            <% }) %>-->
