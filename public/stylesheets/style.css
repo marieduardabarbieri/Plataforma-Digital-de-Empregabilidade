@@ -104,6 +104,17 @@ body {
   display: none;
 }
 
+.mobile-actions2 {
+  margin-left: auto;
+}
+
+.foto-perfil-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  text-align: left;
+  border: 1px solid #b3bdd7;
+}
 /* ================================
    PADRÕES DO SISTEMA
 ================================ */
@@ -3552,7 +3563,8 @@ body {
     display: none;
   }
 
-  .mobile-actions {
+  .mobile-actions,
+  .mobile-actions2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
