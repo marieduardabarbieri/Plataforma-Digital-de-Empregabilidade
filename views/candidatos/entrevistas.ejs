@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Minhas entrevistas - VagaCerta</title>
-    <link    rel="stylesheet"    href="/stylesheets/style.css"   />
-    <link    rel="stylesheet"     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"   />
-    <link     rel="shortcut icon"     type="imagex/png"     href="/images/icon.png"
-   />
-  </head>
-  <body>
 
-    <%- include('../partials/header-candidato') %>
+<head>
+  <title>Minhas entrevistas - VagaCerta</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+</head>
+
+<body>
+
+  <%- include('../partials/header-candidato') %>
 
     <main class="entrevistas-page">
       <section class="entrevistas-header">
@@ -39,7 +40,7 @@
 
       <!-- LISTA DE ENTREVISTAS -->
       <section class="entrevistas-lista">
-        <% if (!entrevistas || entrevistas.length === 0) { %>
+        <% if (!entrevistas || entrevistas.length===0) { %>
           <div class="entrevistas-vazio">
             <i class="fa-solid fa-calendar-xmark"></i>
             <h2>Nenhuma entrevista encontrada</h2>
@@ -48,178 +49,217 @@
             </p>
           </div>
 
-        <% } else { %>
-          <%
-            const vagas = {};
-            entrevistas.forEach((entrevista) => {
+          <% } else { %>
+            <% const vagas={}; entrevistas.forEach((entrevista)=> {
               const vaga = entrevista.candidatura.vaga;
               if (!vagas[vaga.id]) {
-                vagas[vaga.id] = {
-                  vaga: vaga,
-                  entrevistas: []
-                };
+              vagas[vaga.id] = {
+              vaga: vaga,
+              entrevistas: []
+              };
               }
               vagas[vaga.id].entrevistas.push(entrevista);
-            });
-          %>
+              });
+              %>
 
-          <% Object.values(vagas).forEach((grupo) => { %>
+              <% Object.values(vagas).forEach((grupo)=> { %>
 
-            <!-- BLOCO DA VAGA -->
-            <section class="entrevistas-vaga">
-              <div class="entrevistas-vaga-header">
-                <div class="entrevista-vaga-identificacao">
-                  <% if (grupo.vaga.empresa && grupo.vaga.empresa.imagem) { %>
-                    <img
-                      src="<%= grupo.vaga.empresa.imagem %>"
-                      alt="Logo da empresa"
-                      class="entrevista-empresa-logo"
-                    />
-                  <% } else { %>
-                    <div class="entrevista-empresa-logo entrevista-empresa-logo-padrao">
-                      <i class="fa-solid fa-building"></i>
-                    </div>
-                  <% } %>
-                  <div>
-                    <h2>
-                      <%= grupo.vaga.titulo_vaga %>
-                    </h2>
-                    <% if (grupo.vaga.empresa) { %>
-                      <span class="entrevista-empresa-nome">
-                        <%= grupo.vaga.empresa.nome_empresa %>
-                      </span>
-                    <% } %>
+                <!-- BLOCO DA VAGA -->
+                <section class="entrevistas-vaga">
+                  <div class="entrevistas-vaga-header">
+                    <div class="entrevista-vaga-identificacao">
+                      <% if (grupo.vaga.empresa && grupo.vaga.empresa.imagem) { %>
+                        <img src="<%= grupo.vaga.empresa.imagem %>" alt="Logo da empresa"
+                          class="entrevista-empresa-logo" />
+                        <% } else { %>
+                          <div class="entrevista-empresa-logo entrevista-empresa-logo-padrao">
+                            <i class="fa-solid fa-building"></i>
+                          </div>
+                          <% } %>
+                            <div>
+                              <h2>
+                                <%= grupo.vaga.titulo_vaga %>
+                              </h2>
+                              <% if (grupo.vaga.empresa) { %>
+                                <span class="entrevista-empresa-nome">
+                                  <%= grupo.vaga.empresa.nome_empresa %>
+                                </span>
+                                <% } %>
 
-                    <p>
-                      <i class="fa-solid fa-location-dot"></i>
-                      <%= grupo.vaga.localizacao %>
-                    </p>
-                  </div>
-                </div>
-
-                <span class="quantidade-entrevistas">
-                  <%= grupo.entrevistas.length %>
-                  <%= grupo.entrevistas.length === 1
-                    ? 'entrevista'
-                    : 'entrevistas'
-                  %>
-                </span>
-              </div>
-
-              <!-- TABELA -->
-              <div class="entrevistas-tabela-wrapper">
-                <table class="entrevistas-tabela">
-                  <thead>
-                    <tr>
-                      <th>Data e horário</th>
-                      <th>Tipo</th>
-                      <th>Status</th>
-                      <th>Acesso / local</th>
-                      <th>Observações</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <% grupo.entrevistas.forEach((entrevista) => { %>
-                      <tr>
-                        <!-- DATA E HORÁRIO -->
-                        <td>
-                          <div class="entrevista-data-horario">
-                            <div class="entrevista-info">
-                              <i class="fa-regular fa-calendar"></i>
-                              <span>
-                                <%= entrevista.data.split('-').reverse().join('/') %> - 
-                              <%= entrevista.horario %>hs
-                              </span>
+                                  <p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <%= grupo.vaga.localizacao %>
+                                  </p>
                             </div>
-                          </div>
-                        </td>
+                    </div>
 
-                        <!-- TIPO -->
-                        <td>
-                          <div class="entrevista-info">
-                            <% if (entrevista.tipo === 'Online') { %>
-                              <i class="fa-solid fa-video"></i>
-                            <% } else { %>
-                              <i class="fa-solid fa-location-dot"></i>
-                            <% } %>
-                            <span>
-                              <%= entrevista.tipo %>
-                            </span>
-                          </div>
-                        </td>
+                    <span class="quantidade-entrevistas">
+                      <%= grupo.entrevistas.length %>
+                        <%= grupo.entrevistas.length===1 ? 'entrevista' : 'entrevistas' %>
+                    </span>
+                  </div>
 
-                        <!-- STATUS -->
-                        <td>
-                          <span
-                            class="entrevista-status
+                  <!-- TABELA -->
+                  <div class="entrevistas-tabela-wrapper">
+                    <table class="entrevistas-tabela">
+                      <thead>
+                        <tr>
+                          <th>Data e horário</th>
+                          <th>Tipo</th>
+                          <th>Status</th>
+                          <th>Acesso / local</th>
+                          <th>Observações</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <% grupo.entrevistas.forEach((entrevista)=> { %>
+                          <tr>
+                            <!-- DATA E HORÁRIO -->
+                            <td>
+                              <div class="entrevista-data-horario">
+                                <div class="entrevista-info">
+                                  <i class="fa-regular fa-calendar"></i>
+                                  <span>
+                                    <%= entrevista.data.split('-').reverse().join('/') %> -
+                                      <%= entrevista.horario %>hs
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+
+                            <!-- TIPO -->
+                            <td>
+                              <div class="entrevista-info">
+                                <% if (entrevista.tipo==='Online' ) { %>
+                                  <i class="fa-solid fa-video"></i>
+                                  <% } else { %>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <% } %>
+                                      <span>
+                                        <%= entrevista.tipo %>
+                                      </span>
+                              </div>
+                            </td>
+
+                            <!-- STATUS -->
+                            <td>
+                              <span class="entrevista-status
                             <%= entrevista.status_entrevista === 'Agendada'
                               ? 'status-entrevista-agendada'
                               : entrevista.status_entrevista === 'Cancelada'
                               ? 'status-entrevista-cancelada'
                               : 'status-entrevista-realizada'
-                            %>"
-                          >
-                            <i class="fa-solid fa-circle"></i>
-                            <%= entrevista.status_entrevista %>
-                          </span>
-                        </td>
-
-                        <!-- ACESSO / LOCAL -->
-                        <td>
-                          <% if (entrevista.tipo === 'Online') { %>
-                            <% if (entrevista.link) { %>
-                              <a
-                                href="<%= entrevista.link %>"
-                                class="btn-register"
-                              >
-                                <i class="fa-solid fa-video"></i>
-                                Entrar na reunião
-                              </a>
-                            <% } else { %>
-
-                              <span class="entrevista-sem-informacao">
-                                Link ainda não disponível
+                            %>">
+                                <i class="fa-solid fa-circle"></i>
+                                <%= entrevista.status_entrevista %>
                               </span>
-                            <% } %>
+                            </td>
 
-                          <% } else { %>
-                            <div class="entrevista-local">
-                              <i class="fa-solid fa-location-dot"></i>
-                              <span>
-                                <%= entrevista.endereco || 'Endereço ainda não informado' %>
-                              </span>
-                            </div>
-                          <% } %>
-                        </td>
+                            <!-- ACESSO / LOCAL -->
+                            <td>
+                              <% if (entrevista.tipo==='Online' ) { %>
+                                <% if (entrevista.link) { %>
+                                  <a href="<%= entrevista.link %>" class="btn-register">
+                                    <i class="fa-solid fa-video"></i>
+                                    Entrar na reunião
+                                  </a>
+                                  <% } else { %>
 
-                        <!-- OBSERVAÇÕES -->
-                        <td>
-                          <% if (entrevista.observacoes) { %>
-                            <div class="entrevista-observacoes">
-                              <i class="fa-regular fa-message"></i>
-                              <span>
-                                <%= entrevista.observacoes %>
-                              </span>
-                            </div>
+                                    <span class="entrevista-sem-informacao">
+                                      Link ainda não disponível
+                                    </span>
+                                    <% } %>
 
-                          <% } else { %>
-                            <span class="entrevista-sem-informacao">
-                              Nenhuma observação.
-                            </span>
-                          <% } %>
-                        </td>
-                      </tr>
+                                      <% } else { %>
+                                        <div class="entrevista-local">
+                                          <i class="fa-solid fa-location-dot"></i>
+                                          <span>
+                                            <%= entrevista.endereco || 'Endereço ainda não informado' %>
+                                          </span>
+                                        </div>
+                                        <% } %>
+                            </td>
 
-                    <% }) %>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          <% }) %>
-        <% } %>
+                            <!-- OBSERVAÇÕES -->
+                            <td>
+                              <% if (entrevista.observacoes) { %>
+                                <div class="entrevista-observacoes">
+                                  <i class="fa-regular fa-message"></i>
+                                  <span>
+                                    <%= entrevista.observacoes %>
+                                  </span>
+                                </div>
+
+                                <% } else { %>
+                                  <span class="entrevista-sem-informacao">
+                                    Nenhuma observação.
+                                  </span>
+                                  <% } %>
+                            </td>
+                          </tr>
+
+                          <% }) %>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- BLOCO DE ORIENTAÇÕES PÓS APROVAÇÃO, SE FOR APROVADO -->
+       <% if (grupo.entrevistas[0].resultado === 'Aprovado') { %>
+
+  <div class="entrevista-rh">
+
+    <div class="entrevista-rh-titulo">
+
+      <div class="entrevista-rh-icone">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <div>
+        <strong>Candidato aprovado</strong>
+        <span>Você foi aprovado nesta etapa do processo seletivo.</span>
+      </div>
+
+    </div>
+
+    <div class="entrevista-rh-conteudo">
+
+      <div class="entrevista-rh-info">
+
+        <span class="detalhe-label">
+          <i class="fa-regular fa-calendar"></i>
+          Próxima etapa — RH
+        </span>
+
+        <strong>
+          <%= grupo.entrevistas[0].data_rh.split('-').reverse().join('/') %>
+        </strong>
+
+      </div>
+
+      <div class="entrevista-rh-info">
+
+        <span class="detalhe-label">
+          <i class="fa-regular fa-note-sticky"></i>
+          Orientações
+        </span>
+
+        <p>
+          <%= grupo.entrevistas[0].orientacoes_rh %>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<% } %>
+<% }) %>
+   <% } %>
       </section>
     </main>
     <%- include('../partials/footer') %>
-  </body>
+</body>
+
 </html>

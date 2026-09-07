@@ -4387,7 +4387,105 @@ a {
   margin: 0;
   color: #68748a;
 }
+.entrevista-resultado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+/**/
+.entrevista-resultado.aprovado {
+  color: #2e7d32;
+}
 
+.entrevista-resultado.nao-aprovado {
+  color: #c62828;
+}
+
+.entrevista-resultado.pendente {
+  color: #777;
+}
+.entrevista-rh {
+  margin: 0;
+  padding: 28px 35px;
+  background: #f0f9f2;
+  border-top: 1px solid #d7eadb;
+  border-bottom: 1px solid #d7eadb;
+}
+
+.entrevista-rh-titulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.entrevista-rh-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.entrevista-rh-titulo div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entrevista-rh-titulo strong {
+  font-size: 18px;
+  color: #2e7d32;
+}
+
+.entrevista-rh-titulo span {
+  font-size: 13px;
+  color: #666;
+}
+
+.entrevista-rh-conteudo {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 35px;
+  padding-left: 56px;
+}
+
+.entrevista-rh-info {
+  min-width: 0;
+}
+
+.entrevista-rh-info .detalhe-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #2457a6;
+  font-size: 14px;
+}
+
+.entrevista-rh-info .detalhe-label i {
+  font-size: 14px;
+}
+
+.entrevista-rh-info strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  color: #222;
+}
+
+.entrevista-rh-info p {
+  margin: 8px 0 0;
+  color: #555;
+  line-height: 1.5;
+  font-size: 14px;
+}
 /* =========================================
    APROVAR CANDIDATO
 ========================================= */
@@ -4827,7 +4925,8 @@ a {
   .candidatos-resumo,
   .vagas-resumo,
   .reabrir-vaga-dados,
-  .reabrir-vaga-form {
+  .reabrir-vaga-form,
+  .entrevista-rh {
     grid-template-columns: 1fr;
   }
   .cadastro-cards,
