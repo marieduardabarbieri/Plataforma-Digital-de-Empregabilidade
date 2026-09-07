@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'candidatoId',
         as: 'candidato',
       });
+
+      Candidatura(models.Entrevista, {
+        foreignKey: 'candidatura_id',
+        as: 'entrevistas'
+      });
     }
   }
   Candidatura.init({
