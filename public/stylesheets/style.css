@@ -3853,6 +3853,152 @@ a {
 .entrevistas-tabela .btn-detalhes-entrevista {
   margin: 0 !important;
 }
+
+/* =========================================
+   DETALHES DA ENTREVISTA
+========================================= */
+
+.detalhes-entrevista-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.detalhes-entrevista-header {
+  margin-bottom: 25px;
+}
+
+.detalhes-entrevista-header h1 {
+  margin: 0 0 8px;
+  color: #142957;
+}
+
+.detalhes-entrevista-header p {
+  margin: 0;
+  color: #68748a;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.detalhes-entrevista-card {
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+  box-shadow: 0 7px 22px rgba(20, 41, 87, 0.07);
+  overflow: hidden;
+}
+
+/* =========================================
+   CANDIDATO
+========================================= */
+
+.detalhes-entrevista-candidato {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 25px;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.detalhes-entrevista-candidato img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #e1e6f0;
+  flex-shrink: 0;
+}
+
+.detalhes-entrevista-candidato div {
+  flex: 1;
+}
+
+.detalhes-entrevista-candidato h2 {
+  margin: 0 0 4px;
+  color: #142957;
+  font-size: 20px;
+}
+
+.detalhes-entrevista-candidato span {
+  color: #8a94a6;
+  font-size: 13px;
+}
+
+/* =========================================
+   INFORMAÇÕES
+========================================= */
+
+.detalhes-entrevista-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.detalhe-item {
+  padding: 22px 25px;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.detalhe-item:nth-child(odd) {
+  border-right: 1px solid #eef1f5;
+}
+
+.detalhe-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 8px;
+
+  color: #68748a;
+  font-size: 13px;
+}
+
+.detalhe-label i {
+  width: 16px;
+  color: #1746a2;
+  text-align: center;
+}
+
+.detalhe-item strong {
+  color: #142957;
+  font-size: 15px;
+}
+
+/* =========================================
+   INFORMAÇÕES EXTRAS
+========================================= */
+
+.detalhe-extra {
+  padding: 22px 25px;
+  border-bottom: 1px solid #e1e6f0;
+}
+
+.detalhe-extra p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   AÇÕES
+========================================= */
+
+.detalhes-entrevista-acoes {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 25px;
+}
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalhes da entrevista - VagaCerta</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link  rel="shortcut icon"  type="imagex/png"  href="/images/icon.png"
+    />
+  </head>
+  <body>
+    <%- include('../partials/header-empresa') %>
+
+    <main class="detalhes-entrevista-page">
+        <a   href="/empresas/entrevistas"    class="btn-voltar"    >
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar
+        </a><br>
+      <!-- Cabeçalho -->
+
+      <section class="detalhes-entrevista-header">
+        <div>
+          <h1>Detalhes da entrevista</h1>
+          <p>
+            Confira as informações da entrevista e do candidato.
+          </p>
+        </div>
+      </section>
+
+      <!-- Card principal -->
+      <section class="detalhes-entrevista-card">
+        <!-- Candidato -->
+
+        <div class="detalhes-entrevista-candidato">
+          <img
+            src="<%= entrevista.candidatura.candidato.imagem || '/images/candidato.png' %>"
+            alt="Foto de <%= entrevista.candidatura.candidato.nome %>"
+          />
+          <div>
+            <h2>
+              <%= entrevista.candidatura.candidato.nome %>
+            </h2>
+
+            <span>
+              Candidato selecionado
+            </span>
+          </div>
+
+          <span class="entrevista-status">
+            <i class="fa-solid fa-circle"></i>
+            <%= entrevista.status_entrevista %>
+          </span>
+        </div>
+
+        <!-- Informações -->
+
+        <div class="detalhes-entrevista-info">
+          <div class="detalhe-item">
+            <span class="detalhe-label">
+              <i class="fa-solid fa-briefcase"></i>
+              Vaga
+            </span>
+            <strong>
+              <%= entrevista.candidatura.vaga.titulo_vaga %>
+            </strong>
+          </div>
+
+          <div class="detalhe-item">
+            <span class="detalhe-label">
+              <i class="fa-regular fa-calendar"></i>
+              Data
+            </span>
+            <strong>
+              <%= entrevista.data.split('-').reverse().join('/') %>
+            </strong>
+          </div>
+
+          <div class="detalhe-item">
+            <span class="detalhe-label">
+              <i class="fa-regular fa-clock"></i>
+              Horário
+            </span>
+
+            <strong>
+              <%= entrevista.horario %>
+            </strong>
+          </div>
+
+          <div class="detalhe-item">
+            <span class="detalhe-label">
+              <% if (entrevista.tipo === 'Online') { %>
+                <i class="fa-solid fa-video"></i>
+              <% } else { %>
+                <i class="fa-solid fa-location-dot"></i>
+              <% } %>
+              Tipo
+            </span>
+            <strong>
+              <%= entrevista.tipo %>
+            </strong>
+          </div>
+        </div>
+
+        <!-- Local / Link -->
+
+        <% if (entrevista.tipo === 'Online') { %>
+
+          <div class="detalhe-extra">
+            <span class="detalhe-label">
+              <i class="fa-solid fa-link"></i>
+              Link da entrevista
+            </span>
+
+            <% if (entrevista.link) { %>
+              <a
+                href="<%= entrevista.link %>"
+                target="_blank"
+                class="btn-register"
+              >
+                <i class="fa-solid fa-video"></i>
+                Acessar entrevista
+              </a>
+            <% } else { %>
+              <p>
+                Link ainda não informado.
+              </p>
+            <% } %>
+          </div>
+
+        <% } else { %>
+
+          <div class="detalhe-extra">
+            <span class="detalhe-label">
+              <i class="fa-solid fa-location-dot"></i>
+              Local da entrevista
+            </span>
+
+            <p>
+              <%= entrevista.endereco || 'Endereço ainda não informado.' %>
+            </p>
+          </div>
+        <% } %>
+
+        <!-- Observações -->
+
+        <% if (entrevista.observacoes) { %>
+          <div class="detalhe-extra">
+            <span class="detalhe-label">
+              <i class="fa-regular fa-note-sticky"></i>
+              Observações
+            </span>
+            <p>
+              <%= entrevista.observacoes %>
+            </p>
+          </div>
+        <% } %>
+
+        <!-- Resultado -->
+        <div class="detalhe-extra">
+          <span class="detalhe-label">
+            <i class="fa-solid fa-clipboard-check"></i>
+            Resultado
+          </span>
+
+          <p>
+            <%= entrevista.resultado %>
+          </p>
+        </div>
+
+        <!-- Ações -->
+        <div class="detalhes-entrevista-acoes">
+          <a
+            href="/candidatos/<%= entrevista.candidatura.candidato.id %>/curriculo"
+            class="btn-login"
+          >
+            <i class="fa-solid fa-file-lines"></i>
+            Ver currículo
+          </a>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
