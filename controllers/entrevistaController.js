@@ -109,6 +109,67 @@ const getDetalhesEntrevista = async function (req, res, next) {
     }
 };
 
+const aprovarCandidato = async function (req, res, next) {
+    try {
+        const entrevista = await Entrevista.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Candidatura,
+                    as: 'candidatura',
+                    include: [
+                        { model: Vaga, as: 'vaga' },
+                        { model: Candidato, as: 'candidato' }
+                    ]
+                }
+            ]
+        });
+
+        if (!entrevista) {
+            return res.status(404).send('Entrevista não encontrada');
+        }
+
+        res.render('empresas/aprovar-candidato', { entrevista });
+
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+const salvarAprovacao = async function (req, res, next) {
+    try {
+        const { data_rh, orientacoes_rh } = req.body;
+
+        const entrevista = await Entrevista.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Candidatura,
+                    as: 'candidatura'
+                }
+            ]
+        });
+
+        if (!entrevista) {
+            return res.status(404).send('Entrevista não encontrada');
+        }
+
+        await entrevista.update({
+            resultado: 'Aprovado',
+            data_rh,
+            orientacoes_rh
+        });
+
+        await entrevista.candidatura.update({
+            status: 'Aprovado'
+        });
+
+        res.redirect(`/empresas/entrevistas/${entrevista.id}`);
+
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
-    getEntrevistas, agendarEntrevista, salvarEntrevista, getDetalhesEntrevista
+    getEntrevistas, agendarEntrevista, salvarEntrevista, getDetalhesEntrevista, aprovarCandidato, salvarAprovacao
 };

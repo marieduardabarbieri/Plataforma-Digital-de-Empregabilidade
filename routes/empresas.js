@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getEmpresa, cadastroEmpresa, editar, minhas_vagas, vagas_encerradas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga, reabrirVaga } = require('../controllers/empresaController')
-const {
-    getEntrevistas,
-    getDetalhesEntrevista,
-    agendarEntrevista,
-    salvarEntrevista
-} = require('../controllers/entrevistaController');
+const { getEntrevistas, getDetalhesEntrevista, agendarEntrevista, salvarEntrevista, aprovarCandidato, salvarAprovacao } = require('../controllers/entrevistaController');
 
 router.get('/', getEmpresa);
 router.get('/cadastro/empresa', cadastroEmpresa);
@@ -23,5 +18,8 @@ router.get('/entrevistas', getEntrevistas);
 router.get('/entrevistas/agendar/:candidaturaId', agendarEntrevista);
 router.post('/entrevistas/agendar', salvarEntrevista);
 router.get('/entrevistas/:id', getDetalhesEntrevista);
+
+router.get('/entrevistas/:id/aprovar', aprovarCandidato);
+router.post('/entrevistas/:id/aprovar', salvarAprovacao);
 
 module.exports = router;

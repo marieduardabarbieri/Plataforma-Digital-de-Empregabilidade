@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aprovar candidato - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header-empresa') %>
+
+    <main class="aprovar-candidato-page">
+      <a href="/empresas/entrevistas/<%= entrevista.id %>" class="btn-voltar">
+        <i class="fa-solid fa-arrow-left"></i>
+        Voltar para entrevista
+      </a>
+
+      <section class="aprovar-candidato-card">
+        <div class="aprovar-candidato-header">
+          <div class="aprovar-icone">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div>
+            <h1>Aprovar candidato</h1>
+
+            <p>Informe as orientações para a próxima etapa do processo.</p>
+          </div>
+        </div>
+
+        <div class="aprovar-candidato-info">
+          <div class="aprovar-candidato-perfil">
+            <img
+              src="<%= entrevista.candidatura.candidato.imagem || '/images/candidato.png' %>"
+              alt="Foto de <%= entrevista.candidatura.candidato.nome %>"
+            />
+
+            <div>
+              <strong> <%= entrevista.candidatura.candidato.nome %> </strong>
+
+              <span> Candidato </span>
+            </div>
+          </div>
+
+          <div class="aprovar-vaga">
+            <span>Vaga</span>
+
+            <strong> <%= entrevista.candidatura.vaga.titulo_vaga %> </strong>
+          </div>
+        </div>
+
+        <form
+          action="/empresas/entrevistas/<%= entrevista.id %>/aprovar"
+          method="POST"
+          class="aprovar-candidato-form"
+        >
+          <div class="form-group">
+            <label for="data_rh"> Data para comparecer ao RH </label>
+
+            <p class="form-ajuda">
+              Informe o dia em que o candidato deverá comparecer à empresa.
+            </p>
+
+            <input type="date" id="data_rh" name="data_rh" required />
+          </div>
+
+          <div class="form-group">
+            <label for="orientacoes_rh"> Orientações para o candidato </label>
+
+            <p class="form-ajuda">
+              Informe o que o candidato precisa saber para essa etapa.
+            </p>
+
+            <textarea
+              id="orientacoes_rh"
+              name="orientacoes_rh"
+              rows="5"
+              placeholder="Ex.: Comparecer à empresa às 14h e procurar o setor de RH."
+              required
+            ></textarea>
+          </div>
+
+          <div class="aprovar-candidato-acoes">
+            <a
+              href="/empresas/entrevistas/<%= entrevista.id %>"
+              class="btn-cancelar"
+            >
+              Cancelar
+            </a>
+
+            <button type="submit" class="btn-aprovado">
+              <i class="fa-solid fa-check"></i>
+              Confirmar aprovação
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

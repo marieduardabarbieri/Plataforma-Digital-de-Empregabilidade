@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Detalhes da entrevista - VagaCerta</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link  rel="shortcut icon"  type="imagex/png"  href="/images/icon.png"
-    />
-  </head>
-  <body>
-    <%- include('../partials/header-empresa') %>
+
+<head>
+  <title>Detalhes da entrevista - VagaCerta</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+</head>
+
+<body>
+  <%- include('../partials/header-empresa') %>
 
     <main class="detalhes-entrevista-page">
-        <a   href="/empresas/entrevistas"    class="btn-voltar"    >
-          <i class="fa-solid fa-arrow-left"></i>
-          Voltar
-        </a><br>
+      <a href="/empresas/entrevistas" class="btn-voltar">
+        <i class="fa-solid fa-arrow-left"></i>
+        Voltar
+      </a><br>
       <!-- Cabeçalho -->
 
       <section class="detalhes-entrevista-header">
@@ -34,10 +32,8 @@
         <!-- Candidato -->
 
         <div class="detalhes-entrevista-candidato">
-          <img
-            src="<%= entrevista.candidatura.candidato.imagem || '/images/candidato.png' %>"
-            alt="Foto de <%= entrevista.candidatura.candidato.nome %>"
-          />
+          <img src="<%= entrevista.candidatura.candidato.imagem || '/images/candidato.png' %>"
+            alt="Foto de <%= entrevista.candidatura.candidato.nome %>" />
           <div>
             <h2>
               <%= entrevista.candidatura.candidato.nome %>
@@ -90,12 +86,12 @@
 
           <div class="detalhe-item">
             <span class="detalhe-label">
-              <% if (entrevista.tipo === 'Online') { %>
+              <% if (entrevista.tipo==='Online' ) { %>
                 <i class="fa-solid fa-video"></i>
-              <% } else { %>
-                <i class="fa-solid fa-location-dot"></i>
-              <% } %>
-              Tipo
+                <% } else { %>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <% } %>
+                    Tipo
             </span>
             <strong>
               <%= entrevista.tipo %>
@@ -105,7 +101,7 @@
 
         <!-- Local / Link -->
 
-        <% if (entrevista.tipo === 'Online') { %>
+        <% if (entrevista.tipo==='Online' ) { %>
 
           <div class="detalhe-extra">
             <span class="detalhe-label">
@@ -114,73 +110,80 @@
             </span>
 
             <% if (entrevista.link) { %>
-              <a
-                href="<%= entrevista.link %>"
-                target="_blank"
-                class="btn-register"
-              >
+              <a href="<%= entrevista.link %>" target="_blank" class="btn-register">
                 <i class="fa-solid fa-video"></i>
                 Acessar entrevista
               </a>
-            <% } else { %>
+              <% } else { %>
+                <p>
+                  Link ainda não informado.
+                </p>
+                <% } %>
+          </div>
+
+          <% } else { %>
+
+            <div class="detalhe-extra">
+              <span class="detalhe-label">
+                <i class="fa-solid fa-location-dot"></i>
+                Local da entrevista
+              </span>
+
               <p>
-                Link ainda não informado.
+                <%= entrevista.endereco || 'Endereço ainda não informado.' %>
               </p>
+            </div>
             <% } %>
-          </div>
 
-        <% } else { %>
+              <!-- Observações -->
 
-          <div class="detalhe-extra">
-            <span class="detalhe-label">
-              <i class="fa-solid fa-location-dot"></i>
-              Local da entrevista
-            </span>
+              <% if (entrevista.observacoes) { %>
+                <div class="detalhe-extra">
+                  <span class="detalhe-label">
+                    <i class="fa-regular fa-note-sticky"></i>
+                    Observações
+                  </span>
+                  <p>
+                    <%= entrevista.observacoes %>
+                  </p>
+                </div>
+                <% } %>
 
-            <p>
-              <%= entrevista.endereco || 'Endereço ainda não informado.' %>
-            </p>
-          </div>
-        <% } %>
+                  <!-- Resultado -->
+                  <div class="detalhe-extra">
+                    <span class="detalhe-label">
+                      <i class="fa-solid fa-clipboard-check"></i>
+                      Resultado
+                    </span>
 
-        <!-- Observações -->
+                    <% if (entrevista.resultado==='Pendente' ) { %>
 
-        <% if (entrevista.observacoes) { %>
-          <div class="detalhe-extra">
-            <span class="detalhe-label">
-              <i class="fa-regular fa-note-sticky"></i>
-              Observações
-            </span>
-            <p>
-              <%= entrevista.observacoes %>
-            </p>
-          </div>
-        <% } %>
+                      <div class="detalhes-entrevista-acoes">
+                        <a href="/empresas/entrevistas/<%= entrevista.id %>/aprovar" class="btn-aprovado">
+                          <i class="fa-solid fa-check"></i>
+                          Aprovar candidato
+                        </a>
 
-        <!-- Resultado -->
-        <div class="detalhe-extra">
-          <span class="detalhe-label">
-            <i class="fa-solid fa-clipboard-check"></i>
-            Resultado
-          </span>
+                        <button class="btn-cancelar">
+                          <i class="fa-solid fa-xmark"></i>
+                          Não aprovar
+                        </button>
 
-          <p>
-            <%= entrevista.resultado %>
-          </p>
-        </div>
+                      </div>
 
-        <!-- Ações -->
-        <div class="detalhes-entrevista-acoes">
-          <a
-            href="/candidatos/<%= entrevista.candidatura.candidato.id %>/curriculo"
-            class="btn-login"
-          >
-            <i class="fa-solid fa-file-lines"></i>
-            Ver currículo
-          </a>
-        </div>
+                      <% } %>
+                  </div>
+
+                  <!-- Ações -->
+                  <div class="detalhes-entrevista-acoes">
+                    <a href="/candidatos/<%= entrevista.candidatura.candidato.id %>/curriculo" class="btn-login">
+                      <i class="fa-solid fa-file-lines"></i>
+                      Ver currículo
+                    </a>
+                  </div>
       </section>
     </main>
     <%- include('../partials/footer') %>
-  </body>
+</body>
+
 </html>
