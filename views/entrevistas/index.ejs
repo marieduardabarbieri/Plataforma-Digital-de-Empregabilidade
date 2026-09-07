@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Entrevistas - VagaCerta</title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link
+    rel="shortcut icon"
+    type="imagex/png"
+    href="/images/icon.png"
+  >
+</head>
+
+<body>
+
+  <%- include('../partials/header') %>
+
+  <main>
+
+    <h1>Entrevistas</h1>
+
+    <% if (entrevistas.length === 0) { %>
+
+      <p>Nenhuma entrevista cadastrada.</p>
+
+    <% } else { %>
+
+      <% entrevistas.forEach(entrevista => { %>
+
+        <div>
+
+          <h2>
+            <%= entrevista.candidatura.vaga.titulo_vaga %>
+          </h2>
+
+          <p>
+            Candidato:
+            <%= entrevista.candidatura.candidato.nome %>
+          </p>
+
+          <p>
+            Data:
+            <%= entrevista.data %>
+          </p>
+
+          <p>
+            Horário:
+            <%= entrevista.horario %>
+          </p>
+
+          <p>
+            Tipo:
+            <%= entrevista.tipo %>
+          </p>
+
+          <p>
+            Status:
+            <%= entrevista.status_entrevista %>
+          </p>
+
+          <p>
+            Resultado:
+            <%= entrevista.resultado %>
+          </p>
+
+        </div>
+
+      <% }) %>
+
+    <% } %>
+
+  </main>
+
+  <%- include('../partials/footer') %>
+
+</body>
+
+</html>
