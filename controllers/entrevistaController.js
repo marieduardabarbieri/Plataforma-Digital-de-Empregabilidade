@@ -75,6 +75,40 @@ const salvarEntrevista = async function (req, res, next) {
     res.redirect('/entrevistas');
 };
 
+const getDetalhesEntrevista = async function (req, res, next) {
+    try {
+        const entrevista = await Entrevista.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Candidatura,
+                    as: 'candidatura',
+                    include: [
+                        {
+                            model: Vaga,
+                            as: 'vaga'
+                        },
+                        {
+                            model: Candidato,
+                            as: 'candidato'
+                        }
+                    ]
+                }
+            ]
+        });
+
+        if (!entrevista) {
+            return res.status(404).send('Entrevista não encontrada');
+        }
+
+        res.render('empresas/detalhes-entrevista', {
+            entrevista
+        });
+
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
-    getEntrevistas, agendarEntrevista, salvarEntrevista
+    getEntrevistas, agendarEntrevista, salvarEntrevista, getDetalhesEntrevista
 };

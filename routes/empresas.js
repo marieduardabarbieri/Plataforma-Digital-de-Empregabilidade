@@ -3,7 +3,7 @@ const router = express.Router();
 const { getEmpresa, cadastroEmpresa, editar, minhas_vagas, vagas_encerradas, cadastro_vaga, detalhesVaga, editarVaga, candidatosDaVaga, reabrirVaga } = require('../controllers/empresaController')
 const {
     getEntrevistas,
-    //getDetalhesEntrevista,
+    getDetalhesEntrevista,
     agendarEntrevista,
     salvarEntrevista
 } = require('../controllers/entrevistaController');
@@ -22,6 +22,6 @@ router.get('/vagas-encerradas/:id/reabrir', reabrirVaga);
 router.get('/entrevistas', getEntrevistas);
 router.get('/entrevistas/agendar/:candidaturaId', agendarEntrevista);
 router.post('/entrevistas/agendar', salvarEntrevista);
-//router.get('/entrevistas/:id', getDetalhesEntrevista);
+router.get('/entrevistas/:id', getDetalhesEntrevista);
 
 module.exports = router;
