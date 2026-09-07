@@ -173,8 +173,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px;
-  border: 1px solid #1746a2;
+  font-size: 14px;
+  padding: 12px 0px 0px 0px;
   border-radius: 33px;
   color: #1746a2;
   text-decoration: none;
@@ -3370,20 +3370,6 @@ body {
   margin: 0;
   color: #68748a;
   font-size: 15px;
-}
-
-.voltar {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #1748c9;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.voltar:hover {
-  color: #0b3db8;
 }
 
 .entrevista-card {
