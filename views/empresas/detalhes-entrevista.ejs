@@ -158,6 +158,11 @@
 
                     <% if (entrevista.resultado==='Pendente' ) { %>
 
+                      <div class="resultado-pendente">
+                        <strong>Pendente</strong>
+                        <p>O resultado da entrevista ainda não foi definido.</p>
+                      </div>
+
                       <div class="detalhes-entrevista-acoes">
                         <a href="/empresas/entrevistas/<%= entrevista.id %>/aprovar" class="btn-aprovado">
                           <i class="fa-solid fa-check"></i>
@@ -168,10 +173,50 @@
                           <i class="fa-solid fa-xmark"></i>
                           Não aprovar
                         </button>
-
                       </div>
 
-                      <% } %>
+                      <% } else if (entrevista.resultado==='Aprovado' ) { %>
+
+                        <div class="resultado-aprovado">
+                          <strong>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Candidato aprovado
+                          </strong>
+                        </div>
+
+                        <% if (entrevista.data_rh) { %>
+                          <div class="resultado-rh">
+                            <span class="detalhe-label">
+                              <i class="fa-regular fa-calendar"></i>
+                              Data do RH
+                            </span>
+
+                            <strong>
+                              <%= entrevista.data_rh.split('-').reverse().join('/') %>
+                            </strong>
+                          </div>
+                          <% } %>
+
+                            <% if (entrevista.orientacoes_rh) { %>
+                              <div class="resultado-rh">
+                                <span class="detalhe-label">
+                                  <i class="fa-regular fa-note-sticky"></i>
+                                  Orientações do RH
+                                </span>
+
+                                <p>
+                                  <%= entrevista.orientacoes_rh %>
+                                </p>
+                              </div>
+                              <% } %>
+
+                                <% } else { %>
+
+                                  <div class="resultado-nao-aprovado">
+                                    <strong>Não aprovado</strong>
+                                  </div>
+
+                                  <% } %>
                   </div>
 
                   <!-- Ações -->

@@ -3998,7 +3998,48 @@ a {
   font-size: 14px;
   line-height: 1.6;
 }
+.resultado-pendente,
+.resultado-aprovado,
+.resultado-nao-aprovado {
+  margin-top: 15px;
+}
 
+.resultado-pendente strong {
+  color: #777;
+  font-size: 16px;
+}
+
+.resultado-pendente p {
+  margin-top: 6px;
+  color: #777;
+}
+
+.resultado-aprovado strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2e7d32;
+  font-size: 16px;
+}
+
+.resultado-rh {
+  margin-top: 20px;
+}
+
+.resultado-rh strong,
+.resultado-rh p {
+  display: block;
+  margin-top: 6px;
+}
+
+.resultado-rh p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.resultado-nao-aprovado strong {
+  color: #c62828;
+}
 /* =========================================
    AÇÕES
 ========================================= */
