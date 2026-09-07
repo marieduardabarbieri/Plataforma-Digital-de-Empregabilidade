@@ -150,7 +150,9 @@ body {
 /* ================================
    BOTÃO PADRÃO
 ================================ */
-
+a {
+  text-decoration: none;
+}
 .btn-login,
 .btn-register,
 .btn-cancelar {
@@ -163,7 +165,6 @@ body {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  text-decoration: none;
   font-family: inherit;
   transition: 0.2s;
 }
@@ -3432,7 +3433,7 @@ body {
 .form-group textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #dce1eb;
+  border: 1px solid #d1d5dc;
   border-radius: 8px;
   padding: 12px 14px;
   font-family: inherit;
@@ -3442,7 +3443,7 @@ body {
   outline: none;
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.7s ease;
 }
 
 .form-group input,
@@ -3475,7 +3476,383 @@ body {
   margin-top: 20px;
   padding-top: 24px;
 }
+/* =========================================
+   ENTREVISTAS DA EMPRESA
+========================================= */
 
+.entrevistas-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.entrevistas-header {
+  margin-bottom: 30px;
+}
+
+.entrevistas-header h1 {
+  margin-bottom: 8px;
+  color: #142957;
+}
+
+.entrevistas-header p {
+  color: #666;
+}
+
+/* =========================================
+   FILTROS
+========================================= */
+
+.entrevistas-filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filtro-entrevista {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filtro-entrevista.ativo {
+  background: #173474;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* =========================================
+   BLOCO DA VAGA
+========================================= */
+
+.entrevistas-vaga {
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+  box-shadow: 0 7px 22px rgba(20, 41, 87, 0.07);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.entrevistas-vaga-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.entrevistas-vaga-header h2 {
+  margin: 0 0 6px;
+  color: #142957;
+  font-size: 20px;
+}
+
+.entrevistas-vaga-header p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.entrevistas-vaga-header p i {
+  margin-right: 5px;
+  color: #1746a2;
+}
+
+.quantidade-entrevistas {
+  background: #f1f3f6;
+  color: #68748a;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================
+   TABELA
+========================================= */
+
+.entrevistas-tabela-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.entrevistas-tabela {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Largura das colunas */
+
+.entrevistas-tabela th:nth-child(1),
+.entrevistas-tabela td:nth-child(1) {
+  width: 28%;
+}
+
+.entrevistas-tabela th:nth-child(2),
+.entrevistas-tabela td:nth-child(2) {
+  width: 14%;
+}
+
+.entrevistas-tabela th:nth-child(3),
+.entrevistas-tabela td:nth-child(3) {
+  width: 13%;
+}
+
+.entrevistas-tabela th:nth-child(4),
+.entrevistas-tabela td:nth-child(4) {
+  width: 13%;
+}
+
+.entrevistas-tabela th:nth-child(5),
+.entrevistas-tabela td:nth-child(5) {
+  width: 14%;
+}
+
+.entrevistas-tabela th:nth-child(6),
+.entrevistas-tabela td:nth-child(6) {
+  width: 18%;
+}
+
+/* Cabeçalho */
+
+.entrevistas-tabela th {
+  text-align: left;
+  padding: 15px 20px;
+  background: #fafafa;
+  color: #68748a;
+  font-size: 13px;
+  font-weight: 600;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+/* Células */
+
+.entrevistas-tabela td {
+  padding: 16px 20px;
+  border-top: 1px solid #e1e6f0;
+  vertical-align: middle;
+  height: 76px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   CANDIDATO
+========================================= */
+
+.entrevista-candidato {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 46px;
+}
+
+.entrevista-candidato img {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #e1e6f0;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.entrevista-candidato div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.entrevista-candidato strong {
+  color: #142957;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.entrevista-candidato span {
+  color: #8a94a6;
+  font-size: 12px;
+}
+
+/* =========================================
+   INFORMAÇÕES
+========================================= */
+
+.entrevista-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.entrevista-info i {
+  width: 18px;
+  color: #777;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.entrevista-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #edf8f0;
+  color: #16833b;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.entrevista-status i {
+  color: #16833b;
+  font-size: 7px;
+}
+
+/* =========================================
+   AÇÕES
+========================================= */
+
+.btn-detalhes-entrevista {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.btn-detalhes-entrevista:hover {
+  background: #f5f5f5;
+}
+
+/* =========================================
+   ESTADO VAZIO
+========================================= */
+
+.entrevistas-vazio {
+  text-align: center;
+  padding: 70px 20px;
+  color: #777;
+}
+
+.entrevistas-vazio i {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.entrevistas-vazio h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   CORREÇÃO DO ALINHAMENTO DA TABELA
+========================================= */
+
+.entrevistas-tabela tbody tr {
+  height: 110px;
+}
+
+.entrevistas-tabela tbody td {
+  vertical-align: middle !important;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/* Data, horário e tipo */
+
+.entrevistas-tabela .entrevista-info {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start;
+  gap: 8px;
+  width: auto;
+  min-width: 0;
+  height: 46px;
+  min-height: 46px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.entrevistas-tabela .entrevista-info i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #777;
+  flex-shrink: 0;
+}
+
+/* Texto */
+.entrevistas-tabela .entrevista-info span {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal;
+}
+
+/* Candidato */
+.entrevistas-tabela .entrevista-candidato {
+  height: 46px;
+  min-height: 46px;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Status */
+.entrevistas-tabela .entrevista-status {
+  margin: 0 !important;
+}
+
+/* Ações */
+.entrevistas-tabela td:last-child {
+  vertical-align: middle !important;
+}
+
+.entrevistas-tabela .btn-detalhes-entrevista {
+  margin: 0 !important;
+}
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/
 
 .site-footer {

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entrevistas - VagaCerta</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link  rel="shortcut icon"  type="imagex/png"  href="/images/icon.png"
+    />
+  </head>
+  <body>
+
+    <%- include('../partials/header-empresa') %>
+
+    <main class="entrevistas-page">
+      <section class="entrevistas-header">
+        <div>
+          <h1>Entrevistas</h1>
+          <p>
+            Acompanhe as entrevistas dos candidatos selecionados.
+          </p>
+        </div>
+      </section>
+
+      <section class="entrevistas-filtros">
+        <button class="filtro-entrevista ativo">
+          Todas
+        </button>
+        <button class="filtro-entrevista">
+          Agendadas
+        </button>
+        <button class="filtro-entrevista">
+          Realizadas
+        </button>
+        <button class="filtro-entrevista">
+          Canceladas
+        </button>
+      </section>
+
+      <section class="entrevistas-lista">
+
+        <% if (entrevistas.length === 0) { %>
+          <div class="entrevistas-vazio">
+            <i class="fa-solid fa-calendar-xmark"></i>
+            <h2>Nenhuma entrevista encontrada</h2>
+            <p>
+              Ainda não existem entrevistas cadastradas.
+            </p>
+          </div>
+
+        <% } else { %>
+          <% 
+            const vagas = {};
+            entrevistas.forEach((entrevista) => {
+              const vaga = entrevista.candidatura.vaga;
+              if (!vagas[vaga.id]) {
+                vagas[vaga.id] = {
+                  vaga: vaga,
+                  entrevistas: []
+                };
+              }
+              vagas[vaga.id].entrevistas.push(entrevista);
+            });
+          %>
+
+          <% Object.values(vagas).forEach((grupo) => { %>
+
+            <section class="entrevistas-vaga">
+              <div class="entrevistas-vaga-header">
+                <div>
+                  <h2>
+                    <%= grupo.vaga.titulo_vaga %>
+                  </h2>
+                  <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <%= grupo.vaga.localizacao %>
+                  </p>
+
+                </div>
+
+                <span class="quantidade-entrevistas">
+                  <%= grupo.entrevistas.length %>
+                  <%= grupo.entrevistas.length === 1 ? 'entrevista' : 'entrevistas' %>
+                </span>
+
+              </div>
+
+
+              <div class="entrevistas-tabela-wrapper">
+
+                <table class="entrevistas-tabela">
+
+                  <thead>
+
+                    <tr>
+                      <th>Candidato</th>
+                      <th>Data</th>
+                      <th>Horário</th>
+                      <th>Tipo</th>
+                      <th>Status</th>
+                      <th>Ações</th>
+                    </tr>
+
+                  </thead>
+
+
+                  <tbody>
+
+                    <% grupo.entrevistas.forEach((entrevista) => { %>
+
+                      <tr>
+
+                        <td>
+
+                          <div class="entrevista-candidato">
+
+                            <img
+                              src="<%= entrevista.candidatura.candidato.imagem || '/images/candidato.png' %>"
+                              alt="Foto de <%= entrevista.candidatura.candidato.nome %>"
+                            />
+
+                            <div>
+
+                              <strong>
+                                <%= entrevista.candidatura.candidato.nome %>
+                              </strong>
+
+                              <span>
+                                Candidato
+                              </span>
+
+                            </div>
+
+                          </div>
+
+                        </td>
+
+
+                        <td>
+
+                          <div class="entrevista-info">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <span>
+                              <%= new Date(entrevista.data).toLocaleDateString('pt-BR') %>
+                            </span>
+
+                          </div>
+
+                        </td>
+
+
+                        <td>
+
+                          <div class="entrevista-info">
+
+                            <i class="fa-regular fa-clock"></i>
+
+                            <span>
+                              <%= entrevista.horario %>
+                            </span>
+
+                          </div>
+
+                        </td>
+
+
+                        <td>
+
+                          <div class="entrevista-info">
+
+                            <% if (entrevista.tipo === 'Online') { %>
+
+                              <i class="fa-solid fa-video"></i>
+
+                            <% } else { %>
+
+                              <i class="fa-solid fa-location-dot"></i>
+
+                            <% } %>
+
+                            <span>
+                              <%= entrevista.tipo %>
+                            </span>
+
+                          </div>
+
+                        </td>
+
+
+                        <td>
+
+                          <span class="entrevista-status">
+
+                            <i class="fa-solid fa-circle"></i>
+
+                            <%= entrevista.status_entrevista %>
+
+                          </span>
+
+                        </td>
+
+
+                        <td>
+
+                          <a
+                            href="/entrevistas/<%= entrevista.id %>"
+                            class="btn-detalhes-entrevista"
+                          >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            Ver detalhes
+
+                          </a>
+
+                        </td>
+
+                      </tr>
+
+                    <% }) %>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </section>
+
+          <% }) %>
+
+        <% } %>
+
+      </section>
+
+    </main>
+
+
+    <%- include('../partials/footer') %>
+
+  </body>
+</html>

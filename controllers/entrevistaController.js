@@ -17,10 +17,13 @@ const getEntrevistas = async function (req, res, next) {
                     }
                 ]
             }
-        ],
+        ], order: [
+            ['data', 'ASC'],
+            ['horario', 'ASC']
+        ]
     });
 
-    res.render('entrevistas', { entrevistas });
+    res.render('empresas/entrevistas', { entrevistas });
 };
 
 const agendarEntrevista = async function (req, res, next) {
@@ -42,7 +45,7 @@ const agendarEntrevista = async function (req, res, next) {
         return res.status(404).send('Candidatura não encontrada');
     }
 
-    res.render('entrevistas/agendar-entrevista', { candidatura });
+    res.render('empresas/agendar-entrevista', { candidatura });
 };
 
 const salvarEntrevista = async function (req, res, next) {
