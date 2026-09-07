@@ -25,7 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     link: DataTypes.STRING,
     observacoes: DataTypes.TEXT,
     status_entrevista: DataTypes.STRING,
-    resultado: DataTypes.STRING
+    resultado: DataTypes.STRING,
+    data_rh: DataTypes.STRING,
+    orientacoes_rh: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Entrevista',

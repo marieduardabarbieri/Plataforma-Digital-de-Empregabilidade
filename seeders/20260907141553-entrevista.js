@@ -14,6 +14,8 @@ module.exports = {
         observacoes: 'Entrevista para a vaga de Estágio.',
         status_entrevista: 'Agendada',
         resultado: 'Pendente',
+        data_rh: '2026-20-05',
+        orientacoes_rh: 'Comparecer à empresa às 14h e procurar o setor de RH.',
         createdAt: new Date(),
         updatedAt: new Date()
       }

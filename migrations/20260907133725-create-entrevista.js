@@ -45,6 +45,15 @@ module.exports = {
         type: Sequelize.STRING,
         defaultValue: 'Pendente'
       },
+      data_rh: {
+        type: Sequelize.STRING,
+        defaultValue: 'Pendente'
+      },
+
+      orientacoes_rh: {
+        type: Sequelize.STRING,
+        defaultValue: 'Pendente'
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
