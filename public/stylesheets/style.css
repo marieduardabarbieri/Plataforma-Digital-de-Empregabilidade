@@ -2961,6 +2961,11 @@ body {
   transition: 0.2s;
 }
 
+.agendar-entrevista {
+  background: #1746a2;
+  color: #fff;
+}
+
 .btn-curriculo:hover {
   background: #1746a2;
   color: #fff;
@@ -3340,6 +3345,149 @@ body {
 
   color: #68748a;
   font-size: 12px;
+}
+
+/* ================================
+   AGENDAR ENTREVISTA
+================================ */
+
+.entrevista-container {
+  width: min(1000px, 92%);
+  margin: 50px auto 80px;
+}
+
+.entrevista-header {
+  margin-bottom: 30px;
+}
+
+.entrevista-header h1 {
+  margin: 18px 0 8px;
+  color: #142957;
+  font-size: 32px;
+}
+
+.entrevista-header p {
+  margin: 0;
+  color: #68748a;
+  font-size: 15px;
+}
+
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1748c9;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.voltar:hover {
+  color: #0b3db8;
+}
+
+.entrevista-card {
+  background: #fff;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 6px 20px rgba(20, 41, 87, 0.06);
+}
+
+.entrevista-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-label {
+  color: #7a8497;
+  font-size: 13px;
+}
+
+.info-item strong {
+  color: #142957;
+  font-size: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #263653;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dce1eb;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #263653;
+  background: #fff;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 46px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1748c9;
+  box-shadow: 0 0 0 3px rgba(23, 72, 201, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aa3b2;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 24px;
 }
 
 /*RODAPE - VAI SER O MESMO PARA TODAS AS PAGINAS*/

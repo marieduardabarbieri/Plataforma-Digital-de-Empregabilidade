@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agendar entrevista - VagaCerta</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="imagex/png" href="/images/icon.png" />
+  </head>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <main class="entrevista-container">
+      <div class="entrevista-header">
+        <a
+          href="/empresas/minhas-vagas/<%= candidatura.vaga.id %>/candidatos"
+          class="voltar"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+          Voltar
+        </a>
+
+        <h1>Agendar entrevista</h1>
+
+        <p>Defina os detalhes da entrevista com o candidato.</p>
+      </div>
+
+      <div class="entrevista-card">
+        <div class="entrevista-info">
+          <div class="info-item">
+            <span class="info-label">Candidato</span>
+            <strong> <%= candidatura.candidato.nome %> </strong>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">Vaga</span>
+            <strong> <%= candidatura.vaga.titulo_vaga %> </strong>
+          </div>
+        </div>
+
+        <form action="/entrevistas/agendar" method="POST">
+          <input
+            type="hidden"
+            name="candidatura_id"
+            value="<%= candidatura.id %>"
+          />
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="data"> Data da entrevista </label>
+
+              <input type="date" id="data" name="data" required />
+            </div>
+
+            <div class="form-group">
+              <label for="horario"> Horário </label>
+
+              <input type="time" id="horario" name="horario" required />
+            </div>
+
+            <div class="form-group">
+              <label for="tipo"> Tipo de entrevista </label>
+
+              <select id="tipo" name="tipo" required>
+                <option value="">Selecione</option>
+
+                <option value="Presencial">Presencial</option>
+
+                <option value="Online">Online</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="endereco"> Endereço </label>
+
+              <input
+                type="text"
+                id="endereco"
+                name="endereco"
+                placeholder="Endereço da entrevista"
+              />
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="link"> Link da entrevista (Caso seja on-line) </label>
+
+              <input
+                type="url"
+                id="link"
+                name="link"
+                placeholder="https://meet.google.com/..."
+              />
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="observacoes"> Observações </label>
+
+              <textarea
+                id="observacoes"
+                name="observacoes"
+                rows="5"
+                placeholder="Digite alguma orientação para o candidato. Ex: Leve documento com foto e esteja com 10 min de antecedência no local."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <a
+              href="/empresas/minhas-vagas/<%= candidatura.vaga.id %>/candidatos"
+              class="btn-cancelar"
+            >
+              Cancelar
+            </a>
+
+            <button type="submit" class="btn-register">
+              <i class="fa-solid fa-calendar-check"></i>
+              Agendar entrevista
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
