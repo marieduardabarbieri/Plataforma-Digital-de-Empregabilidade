@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'candidato',
       });
 
-      Candidatura(models.Entrevista, {
+      Candidatura.hasMany(models.Entrevista, {
         foreignKey: 'candidatura_id',
         as: 'entrevistas'
       });
