@@ -98,6 +98,36 @@
           </div>
         </div>
 
+        <!-- DESCRIÇÃO -->
+        <section class="detalhes-secao">
+          <div class="detalhes-secao-titulo">
+            <i class="fa-solid fa-align-left"></i>
+            <h2>Descrição da vaga</h2>
+          </div>
+
+          <p class="detalhes-descricao"><%= vaga.descricao_vaga %></p>
+        </section>
+
+        <!-- REQUISITOS -->
+        <section class="detalhes-secao">
+          <div class="detalhes-secao-titulo">
+            <i class="fa-solid fa-align-left"></i>
+            <h2>Requisitos da vaga</h2>
+          </div>
+
+          <p class="detalhes-descricao"><%= vaga.requisitos_vaga %></p>
+        </section>
+
+        <!-- BENEFICIOS -->
+        <section class="detalhes-secao">
+          <div class="detalhes-secao-titulo">
+            <i class="fa-solid fa-align-left"></i>
+            <h2>Informações Adicionais</h2>
+          </div>
+
+          <p class="detalhes-descricao"><%= vaga.informacoes_adicionais %></p>
+        </section>
+
         <!-- PERÍODO -->
         <section class="detalhes-secao">
           <div class="detalhes-secao-titulo">
@@ -118,16 +148,6 @@
               <strong><%= vaga.dataFimFormatada %></strong>
             </div>
           </div>
-        </section>
-
-        <!-- DESCRIÇÃO -->
-        <section class="detalhes-secao">
-          <div class="detalhes-secao-titulo">
-            <i class="fa-solid fa-align-left"></i>
-            <h2>Descrição da vaga</h2>
-          </div>
-
-          <p class="detalhes-descricao"><%= vaga.descricao_vaga %></p>
         </section>
 
         <!-- EMPRESA -->

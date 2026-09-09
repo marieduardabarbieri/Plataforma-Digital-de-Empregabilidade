@@ -133,17 +133,6 @@
           </div>
 
           <div class="login-field">
-            <label>Status da vaga</label>
-
-            <div class="perfil-radio">
-              <label>
-                <input type="radio" name="status" value="status_vaga" checked />
-                Em aberto
-              </label>
-            </div>
-          </div>
-
-          <div class="login-field">
             <label for="status_vaga">Data para início das candidaturas</label>
             <div class="search-field">
               <label>
@@ -176,6 +165,42 @@
           </div>
 
           <div class="login-field">
+            <label for="tipo_trabalho">Requisitos para a Vaga</label>
+
+            <div class="search-field descricao-field">
+              <i class="fa-solid fa-align-left"></i>
+
+              <textarea
+                class="form-input"
+                type="text"
+                id="requisitos_vaga"
+                name="requisitos_vaga"
+                placeholder="Ex.: Obter 2° grau completo..."
+                required
+                rows="5"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="tipo_trabalho">Informações Adicionais</label>
+
+            <div class="search-field descricao-field">
+              <i class="fa-solid fa-align-left"></i>
+
+              <textarea
+                class="form-input"
+                type="text"
+                id="informacoes_adicionais"
+                name="informacoes_adicionais"
+                placeholder="Ex.: Vale-transporte, auxílio alimentação..."
+                required
+                rows="5"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="login-field">
             <label for="descricao_vaga">Descrição da vaga</label>
 
             <div class="search-field descricao-field">
@@ -191,6 +216,17 @@
               ></textarea>
             </div>
           </div>
+          <div class="login-field">
+            <label>Status da vaga</label>
+
+            <div class="perfil-radio">
+              <label>
+                <input type="radio" name="status" value="status_vaga" checked />
+                Em aberto
+              </label>
+            </div>
+          </div>
+
           <br />
 
           <button type="submit" class="btn-register" id="cadastro-button">

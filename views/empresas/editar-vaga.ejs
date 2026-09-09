@@ -209,6 +209,42 @@
             </div>
           </div>
 
+          <div class="login-field">
+            <label for="descricao_vaga">Requisitos para a Vaga</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-align-left"></i>
+
+              <textarea
+                class="form-input"
+                id="requisitos_vaga"
+                name="requisitos_vaga"
+                placeholder="Descreva a oportunidade..."
+                required
+              >
+                    <%= vaga.requisitos_vaga %></textarea
+              >
+            </div>
+          </div>
+
+          <div class="login-field">
+            <label for="descricao_vaga">Informações Adicionais</label>
+
+            <div class="search-field">
+              <i class="fa-solid fa-align-left"></i>
+
+              <textarea
+                class="form-input"
+                id="informacoes_adicionais"
+                name="informacoes_adicionais"
+                placeholder="Descreva a oportunidade..."
+                required
+              >
+                    <%= vaga.informacoes_adicionais %></textarea
+              >
+            </div>
+          </div>
+
           <button type="submit" class="btn-register" id="cadastro-button">
             <i class="fa-solid fa-check"></i>
             Salvar alterações
