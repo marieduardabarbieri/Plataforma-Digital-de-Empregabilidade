@@ -231,52 +231,89 @@
                 </div>
               </div>
 
-              <!-- INFORMAÇÕES -->
-              <div class="vaga-info">
-                <span>
-                  <i class="fa-solid fa-location-dot"></i>
-                  <%= vaga.localizacao %>
-                </span>
+              <!-- INFORMAÇÕES PRINCIPAIS -->
+<div class="vaga-info">
+  <span>
+    <%= vaga.localizacao %>
+  </span>
 
-                <span>
-                  <i class="fa-solid fa-file-contract"></i>
-                  <%= vaga.regime_contrato %>
-                </span>
+  <span>
+    <%= vaga.regime_contrato %>
+  </span>
 
-                <span>
-                  <i class="fa-solid fa-laptop"></i>
-                  <%= vaga.tipo_trabalho %>
-                </span>
+  <span>
+    <%= vaga.tipo_trabalho %>
+  </span>
 
-                <span>
-                  <i class="fa-solid fa-users"></i>
-                  <%= vaga.quantidade_vagas %>
-                  <%= vaga.quantidade_vagas == 1 ? 'vaga' : 'vagas' %> disponiveis
-                </span>
+  <span>
+    R$ <%= Number(vaga.salario).toFixed(2).replace('.', ',') %>
+  </span>
+</div>
 
-                 <span >
-                  <i class="fa-solid fa-money-bill"></i>
-                  Salário: R$
-                  <%= Number(vaga.salario)
-                    .toFixed(2)
-                    .replace('.', ',') %>
-                </span>
-              </div>
+<div class="vaga-resumo">
+  <p>
+    <%= vaga.descricao_vaga %>
+  </p>
+</div>
+<!-- VER MAIS -->
+<details class="vaga-detalhes">
 
-              <!-- CONTEÚDO -->
-              <div class="vaga-conteudo">
-                <p class="vaga-descricao">
-                  <%= vaga.descricao_vaga %>
-                </p>
+  <summary>
+    Ver detalhes da vaga
+  </summary>
 
-                <span class="vaga-periodo">
-                  <i class="fa-regular fa-calendar"></i>
-                  Candidaturas:
-                  <%= vaga.dataInicioFormatada %>
-                  até
-                  <%= vaga.dataFimFormatada %>
-                </span>
-              </div>
+  <div class="vaga-detalhes-conteudo">
+
+    <div>
+      <h4>Sobre a vaga</h4>
+      <p>
+        <%= vaga.descricao_vaga %>
+      </p>
+    </div>
+
+   <div class="vaga-informacoes">
+  <h4>Informações da oportunidade</h4>
+
+  <div class="vaga-informacao">
+    <span>Tipo de contrato</span>
+    <strong><%= vaga.regime_contrato %></strong>
+  </div>
+
+  <div class="vaga-informacao">
+    <span>Modalidade</span>
+    <strong><%= vaga.tipo_trabalho %></strong>
+  </div>
+
+  <div class="vaga-informacao">
+    <span>Localização</span>
+    <strong><%= vaga.localizacao %></strong>
+  </div>
+
+  <div class="vaga-informacao">
+    <span>Salário</span>
+    <strong>R$ <%= Number(vaga.salario).toFixed(2).replace('.', ',') %></strong>
+  </div>
+
+  
+  <div class="vaga-informacao">
+    <span>Vagas disponiveis</span>
+    <strong><%= vaga.quantidade_vagas %> disponíveis</strong>
+  </div>
+</div>
+
+    <div>
+      <h4>Período de candidaturas</h4>
+
+      <p>
+       <%= String(vaga.data_inicio_candidatura).split('-').reverse().join('/') %>
+até
+<%= String(vaga.data_fim_candidatura).split('-').reverse().join('/') %>
+      </p>
+    </div>
+
+  </div>
+
+</details>
 
               <!-- RODAPÉ -->
               <div class="vaga-rodape">

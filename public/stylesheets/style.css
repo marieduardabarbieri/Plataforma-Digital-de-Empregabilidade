@@ -442,7 +442,7 @@ a {
 }
 
 .vagas-busca-titulo h1 {
-  margin: 6px 0 5px;
+  margin: 3px 0 5px;
   color: #142957;
   font-size: 32px;
 }
@@ -475,7 +475,7 @@ a {
 ========================================================= */
 
 .mapa-vagas-section {
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   background: #fff;
   border: 1px solid #e1e6f0;
   border-radius: 14px;
@@ -487,7 +487,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 22px;
+  padding: 13px 22px;
   border-bottom: 1px solid #e8ecf3;
 }
 
@@ -511,7 +511,7 @@ a {
 
 #mapa-vagas {
   width: 100%;
-  height: 330px;
+  height: 230px;
 }
 
 /* =========================================================
@@ -536,15 +536,14 @@ a {
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(20, 41, 87, 0.06);
   position: sticky;
-  top: 20px;
 }
 
 .filtros-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #e8ecf3;
 }
 
@@ -554,6 +553,11 @@ a {
   font-size: 19px;
 }
 
+.subtitulo-vagas {
+  margin: 0px;
+  color: #142957;
+  padding: 0px 0px 10px 0px;
+}
 .filtros-header a {
   color: #1746a2;
   font-size: 12px;
@@ -562,12 +566,12 @@ a {
 }
 
 .filtro-grupo {
-  margin-bottom: 22px;
+  margin-bottom: 17px;
 }
 
 .filtro-grupo > label:first-child {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 5px;
   color: #142957;
   font-size: 13px;
   font-weight: 600;
@@ -617,7 +621,7 @@ a {
   display: flex !important;
   align-items: center;
   gap: 9px;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   color: #4f5d73 !important;
   font-size: 13px !important;
   font-weight: 400 !important;
@@ -678,11 +682,11 @@ a {
 .vagas-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 }
 
 .vaga-card {
-  padding: 22px;
+  padding: 0px 22px;
   background: #fff;
   border: 1px solid #e1e6f0;
   border-radius: 13px;
@@ -694,13 +698,13 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 15px;
+  gap: 0px 15px;
 }
 
 .vaga-identificacao {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 0px 13px;
 }
 
 .vaga-empresa-imagem {
@@ -741,52 +745,164 @@ a {
   color: #16833b;
 }
 
-/* INFORMAÇÕES */
+/* =====================================================
+   INFORMAÇÕES DA VAGA
+===================================================== */
 
 .vaga-info {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 0;
+  padding: 8px 0;
+  border-top: 1px solid #d9dce2;
+  border-bottom: 1px solid #7987a1;
 }
 
 .vaga-info span {
   display: inline-flex;
   align-items: center;
-  background: #f6f8fb;
-  border-radius: 5px;
+  padding: 0 20px;
   color: #68748a;
-  font-size: 11px;
+  font-size: 13px;
+  border-right: 1px solid #b9bfca;
+}
+
+.vaga-info span:first-child {
+  padding-left: 0;
+}
+
+.vaga-info span:last-child {
+  border-right: none;
 }
 
 .vaga-info i {
-  color: #1746a2;
+  display: none;
 }
 
-/* CONTEÚDO */
+/* =====================================================
+   DETALHES DA VAGA
+===================================================== */
 
-.vaga-conteudo {
+.vaga-detalhes {
+  display: block;
+  width: 100%;
   border-bottom: 1px solid #edf0f5;
 }
 
-.vaga-descricao {
-  color: #68748a;
-  font-size: 13px;
-  line-height: 1.55;
+.vaga-detalhes summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 0;
+  cursor: pointer;
+
+  color: #1746a2;
+  font-size: 14px;
+  font-weight: 600;
+
+  list-style: none;
+  transition: color 0.2s ease;
 }
 
-.vaga-salario,
-.vaga-periodo {
+.vaga-detalhes summary::-webkit-details-marker {
+  display: none;
+}
+
+.vaga-detalhes summary::after {
+  content: "›";
+  font-size: 22px;
+  color: #1746a2;
+  transition: transform 0.2s ease;
+}
+
+.vaga-detalhes[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.vaga-detalhes summary:hover {
+  color: #12377f;
+}
+
+/* CONTEÚDO ABERTO */
+
+.vaga-detalhes-conteudo {
   display: block;
-  color: #4f5d73;
-  font-size: 12px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0;
+  padding: 5px 0 25px;
+  text-align: left;
 }
 
+.vaga-detalhes-conteudo > div {
+  margin-bottom: 25px;
+}
+
+.vaga-detalhes-conteudo > div:last-child {
+  margin-bottom: 0;
+}
+
+.vaga-detalhes-conteudo h4 {
+  margin: 0 0 10px;
+  color: #142957;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.vaga-detalhes-conteudo p {
+  margin: 0;
+  color: #68748a;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* INFORMAÇÕES DA OPORTUNIDADE */
+
+.vaga-informacoes {
+  margin-bottom: 15px;
+}
+
+.vaga-informacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px solid #dfe3ec;
+  font-size: 13px;
+}
+
+.vaga-informacao:last-child {
+  border-bottom: none;
+}
+
+.vaga-informacao span {
+  color: #68748a;
+}
+
+.vaga-informacao strong {
+  color: #4f5d73;
+  font-weight: 500;
+  text-align: right;
+}
+.vaga-resumo p {
+  margin: 0 0px 10px 0px;
+  color: #68748a;
+  font-size: 15px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 /* RODAPÉ */
 
 .vaga-rodape {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
 }
 
 .vaga-rodape small {
@@ -799,7 +915,7 @@ a {
 }
 
 .vaga-rodape {
-  padding: 9px 16px;
+  padding: 10px 16px 0px 16px;
   border-radius: 6px;
   color: #fff;
   font-size: 12px;
@@ -1618,16 +1734,15 @@ a {
 .vaga-periodo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 18px 0;
-  padding: 12px 14px;
+  gap: 0px 12px;
+  padding: 12px 0px 0px 0px;
   border-radius: 10px;
   background: #f7f9fc;
 }
 
 .vaga-periodo > i {
   color: #1749a8;
-  font-size: 19px;
+  font-size: 14px;
 }
 
 .vaga-periodo div {
@@ -5022,6 +5137,9 @@ a {
   .vaga-rodape .btn-register {
     width: 100%;
     text-align: center;
+  }
+  .vaga-rodape small {
+    margin-bottom: 10px;
   }
 
   .vagas-header,

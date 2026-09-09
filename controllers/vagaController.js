@@ -9,15 +9,6 @@ const getVaga = async function (req, res, next) {
             },
         ],
     });
-    vagas.forEach((vaga) => {
-        vaga.dataInicioFormatada = new Date(
-            vaga.data_inicio_candidatura
-        ).toLocaleDateString('pt-BR');
-
-        vaga.dataFimFormatada = new Date(
-            vaga.data_fim_candidatura
-        ).toLocaleDateString('pt-BR');
-    });
 
     res.render('vagas', { vagas })
 };
