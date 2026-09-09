@@ -32,7 +32,9 @@ module.exports = (sequelize, DataTypes) => {
     status_vaga: DataTypes.STRING,
     data_inicio_candidatura: DataTypes.DATE,
     data_fim_candidatura: DataTypes.DATE,
-    descricao_vaga: DataTypes.STRING
+    descricao_vaga: DataTypes.STRING,
+    requisitos_vaga: DataTypes.TEXT,
+    informacoes_adicionais: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Vaga',

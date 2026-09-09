@@ -49,6 +49,15 @@ module.exports = {
       descricao_vaga: {
         type: Sequelize.STRING
       },
+      requisitos_vaga: {
+        type: Sequelize.TEXT,
+        allowNull: true
+      },
+
+      informacoes_adicionais: {
+        type: Sequelize.TEXT,
+        allowNull: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
