@@ -4937,10 +4937,15 @@ a {
     align-items: center;
   }
 
+  .vagas-busca-form {
+    flex-direction: column !important;
+  }
   .cadastro-card {
     width: min(390px, 90%);
   }
-
+  #buscador-vagas {
+    width: 72%;
+  }
   .cadastro-intro h1,
   .candidatos-vaga-header h1 {
     font-size: 34px;
@@ -5037,9 +5042,23 @@ a {
   }
 
   .main-nav a {
-    font-size: 12px;
+    font-size: 15px;
   }
 
+  .detalhes-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detalhes-vaga-header {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+  }
+  .detalhes-vaga-header img {
+    width: 15%;
+    height: 15%;
+  }
+  .detalhes-vaga-header h1 {
+    font-size: 23px;
+  }
   .btn-login,
   .btn-register {
     padding: 0 11px;
