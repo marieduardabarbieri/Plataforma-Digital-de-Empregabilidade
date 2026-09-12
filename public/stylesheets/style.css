@@ -4891,7 +4891,12 @@ a {
   font-size: 14px;
   outline: none;
 }
-
+.campo-ajuda {
+  display: block;
+  margin-top: 4px;
+  color: #8a94a6;
+  font-size: 11px;
+}
 .aprovar-candidato-form input:focus,
 .aprovar-candidato-form textarea:focus {
   border-color: #1746a2;
@@ -5103,6 +5108,11 @@ a {
     box-sizing: border-box;
   }
 
+  .header-container,
+  .cadastro-empresa-card {
+    width: 100%;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -5169,7 +5179,8 @@ a {
   .vagas-resumo,
   .reabrir-vaga-dados,
   .reabrir-vaga-form,
-  .entrevista-rh {
+  .entrevista-rh,
+  .cadastro-grid {
     grid-template-columns: 1fr;
   }
   .cadastro-cards,
@@ -5178,6 +5189,9 @@ a {
   .vaga-footer {
     flex-direction: column;
     align-items: center;
+  }
+  .campo-largo {
+    grid-column: auto;
   }
 
   .vagas-busca-form {
