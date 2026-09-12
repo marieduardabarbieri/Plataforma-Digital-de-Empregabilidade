@@ -17,225 +17,284 @@
     <%- include('../partials/header-empresa') %>
 
     <main class="login-page">
-      <section class="login-card">
-        <h1>Cadastrar nova vaga</h1>
+      <section class="login-card cadastro-vaga-card">
+        <!-- TOPO -->
+        <div class="cadastro-topo">
+          <span class="cadastro-tag">
+            <i class="fa-solid fa-briefcase"></i>
+            Cadastro de vaga
+          </span>
 
-        <p class="section-text">
-          Preencha os dados da vaga para encontrar os candidatos ideais.
-        </p>
+          <h1>Cadastrar nova vaga</h1>
 
-        <form class="login-form" action="/vagas/cadastrar" method="POST">
-          <div class="login-field">
-            <label for="titulo_vaga">Título da vaga</label>
+          <p class="section-text">
+            Preencha as informações da vaga para encontrar os candidatos ideais.
+          </p>
+        </div>
 
-            <div class="search-field">
+        <form
+          class="login-form vaga-form"
+          action="/vagas/cadastrar"
+          method="POST"
+        >
+          <!-- INFORMAÇÕES DA VAGA -->
+          <div class="cadastro-secao">
+            <div class="cadastro-secao-titulo">
               <i class="fa-solid fa-briefcase"></i>
 
-              <input
-                class="form-input"
-                type="text"
-                id="titulo_vaga"
-                name="titulo_vaga"
-                placeholder="Ex.: Analista de Dados..."
-                required
-              />
+              <div>
+                <h2>Informações da vaga</h2>
+                <span>Informe os principais dados da oportunidade.</span>
+              </div>
+            </div>
+
+            <div class="cadastro-grid">
+              <!-- TÍTULO -->
+              <div class="login-field campo-largo">
+                <label for="titulo_vaga">Título da vaga</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-briefcase"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="titulo_vaga"
+                    name="titulo_vaga"
+                    placeholder="Ex.: Analista de Dados..."
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- QUANTIDADE -->
+              <div class="login-field">
+                <label for="quantidade_vagas"> Quantidade de vagas </label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-users"></i>
+
+                  <input
+                    class="form-input"
+                    type="number"
+                    id="quantidade_vagas"
+                    name="quantidade_vagas"
+                    placeholder="Ex.: 2"
+                    min="1"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- SALÁRIO -->
+              <div class="login-field">
+                <label for="salario">Salário</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-money-bill"></i>
+
+                  <input
+                    class="form-input"
+                    type="number"
+                    id="salario"
+                    name="salario"
+                    placeholder="Ex.: 2500"
+                    min="0"
+                    step="0.01"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- REGIME -->
+              <div class="login-field">
+                <label for="regime_contrato"> Regime de contrato </label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-file-contract"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="regime_contrato"
+                    name="regime_contrato"
+                    placeholder="Ex.: CLT, Estágio, PJ..."
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- TIPO DE TRABALHO -->
+              <div class="login-field">
+                <label for="tipo_trabalho"> Tipo de trabalho </label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-building"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="tipo_trabalho"
+                    name="tipo_trabalho"
+                    placeholder="Ex.: Presencial, Híbrido..."
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- LOCALIZAÇÃO -->
+              <div class="login-field campo-largo">
+                <label for="localizacao">Localização</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="localizacao"
+                    name="localizacao"
+                    placeholder="Ex.: Nova Andradina - MS"
+                    required
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="login-field">
-            <label for="quantidade_vagas"
-              >Quantidade de vagas disponíveis</label
-            >
+          <!-- PERÍODO -->
+          <div class="cadastro-secao">
+            <div class="cadastro-secao-titulo">
+              <i class="fa-regular fa-calendar"></i>
 
-            <div class="search-field">
-              <i class="fa-solid fa-users"></i>
+              <div>
+                <h2>Período de candidatura</h2>
+                <span>
+                  Defina quando os candidatos poderão se candidatar.
+                </span>
+              </div>
+            </div>
 
-              <input
-                class="form-input"
-                type="number"
-                id="quantidade_vagas"
-                name="quantidade_vagas"
-                placeholder="Ex.: 2"
-                min="1"
-                required
-              />
+            <div class="cadastro-grid">
+              <!-- DATA INICIAL -->
+              <div class="login-field">
+                <label for="data_inicio_candidatura">
+                  Início das candidaturas
+                </label>
+
+                <div class="search-field">
+                  <i class="fa-regular fa-calendar"></i>
+
+                  <input
+                    class="form-input"
+                    type="date"
+                    id="data_inicio_candidatura"
+                    name="data_inicio_candidatura"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- DATA FINAL -->
+              <div class="login-field">
+                <label for="data_fim_candidatura"> Fim das candidaturas </label>
+
+                <div class="search-field">
+                  <i class="fa-regular fa-calendar-check"></i>
+
+                  <input
+                    class="form-input"
+                    type="date"
+                    id="data_fim_candidatura"
+                    name="data_fim_candidatura"
+                    required
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="login-field">
-            <label for="salario">Salário</label>
+          <!-- DETALHES DA VAGA -->
+          <div class="cadastro-secao">
+            <div class="cadastro-secao-titulo">
+              <i class="fa-solid fa-list-check"></i>
 
-            <div class="search-field">
-              <i class="fa-solid fa-money-bill"></i>
+              <div>
+                <h2>Detalhes da vaga</h2>
+                <span> Explique o que a empresa espera e o que oferece. </span>
+              </div>
+            </div>
 
-              <input
-                class="form-input"
-                type="number"
-                id="salario"
-                name="salario"
-                placeholder="Ex.: 2500"
-                min="0"
-                step="0.01"
-                required
-              />
+            <div class="cadastro-grid">
+              <!-- REQUISITOS -->
+              <div class="login-field campo-texto">
+                <label for="requisitos_vaga"> Requisitos </label>
+
+                <div class="search-field descricao-field">
+                  <i class="fa-solid fa-list-check"></i>
+
+                  <textarea
+                    class="form-input descricao-input"
+                    id="requisitos_vaga"
+                    name="requisitos_vaga"
+                    placeholder="Ex.: Ensino médio completo, conhecimento em informática..."
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- INFORMAÇÕES ADICIONAIS -->
+              <div class="login-field campo-texto">
+                <label for="informacoes_adicionais">
+                  Informações adicionais
+                </label>
+
+                <div class="search-field descricao-field">
+                  <i class="fa-solid fa-gift"></i>
+
+                  <textarea
+                    class="form-input descricao-input"
+                    id="informacoes_adicionais"
+                    name="informacoes_adicionais"
+                    placeholder="Ex.: Vale-transporte, auxílio alimentação..."
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- DESCRIÇÃO -->
+              <div class="login-field campo-largo">
+                <label for="descricao_vaga"> Descrição da vaga </label>
+
+                <div class="search-field descricao-field">
+                  <i class="fa-solid fa-align-left"></i>
+
+                  <textarea
+                    class="form-input descricao-input"
+                    id="descricao_vaga"
+                    name="descricao_vaga"
+                    placeholder="Descreva as atividades e responsabilidades da vaga..."
+                    rows="6"
+                    required
+                  ></textarea>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="login-field">
-            <label for="regime_contrato">Regime de contrato</label>
+          <!-- STATUS -->
+          <input type="hidden" name="status_vaga" value="Em andamento" />
 
-            <div class="search-field">
-              <i class="fa-solid fa-file-contract"></i>
-
-              <input
-                class="form-input"
-                type="text"
-                id="regime_contrato"
-                name="regime_contrato"
-                placeholder="Ex.: CLT, Estágio, PJ..."
-                required
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="tipo_trabalho">Tipo de trabalho</label>
-
-            <div class="search-field">
-              <i class="fa-solid fa-building"></i>
-
-              <input
-                class="form-input"
-                type="text"
-                id="tipo_trabalho"
-                name="tipo_trabalho"
-                placeholder="Ex.: Desenvolvedor, Auxiliar..."
-                required
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="localizacao">Localização</label>
-
-            <div class="search-field">
-              <i class="fa-solid fa-location-dot"></i>
-
-              <input
-                class="form-input"
-                type="text"
-                id="localizacao"
-                name="localizacao"
-                placeholder="Ex.: São Paulo - SP"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="status_vaga">Data para início das candidaturas</label>
-            <div class="search-field">
-              <label>
-                <input
-                  class="form-input"
-                  type="date"
-                  id="data_inicio_candidatura"
-                  name="data_inicio_candidatura"
-                  value="data_inicio_candidatura"
-                  required
-                />
-              </label>
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="status_vaga">Data para fim das candidaturas</label>
-            <div class="search-field">
-              <label>
-                <input
-                  class="form-input"
-                  type="date"
-                  id="data_fim_candidatura"
-                  name="data_fim_candidatura"
-                  value="data_fim_candidatura"
-                  required
-                />
-              </label>
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="tipo_trabalho">Requisitos para a Vaga</label>
-
-            <div class="search-field descricao-field">
-              <i class="fa-solid fa-align-left"></i>
-
-              <textarea
-                class="form-input"
-                type="text"
-                id="requisitos_vaga"
-                name="requisitos_vaga"
-                placeholder="Ex.: Obter 2° grau completo..."
-                required
-                rows="5"
-              ></textarea>
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="tipo_trabalho">Informações Adicionais</label>
-
-            <div class="search-field descricao-field">
-              <i class="fa-solid fa-align-left"></i>
-
-              <textarea
-                class="form-input"
-                type="text"
-                id="informacoes_adicionais"
-                name="informacoes_adicionais"
-                placeholder="Ex.: Vale-transporte, auxílio alimentação..."
-                required
-                rows="5"
-              ></textarea>
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="descricao_vaga">Descrição da vaga</label>
-
-            <div class="search-field descricao-field">
-              <i class="fa-solid fa-align-left"></i>
-
-              <textarea
-                class="form-input descricao-input"
-                id="descricao_vaga"
-                name="descricao_vaga"
-                placeholder="Descreva as atividades, requisitos e informações da vaga..."
-                rows="5"
-                required
-              ></textarea>
-            </div>
-          </div>
-          <div class="login-field">
-            <label>Status da vaga</label>
-
-            <div class="perfil-radio">
-              <label>
-                <input type="radio" name="status" value="status_vaga" checked />
-                Em aberto
-              </label>
-            </div>
-          </div>
-
-          <br />
-
+          <!-- BOTÃO -->
           <button type="submit" class="btn-register" id="cadastro-button">
+            <i class="fa-solid fa-check"></i>
             Cadastrar vaga
           </button>
         </form>
       </section>
     </main>
-
     <%- include('../partials/footer') %>
   </body>
 </html>
