@@ -928,7 +928,6 @@ a {
 /* LOGIN */
 
 .login-page {
-  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -937,7 +936,6 @@ a {
 }
 
 .login-card {
-  width: min(350px, 100%);
   padding: 45px;
   background: #fff;
   border-radius: 18px;
