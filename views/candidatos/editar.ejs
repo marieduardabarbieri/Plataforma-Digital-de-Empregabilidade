@@ -17,119 +17,162 @@
     <%-include('../partials/header-candidato') %>
 
     <main class="login-page">
-      <section class="login-card">
-        <h1>Editar perfil</h1>
+      <section class="login-card cadastro-candidato-card">
+        <div class="cadastro-topo">
+          <span class="cadastro-tag">
+            <i class="fa-solid fa-user"></i>
+            Perfil do candidato
+          </span>
 
-        <p class="section-text">Atualize seus dados pessoais.</p>
+          <h1>Editar perfil</h1>
 
-        <form class="login-form">
-          <div class="login-field">
-            <label for="nome">Nome</label>
+          <p class="section-text">
+            Atualize seus dados pessoais e mantenha seu perfil completo.
+          </p>
+        </div>
 
-            <div class="search-field">
+        <form class="login-form candidato">
+          <!-- DADOS PESSOAIS -->
+          <div class="cadastro-secao">
+            <div class="cadastro-secao-titulo">
               <i class="fa-solid fa-user"></i>
 
-              <input
-                class="form-input"
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome..."
-              />
+              <div>
+                <h2>Dados pessoais</h2>
+                <span>Atualize as principais informações do seu perfil.</span>
+              </div>
+            </div>
+
+            <div class="cadastro-grid">
+              <!-- NOME -->
+              <div class="login-field campo-largo">
+                <label for="nome">Nome completo</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-user"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome completo..."
+                  />
+                </div>
+              </div>
+
+              <!-- EMAIL -->
+              <div class="login-field">
+                <label for="email">E-mail</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-envelope"></i>
+
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail..."
+                  />
+                </div>
+              </div>
+
+              <!-- NOVA SENHA -->
+              <div class="login-field">
+                <label for="senha">Nova senha</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-lock"></i>
+
+                  <input
+                    class="form-input"
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite uma nova senha..."
+                  />
+                </div>
+
+                <small class="campo-ajuda">
+                  Deixe em branco para manter sua senha atual.
+                </small>
+              </div>
+
+              <!-- TELEFONE -->
+              <div class="login-field">
+                <label for="telefone">Telefone</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-phone"></i>
+
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="Digite seu telefone..."
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="login-field">
-            <label for="email">Email</label>
-
-            <div class="search-field">
-              <i class="fa-solid fa-envelope"></i>
-
-              <input
-                class="form-input"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu e-mail..."
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="senha">Senha</label>
-
-            <div class="search-field">
-              <i class="fa-solid fa-lock"></i>
-
-              <input
-                class="form-input"
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Digite uma nova senha..."
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="senha">Telefone</label>
-
-            <div class="search-field">
-              <i class="fa-solid fa-phone"></i>
-
-              <input
-                class="form-input"
-                type="text"
-                id="telefone"
-                name="telefone"
-                placeholder="Digite seu novo telefone..."
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label for="senha">Cidade</label>
-
-            <div class="search-field">
+          <!-- LOCALIZAÇÃO -->
+          <div class="cadastro-secao">
+            <div class="cadastro-secao-titulo">
               <i class="fa-solid fa-location-dot"></i>
 
-              <input
-                class="form-input"
-                type="text"
-                id="cidade_candidato"
-                name="cidade_candidato"
-                placeholder="Digite sua cidade..."
-              />
+              <div>
+                <h2>Localização</h2>
+                <span>Informe a cidade onde você está localizado.</span>
+              </div>
+            </div>
+
+            <div class="cadastro-grid">
+              <!-- CIDADE -->
+              <div class="login-field">
+                <label for="cidade_candidato">Cidade</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="cidade_candidato"
+                    name="cidade_candidato"
+                    placeholder="Digite sua cidade..."
+                  />
+                </div>
+              </div>
+
+              <!-- UF -->
+              <div class="login-field">
+                <label for="uf_candidato">Estado (UF)</label>
+
+                <div class="search-field">
+                  <i class="fa-solid fa-map"></i>
+
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="uf_candidato"
+                    name="uf_candidato"
+                    maxlength="2"
+                    placeholder="Ex.: MS"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="login-field">
-            <label for="senha">UF</label>
+          <!-- PERFIL -->
+          <input type="hidden" name="perfil" value="candidato" />
 
-            <div class="search-field">
-              <i class="fa-solid fa-map"></i>
-
-              <input
-                class="form-input"
-                type="text"
-                id="uf_candidato"
-                name="uf_candidato"
-                placeholder="Ex: SP"
-              />
-            </div>
-          </div>
-
-          <div class="login-field">
-            <label>Perfil</label><br />
-
-            <label>
-              <input type="radio" name="perfil" value="candidato" checked />
-
-              Candidato
-            </label>
-          </div>
-
+          <!-- BOTÃO -->
           <button type="submit" class="btn-register" id="cadastro-button">
+            <i class="fa-solid fa-check"></i>
             Salvar alterações
           </button>
         </form>
