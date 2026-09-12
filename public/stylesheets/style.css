@@ -973,7 +973,7 @@ a {
 .linha {
   width: 100%;
   margin: 30px 0px;
-  color: #f4f4f5;
+  color: #f8f8f8;
 }
 
 .descricao-field {
@@ -1222,7 +1222,135 @@ a {
 .login-link a:hover {
   text-decoration: underline;
 }
+/* ==============================
+   CADASTRO DE EMPRESA
+   ============================== */
 
+.cadastro-empresa-card {
+  width: 40%;
+}
+
+.cadastro-topo {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cadastro-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: #1746a2;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cadastro-tag i {
+  font-size: 13px;
+}
+
+.cadastro-topo h1 {
+  margin: 0 0 10px;
+  color: #142957;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.cadastro-topo .section-text {
+  color: #68748a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* SEÇÕES */
+
+.cadastro-secao {
+  margin-bottom: 28px;
+}
+
+.cadastro-secao-titulo {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cadastro-secao-titulo > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #edf3ff;
+  color: #1746a2;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.cadastro-secao-titulo h2 {
+  margin: 0 0 3px;
+  color: #142957;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.cadastro-secao-titulo span {
+  color: #8a94a6;
+  font-size: 12px;
+}
+.campo-largo .search-field {
+  margin-right: 10px;
+}
+/* GRID DOS CAMPOS */
+
+.cadastro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 18px;
+}
+
+.cadastro-grid .login-field {
+  margin: 0;
+}
+
+.campo-largo {
+  grid-column: 1 / -1;
+}
+
+/* LABEL */
+
+.cadastro-grid .login-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #34415a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* CAMPOS */
+
+.cadastro-grid .search-field {
+  width: 100%;
+}
+
+.cadastro-grid .form-input {
+  width: 100%;
+}
+
+/* SEGURANÇA */
+
+.cadastro-seguranca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cadastro-seguranca i {
+  color: #16833b;
+}
 /* =========================
    PERFIL
 ========================= */
